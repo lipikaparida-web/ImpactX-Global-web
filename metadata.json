@@ -1,0 +1,6 @@
+{
+  "name": "ImpactX Global — Digital Headquarters",
+  "description": "The digital headquarters of ImpactX Global: a student-led ecosystem where students build real-world projects, receive mentorship, and create measurable global impact.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

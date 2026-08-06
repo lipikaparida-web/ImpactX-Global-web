@@ -422,7 +422,7 @@ export const JOURNEY_STAGES: JourneyStage[] = [
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'team-1',
-    name: 'Ms. Ritika Lenka',
+    name: 'Ms. Reetika Lenka',
     role: 'Founder & Vision Architect',
     chapter: 'Global HQ',
     university: 'ImpactX Global',

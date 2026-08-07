@@ -58,18 +58,46 @@ export const ThemePlayer: React.FC = () => {
   const isPlayingRef = useRef(false);
   const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
 
+  const userHasToggledRef = useRef(false);
+
   useEffect(() => {
     // Listen for custom event to start music from PlatformGateway
     const handleStartMusic = () => {
-      if (!isPlayingRef.current) {
+      if (!isPlayingRef.current && !userHasToggledRef.current) {
         playMelody();
       }
     };
     
     window.addEventListener('start-theme-music', handleStartMusic);
 
+    // Attempt autoplay on mount
+    const attemptAutoplay = () => {
+      if (!isPlayingRef.current && !userHasToggledRef.current) {
+        playMelody().catch(() => console.log('Autoplay blocked by browser'));
+      }
+    };
+    
+    // Play on first interaction if autoplay was blocked
+    const handleFirstInteraction = () => {
+      if (!isPlayingRef.current && !userHasToggledRef.current) {
+        playMelody();
+      }
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
+      document.removeEventListener('scroll', handleFirstInteraction);
+    };
+
+    const timer = setTimeout(attemptAutoplay, 1000);
+    document.addEventListener('click', handleFirstInteraction);
+    document.addEventListener('keydown', handleFirstInteraction);
+    document.addEventListener('scroll', handleFirstInteraction, { passive: true, once: true });
+
     return () => {
       window.removeEventListener('start-theme-music', handleStartMusic);
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
+      document.removeEventListener('scroll', handleFirstInteraction);
+      clearTimeout(timer);
       if (audioCtxRef.current) {
         audioCtxRef.current.close();
       }
@@ -156,6 +184,7 @@ export const ThemePlayer: React.FC = () => {
   };
 
   const togglePlay = () => {
+    userHasToggledRef.current = true;
     if (isPlaying) {
       stopMelody();
     } else {

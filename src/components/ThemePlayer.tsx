@@ -116,8 +116,8 @@ export const ThemePlayer: React.FC = () => {
     osc.type = 'triangle';
     osc.frequency.setValueAtTime(frequency, startTime);
 
-    // Perfect volume: 0.25 (not too loud, not too quiet)
-    const MAX_VOL = 0.25;
+    // Perfect volume: 0.05 (very soft background melody)
+    const MAX_VOL = 0.05;
     
     gainNode.gain.setValueAtTime(0, startTime);
     gainNode.gain.linearRampToValueAtTime(MAX_VOL, startTime + 0.05);

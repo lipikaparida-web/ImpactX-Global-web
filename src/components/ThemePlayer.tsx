@@ -73,7 +73,7 @@ export const ThemePlayer: React.FC = () => {
 
     // Envelope to make it sound plucky/magical
     gainNode.gain.setValueAtTime(0, startTime);
-    gainNode.gain.linearRampToValueAtTime(0.3, startTime + 0.05); // Attack
+    gainNode.gain.linearRampToValueAtTime(0.6, startTime + 0.05); // Attack
     gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + duration - 0.05); // Decay
 
     osc.connect(gainNode);
@@ -147,7 +147,7 @@ export const ThemePlayer: React.FC = () => {
   return (
     <button
       onClick={togglePlay}
-      className={`fixed bottom-6 right-6 z-50 p-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(200,169,106,0.3)]
+      className={`fixed bottom-6 right-6 z-[9999] p-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(200,169,106,0.3)]
         ${isPlaying 
           ? 'bg-gradient-to-br from-[#1a130f] to-[#3a2818] border border-[#c8a96a] shadow-[0_0_30px_rgba(200,169,106,0.6)] scale-105' 
           : 'bg-gradient-to-br from-[#0a0806] to-[#1a130f] border border-[#c8a96a]/30 hover:border-[#c8a96a]/70 hover:scale-105'

@@ -2,15 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 export const LiveExpressBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const parallaxBgRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -228,6 +220,10 @@ export const LiveExpressBackground: React.FC = () => {
         ctx.globalAlpha = 1.0;
       });
 
+      if (parallaxBgRef.current) {
+        parallaxBgRef.current.style.transform = `scale(1.04) translateY(${currentScroll * 0.15}px)`;
+      }
+
       animId = requestAnimationFrame(render);
     };
 
@@ -244,10 +240,11 @@ export const LiveExpressBackground: React.FC = () => {
       
       {/* 1. Uncropped Cinematic Landscape Artwork with Smooth Parallax */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-500 ease-out"
+        ref={parallaxBgRef}
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=2400&auto=format&fit=crop')`,
-          transform: `scale(1.04) translateY(${scrollY * 0.15}px)`,
+          transform: `scale(1.04) translateY(0px)`,
           filter: 'brightness(0.85) contrast(1.10) saturate(1.10)',
         }}
       >

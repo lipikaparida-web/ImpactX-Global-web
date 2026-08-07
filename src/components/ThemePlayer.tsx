@@ -61,20 +61,20 @@ export const ThemePlayer: React.FC = () => {
     };
   }, []);
 
+  const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
+
   const playNote = (ctx: AudioContext, frequency: number, duration: number, startTime: number) => {
     if (frequency === 0) return; // Rest
 
     const osc = ctx.createOscillator();
     const gainNode = ctx.createGain();
 
-    // Magical triangle wave sounds a bit like a music box/celesta
     osc.type = 'triangle';
-    osc.frequency.value = frequency;
+    osc.frequency.setValueAtTime(frequency, startTime);
 
-    // Envelope to make it sound plucky/magical
     gainNode.gain.setValueAtTime(0, startTime);
-    gainNode.gain.linearRampToValueAtTime(0.6, startTime + 0.05); // Attack
-    gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + duration - 0.05); // Decay
+    gainNode.gain.linearRampToValueAtTime(1, startTime + 0.05);
+    gainNode.gain.linearRampToValueAtTime(0, startTime + duration);
 
     osc.connect(gainNode);
     gainNode.connect(ctx.destination);
@@ -96,14 +96,14 @@ export const ThemePlayer: React.FC = () => {
     isPlayingRef.current = true;
     setIsPlaying(true);
 
-    const baseNoteLength = 0.25; // Speed of the song
+    const baseNoteLength = 0.25;
     let currentTime = ctx.currentTime + 0.1;
-    
     let noteIndex = 0;
 
     const scheduleNotes = () => {
-      // Lookahead window
-      while (isPlayingRef.current && noteIndex < MELODY.length && currentTime < ctx.currentTime + 1.0) {
+      if (!isPlayingRef.current) return;
+
+      while (currentTime < ctx.currentTime + 0.5) {
         const [note, durationMult] = MELODY[noteIndex];
         const duration = durationMult * baseNoteLength;
         
@@ -111,17 +111,13 @@ export const ThemePlayer: React.FC = () => {
         
         currentTime += duration;
         noteIndex++;
-      }
-
-      if (isPlayingRef.current) {
-        if (noteIndex < MELODY.length) {
-          requestAnimationFrame(scheduleNotes);
-        } else {
-          // Loop the melody when finished
+        
+        if (noteIndex >= MELODY.length) {
           noteIndex = 0;
-          requestAnimationFrame(scheduleNotes);
         }
       }
+
+      timeoutIdRef.current = setTimeout(scheduleNotes, 100);
     };
 
     scheduleNotes();
@@ -130,6 +126,9 @@ export const ThemePlayer: React.FC = () => {
   const stopMelody = () => {
     isPlayingRef.current = false;
     setIsPlaying(false);
+    if (timeoutIdRef.current) {
+      clearTimeout(timeoutIdRef.current);
+    }
     if (audioCtxRef.current) {
       audioCtxRef.current.close();
       audioCtxRef.current = null;

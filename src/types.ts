@@ -81,7 +81,7 @@ export interface TeamMember {
 export interface CommunityHub {
   id: string;
   title: string;
-  type: 'Discord' | 'Events' | 'Workshops' | 'Book Clubs' | 'Research' | 'Office Hours' | 'Hackathons';
+  type: 'Discord' | 'Events' | 'Workshops' | 'Book Clubs' | 'Research' | 'Office Hours' | 'Hackathons' | 'Impact' | 'Community';
   description: string;
   cadence: string;
   participants: string;

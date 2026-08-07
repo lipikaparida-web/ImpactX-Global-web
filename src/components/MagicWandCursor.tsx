@@ -47,7 +47,16 @@ interface FloatText {
   vy: number;
 }
 
+const isTouchDevice = () => {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+};
+
 export const MagicWandCursor: React.FC = () => {
+  const [isTouch] = useState(isTouchDevice());
+
+  if (isTouch) return null;
+
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [pos, setPos] = useState({ x: -200, y: -200 });
   const [hovered, setHovered] = useState(false);

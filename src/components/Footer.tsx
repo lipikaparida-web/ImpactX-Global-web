@@ -189,26 +189,29 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
         </div>
 
         {/* Bottom Legal & Back to Top Row */}
-        <div className="pt-10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-[#9E9EA7]">
-          <div className="flex flex-col items-center sm:items-start gap-1.5 text-center sm:text-left">
-            <div className="flex flex-col sm:flex-row items-center gap-2">
-              <span>© {new Date().getFullYear()} ImpactX Global. All rights reserved.</span>
-              <span className="hidden sm:inline text-white/20">•</span>
-              <span>Student-led Movement. Headquartered in India.</span>
+        <div className="pt-10 flex flex-col gap-6 font-mono text-[11px] text-[#9E9EA7]">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col items-center sm:items-start gap-1 text-center sm:text-left">
+              <span>Student-led Movement. Headquartered in India. Built for students worldwide.</span>
+              <span className="text-white/40 text-[10px]">
+                All content, trademarks, and user rights are strictly protected for safety and legal purposes.
+              </span>
             </div>
-            <span className="text-white/40 text-[10px]">
-              Built for students worldwide. All content, trademarks, and user rights are strictly protected for safety and legal purposes.
-            </span>
-          </div>
 
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0D0D0F]/60 border border-white/10 hover:border-[#C8A96A]/40 text-[#F7F4EE] transition-all cursor-pointer hover:text-[#C8A96A]"
-            title="Back to top"
-          >
-            <span>Back to Top</span>
-            <ArrowUp className="w-3.5 h-3.5" />
-          </button>
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0D0D0F]/60 border border-white/10 hover:border-[#C8A96A]/40 text-[#F7F4EE] transition-all cursor-pointer hover:text-[#C8A96A]"
+              title="Back to top"
+            >
+              <span>Back to Top</span>
+              <ArrowUp className="w-3.5 h-3.5" />
+            </button>
+          </div>
+          
+          {/* Centered Copyright line */}
+          <div className="pt-4 border-t border-white/10 w-full text-center">
+            <span>© {new Date().getFullYear()} ImpactX Global. All rights reserved.</span>
+          </div>
         </div>
 
       </div>

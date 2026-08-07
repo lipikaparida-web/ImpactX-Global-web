@@ -19,7 +19,6 @@ import { HogwartsCastleBackground } from './components/HogwartsCastleBackground'
 import { HogwartsTrainBackground } from './components/HogwartsTrainBackground';
 import { MagicWandCursor } from './components/MagicWandCursor';
 import { PlatformGateway } from './components/PlatformGateway';
-import { ThemePlayer } from './components/ThemePlayer';
 import { DomainId } from './types';
 
 export default function App() {
@@ -65,8 +64,6 @@ export default function App() {
 
       {/* ── Magic Wand Cursor — golden dust + spell bursts ── */}
       <MagicWandCursor />
-      
-      <ThemePlayer />
 
       {/* ── Layer 0: Hogwarts Castle — immersive fixed background ── */}
       <HogwartsCastleBackground />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { SocialProofBanner } from './components/SocialProofBanner';
 import { OurStory } from './components/OurStory';
 import { OurPhilosophy } from './components/OurPhilosophy';
 import { Comparison } from './components/Comparison';
@@ -95,6 +96,9 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
         />
+
+        {/* 01.5. Social Proof / FOMO Banner */}
+        <SocialProofBanner />
 
         {/* 02. Our Story */}
         <OurStory />

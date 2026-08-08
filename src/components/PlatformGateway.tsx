@@ -530,7 +530,7 @@ export const PlatformGateway: React.FC<PlatformGatewayProps> = ({ onEnterWebsite
   };
 
   return (
-    <div className="fixed inset-0 z-[70] overflow-hidden bg-[#09090B] font-sans text-[#F5F5F5] selection:bg-[#C9A96E]/30 selection:text-[#C9A96E] flex flex-col justify-between h-[100dvh] min-h-[100dvh] supports-[height:100dvh]:h-[100dvh]">
+    <div className="fixed inset-0 z-[70] overflow-hidden bg-[#09090B] font-sans text-[#FFFFFF] selection:bg-[#C9A96E]/30 selection:text-[#C9A96E] flex flex-col justify-between h-[100dvh] min-h-[100dvh] supports-[height:100dvh]:h-[100dvh]">
       
       {/* Canvas Live Atmosphere Background */}
       <canvas
@@ -576,7 +576,7 @@ export const PlatformGateway: React.FC<PlatformGatewayProps> = ({ onEnterWebsite
             <ImpactXLogo className="w-4 h-4 text-[#C9A96E]" />
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-[#F5F5F5] font-sans-display font-bold text-xs sm:text-sm tracking-tight whitespace-nowrap">
+            <span className="text-[#FFFFFF] font-sans-display font-bold text-xs sm:text-sm tracking-tight whitespace-nowrap">
               IMPACTX
             </span>
             <span className="text-[#C9A96E] font-mono text-[9px] sm:text-[10px] tracking-widest uppercase bg-[#C9A96E]/10 px-2 py-0.5 rounded-full border border-[#C9A96E]/20 whitespace-nowrap">
@@ -589,7 +589,7 @@ export const PlatformGateway: React.FC<PlatformGatewayProps> = ({ onEnterWebsite
         <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
           <button
             onClick={() => setSoundEnabled(!soundEnabled)}
-            className="p-2 min-w-[38px] min-h-[38px] flex items-center justify-center rounded-full bg-[#111111]/70 border border-white/10 hover:border-[#C9A96E]/40 text-[#A6A6B2] hover:text-[#F5F5F5] transition-all cursor-pointer active:scale-95"
+            className="p-2 min-w-[38px] min-h-[38px] flex items-center justify-center rounded-full bg-[#111111]/70 border border-white/10 hover:border-[#C9A96E]/40 text-[#D1CBC0] hover:text-[#FFFFFF] transition-all cursor-pointer active:scale-95"
             title={soundEnabled ? 'Mute Ambience' : 'Enable Ambience'}
           >
             {soundEnabled ? (
@@ -602,7 +602,7 @@ export const PlatformGateway: React.FC<PlatformGatewayProps> = ({ onEnterWebsite
           <button
             onClick={onEnterWebsite}
             disabled={isTransitioning}
-            className="text-xs font-mono text-[#A6A6B2] hover:text-[#F5F5F5] transition-colors cursor-pointer min-h-[44px] px-3 py-2 flex items-center justify-center active:scale-95 whitespace-nowrap"
+            className="text-xs font-mono text-[#D1CBC0] hover:text-[#FFFFFF] transition-colors cursor-pointer min-h-[44px] px-3 py-2 flex items-center justify-center active:scale-95 whitespace-nowrap"
           >
             Skip Intro →
           </button>
@@ -661,7 +661,7 @@ export const PlatformGateway: React.FC<PlatformGatewayProps> = ({ onEnterWebsite
 
         {/* Body Description */}
         <p
-          className="text-xs sm:text-base text-[#A6A6B2] leading-relaxed max-w-md sm:max-w-lg mx-auto mb-6 sm:mb-8 font-sans font-normal transition-all duration-700"
+          className="text-sm sm:text-base text-[#D1CBC0] leading-loose max-w-md sm:max-w-lg mx-auto mb-6 sm:mb-8 font-sans font-normal transition-all duration-700"
           style={{ opacity: isTransitioning ? 1 - transitionProgress : 1 }}
         >
           Leave the ordinary behind and step into a world where ideas become projects, curiosity becomes innovation, and students become future leaders.
@@ -669,7 +669,7 @@ export const PlatformGateway: React.FC<PlatformGatewayProps> = ({ onEnterWebsite
 
         {/* Tagline Statement */}
         <div
-          className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono text-[#F5F5F5]/75 mb-8 sm:mb-10 tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-700"
+          className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono text-[#FFFFFF]/75 mb-8 sm:mb-10 tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-700"
           style={{ opacity: isTransitioning ? 1 - transitionProgress : 1 }}
         >
           <span>Learn</span>
@@ -686,7 +686,7 @@ export const PlatformGateway: React.FC<PlatformGatewayProps> = ({ onEnterWebsite
           <button
             onClick={handleBeginJourney}
             disabled={isTransitioning}
-            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-semibold text-[#F5F5F5] bg-[#111111]/90 backdrop-blur-md border border-[#C9A96E]/40 hover:border-[#C9A96E]/80 hover:bg-[#1A1815] transition-all duration-300 shadow-[0_0_25px_rgba(201,169,110,0.15)] hover:shadow-[0_0_40px_rgba(201,169,110,0.35)] hover:scale-[1.02] active:scale-95 cursor-pointer min-h-[48px]"
+            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full text-sm font-semibold text-[#FFFFFF] bg-[#111111]/90 backdrop-blur-md border border-[#C9A96E]/40 hover:border-[#C9A96E]/80 hover:bg-[#1A1815] transition-all duration-300 shadow-[0_0_25px_rgba(201,169,110,0.15)] hover:shadow-[0_0_40px_rgba(201,169,110,0.35)] hover:scale-[1.02] active:scale-95 cursor-pointer min-h-[48px]"
           >
             <span>{isTransitioning ? 'Crossing Threshold...' : 'Board Platform 9¾'}</span>
             <ArrowRight className="w-4 h-4 text-[#C9A96E] transition-transform duration-300 group-hover:translate-x-1" />
@@ -696,7 +696,7 @@ export const PlatformGateway: React.FC<PlatformGatewayProps> = ({ onEnterWebsite
       </main>
 
       {/* FOOTER */}
-      <footer className="relative z-20 w-full max-w-7xl mx-auto px-6 py-4 sm:py-6 text-center text-[10px] sm:text-[11px] font-mono text-[#A6A6B2]/40">
+      <footer className="relative z-20 w-full max-w-7xl mx-auto px-6 py-4 sm:py-6 text-center text-[10px] sm:text-[11px] font-mono text-[#D1CBC0]/40">
         <span>ImpactX Global Ecosystem</span>
       </footer>
 

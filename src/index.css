@@ -5,16 +5,16 @@
     --bg-primary: #090909;
     --bg-secondary: #111114;
     --bg-surface: #151519;
-    --border-subtle: rgba(255, 255, 255, 0.05);
-    --border-hover: rgba(255, 255, 255, 0.12);
-    --text-primary: #F7F4EE;
-    --text-secondary: #B6B0A8;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.2);
+    --text-primary: #FFFFFF;
+    --text-secondary: #D1CBC0;
     --accent-gold: #C8A96A;
     --warm-brass: #C5A059;
     --copper: #A86532;
     --burgundy: #5A1414;
     --forest-green: #2A3A2C;
-    --smoke-gray: #8A8A93;
+    --smoke-gray: #A0A0AA;
   }
 
   body {

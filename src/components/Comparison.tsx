@@ -13,14 +13,14 @@ export const Comparison: React.FC = () => {
             <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md inline-block">
               04. What Makes Us Different
             </span>
-            <h2 className="text-2xl sm:text-4xl font-sans-display font-bold text-[#F7F4EE] tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-4xl font-sans-display font-bold text-[#FFFFFF] tracking-tight leading-tight">
               An Uncompromising Shift in{' '}
               <span className="font-serif-editorial italic font-normal text-[#C8A96A]">
                 How Students Experience Work.
               </span>
             </h2>
           </div>
-          <p className="text-sm text-[#9E9EA7] font-light max-w-xs leading-relaxed shrink-0">
+          <p className="text-base text-[#D1CBC0] font-light max-w-xs leading-loose shrink-0">
             Every pillar of a typical internship, rebuilt from scratch for real impact.
           </p>
         </div>
@@ -28,60 +28,66 @@ export const Comparison: React.FC = () => {
         {/* ── Single Unified Comparison Box ── */}
         <div className="rounded-2xl bg-[#0C0C10]/60 backdrop-blur-2xl border border-[#C8A96A]/20 overflow-hidden shadow-2xl">
 
-          {/* Column Header Row */}
-          <div className="grid grid-cols-12 gap-0 px-5 py-3 border-b border-white/[0.06] bg-[#0D0D0F]/50">
-            <div className="col-span-3 text-[10px] font-mono uppercase tracking-widest text-[#9E9EA7]">
+          {/* Column Header Row (Desktop Only) */}
+          <div className="hidden md:grid md:grid-cols-12 gap-0 px-5 py-3 border-b border-white/[0.06] bg-[#0D0D0F]/50">
+            <div className="md:col-span-3 text-[11px] font-mono uppercase tracking-widest text-[#D1CBC0]">
               Pillar
             </div>
-            <div className="col-span-4 pl-4 text-[10px] font-mono uppercase tracking-widest text-[#9E9EA7] flex items-center gap-1.5">
-              <XCircle className="w-3 h-3 text-[#9E9EA7]/60" /> Typical Track
+            <div className="md:col-span-4 pl-4 text-[11px] font-mono uppercase tracking-widest text-[#D1CBC0] flex items-center gap-1.5">
+              <XCircle className="w-3 h-3 text-[#D1CBC0]/60" /> Typical Track
             </div>
-            <div className="col-span-5 pl-4 text-[10px] font-mono uppercase tracking-widest text-[#C8A96A] flex items-center gap-1.5">
+            <div className="md:col-span-5 pl-4 text-[11px] font-mono uppercase tracking-widest text-[#C8A96A] flex items-center gap-1.5">
               <CheckCircle2 className="w-3 h-3 text-[#C8A96A]" /> The ImpactX Track
             </div>
           </div>
 
-          {/* Comparison Rows — compact, dense, readable */}
+          {/* Comparison Rows — responsive stack on mobile, grid on desktop */}
           {COMPARISON_ITEMS.map((item, idx) => (
             <div
               key={idx}
-              className={`grid grid-cols-12 gap-0 transition-colors duration-200 hover:bg-[#C8A96A]/[0.03] ${
+              className={`flex flex-col md:grid md:grid-cols-12 gap-0 transition-colors duration-200 hover:bg-[#C8A96A]/[0.03] ${
                 idx < COMPARISON_ITEMS.length - 1 ? 'border-b border-white/[0.05]' : ''
               }`}
             >
               {/* Pillar Label */}
-              <div className="col-span-3 px-5 py-4 flex items-center">
-                <span className="font-sans-display font-semibold text-[#F7F4EE] text-sm leading-tight">
+              <div className="md:col-span-3 px-5 py-3 md:py-4 flex items-center bg-[#000000]/20 md:bg-transparent">
+                <span className="font-sans-display font-semibold text-[#FFFFFF] text-base md:text-sm leading-tight">
                   {item.aspect}
                 </span>
               </div>
 
               {/* Typical Track */}
-              <div className="col-span-4 px-4 py-4 border-l border-white/[0.04] flex items-center gap-2.5">
-                <XCircle className="w-3.5 h-3.5 text-[#9E9EA7]/50 shrink-0" />
-                <p className="text-xs text-[#9E9EA7] font-light leading-relaxed">
-                  {condensed(item.typical)}
-                </p>
+              <div className="md:col-span-4 px-5 py-3 md:px-4 md:py-4 md:border-l border-white/[0.04] flex items-start md:items-center gap-2.5">
+                <XCircle className="w-4 h-4 md:w-3.5 md:h-3.5 text-[#D1CBC0]/50 shrink-0 mt-0.5 md:mt-0" />
+                <div className="flex flex-col">
+                  <span className="md:hidden text-[10px] font-mono uppercase tracking-widest text-[#D1CBC0] mb-1">Typical Track</span>
+                  <p className="text-sm md:text-xs text-[#D1CBC0] font-light leading-relaxed">
+                    {condensed(item.typical)}
+                  </p>
+                </div>
               </div>
 
               {/* ImpactX Track */}
-              <div className="col-span-5 px-4 py-4 border-l border-[#C8A96A]/10 bg-[#C8A96A]/[0.04] flex items-center gap-2.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#C8A96A] shrink-0" />
-                <p className="text-xs text-[#F7F4EE] font-medium leading-relaxed">
-                  {condensed(item.impactX)}
-                </p>
+              <div className="md:col-span-5 px-5 py-3 md:px-4 md:py-4 md:border-l border-[#C8A96A]/10 bg-[#C8A96A]/[0.04] flex items-start md:items-center gap-2.5">
+                <CheckCircle2 className="w-4 h-4 md:w-3.5 md:h-3.5 text-[#C8A96A] shrink-0 mt-0.5 md:mt-0" />
+                <div className="flex flex-col">
+                  <span className="md:hidden text-[10px] font-mono uppercase tracking-widest text-[#C8A96A] mb-1">The ImpactX Track</span>
+                  <p className="text-sm md:text-xs text-[#FFFFFF] font-medium leading-relaxed">
+                    {condensed(item.impactX)}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
 
           {/* Bottom CTA strip */}
           <div className="px-5 py-4 bg-[#C8A96A]/[0.06] border-t border-[#C8A96A]/20 flex items-center justify-between gap-4">
-            <p className="text-xs text-[#9E9EA7] font-light">
+            <p className="text-sm md:text-xs text-[#D1CBC0] font-light">
               Ready to experience the ImpactX difference?
             </p>
             <a
               href="#programs"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-[#C8A96A] hover:text-[#F7F4EE] transition-colors"
+              className="inline-flex items-center gap-2 text-sm md:text-xs font-semibold text-[#C8A96A] hover:text-[#FFFFFF] transition-colors"
             >
               <span>Explore Programs</span>
               <ArrowRight className="w-3.5 h-3.5" />

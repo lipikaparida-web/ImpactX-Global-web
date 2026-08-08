@@ -74,10 +74,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
             <ImpactXLogo className="w-4 h-4 text-[#C8A96A]" />
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-sans-display font-bold text-sm tracking-tight text-[#F7F4EE] whitespace-nowrap">
+            <span className="font-sans-display font-bold text-base tracking-tight text-[#FFFFFF] whitespace-nowrap">
               IMPACTX
             </span>
-            <span className="text-[9px] font-mono tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-2 py-0.5 rounded-full border border-[#C8A96A]/20 uppercase whitespace-nowrap">
+            <span className="text-[10px] font-mono tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-2.5 py-0.5 rounded-full border border-[#C8A96A]/20 uppercase whitespace-nowrap">
               GLOBAL
             </span>
           </div>
@@ -91,10 +91,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
               <a
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-300 whitespace-nowrap ${
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 whitespace-nowrap ${
                   isActive
                     ? 'text-[#C8A96A] bg-[#C8A96A]/15 border border-[#C8A96A]/30 shadow-sm'
-                    : 'text-[#9E9EA7] hover:text-[#F7F4EE] hover:bg-white/[0.05]'
+                    : 'text-[#D1CBC0] hover:text-[#FFFFFF] hover:bg-white/[0.08]'
                 }`}
               >
                 {link.label}
@@ -107,13 +107,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
         <div className="pointer-events-auto hidden sm:flex items-center gap-3 shrink-0">
           <a
             href="#domains"
-            className="text-xs font-medium text-[#9E9EA7] hover:text-[#F7F4EE] transition-colors px-3 py-2 whitespace-nowrap"
+            className="text-sm font-medium text-[#D1CBC0] hover:text-[#FFFFFF] transition-colors px-3 py-2 whitespace-nowrap"
           >
             Explore Domains
           </a>
           <button
             onClick={onOpenApply}
-            className="px-5 py-2.5 text-xs font-semibold text-[#0D0D0F] bg-[#F7F4EE] hover:bg-white rounded-full shadow-[0_4px_20px_rgba(247,244,238,0.15)] hover:shadow-[0_6px_28px_rgba(200,169,106,0.35)] transition-all duration-300 transform hover:scale-[1.02] cursor-pointer whitespace-nowrap"
+            className="px-6 py-2.5 text-sm font-semibold text-[#0D0D0F] bg-[#FFFFFF] hover:bg-[#F7F4EE] rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.15)] hover:shadow-[0_6px_28px_rgba(200,169,106,0.35)] transition-all duration-300 transform hover:scale-[1.02] cursor-pointer whitespace-nowrap"
           >
             Apply for Cohort
           </button>
@@ -123,13 +123,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
         <div className="pointer-events-auto xl:hidden flex items-center gap-2 shrink-0">
           <button
             onClick={onOpenApply}
-            className="sm:hidden px-3.5 py-1.5 text-xs font-semibold text-[#0D0D0F] bg-[#F7F4EE] rounded-full shadow-md whitespace-nowrap"
+            className="sm:hidden px-4 py-2 text-sm font-semibold text-[#0D0D0F] bg-[#FFFFFF] rounded-full shadow-md whitespace-nowrap"
           >
             Apply
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-full bg-[#121215]/70 border border-[#C8A96A]/20 backdrop-blur-xl text-[#9E9EA7] hover:text-[#F7F4EE] transition-colors"
+            className="p-2.5 rounded-full bg-[#121215]/70 border border-[#C8A96A]/20 backdrop-blur-xl text-[#D1CBC0] hover:text-[#FFFFFF] transition-colors"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -148,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3.5 py-2.5 text-xs font-medium text-[#9E9EA7] hover:text-[#F7F4EE] rounded-xl hover:bg-white/[0.05] transition-colors"
+                  className="px-4 py-3 text-sm font-medium text-[#D1CBC0] hover:text-[#FFFFFF] rounded-xl hover:bg-white/[0.08] transition-colors"
                 >
                   {link.label}
                 </a>
@@ -159,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
                 setMobileMenuOpen(false);
                 onOpenApply();
               }}
-              className="w-full py-3 px-4 text-xs font-semibold text-[#0D0D0F] bg-[#F7F4EE] rounded-full text-center flex items-center justify-center gap-2 shadow-lg"
+              className="w-full py-3 px-4 text-sm font-semibold text-[#0D0D0F] bg-[#FFFFFF] hover:bg-[#F7F4EE] transition-colors rounded-full text-center flex items-center justify-center gap-2 shadow-lg"
             >
               <span>Apply for Global Cohort</span>
               <ArrowUpRight className="w-4 h-4 text-[#0D0D0F]" />

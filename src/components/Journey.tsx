@@ -44,11 +44,11 @@ export const Journey: React.FC = () => {
           <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md">
             07. The Builder Journey
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans-display font-bold text-[#F7F4EE] tracking-tight max-w-3xl leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans-display font-bold text-[#FFFFFF] tracking-tight max-w-3xl leading-tight">
             From Curious Explorer to <br />
             <span className="font-serif-editorial italic font-normal text-[#C8A96A]">Global Ecosystem Leader.</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#9E9EA7] max-w-xl leading-relaxed font-light">
+          <p className="text-base sm:text-lg text-[#D1CBC0] max-w-xl leading-loose font-light">
             An eight-stage progression framework supporting you from initial application to lifelong alumni leverage.
           </p>
         </div>
@@ -63,8 +63,8 @@ export const Journey: React.FC = () => {
                 Internship Timeline · 1 Month · 4 Weeks
               </span>
             </div>
-            <div className="flex items-center gap-1.5 text-xs font-mono text-[#9E9EA7]">
-              <Calendar className="w-3.5 h-3.5 text-[#9E9EA7]" />
+            <div className="flex items-center gap-1.5 text-xs sm:text-sm font-mono text-[#D1CBC0]">
+              <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D1CBC0]" />
               <span>All domain internships are 4 weeks long</span>
             </div>
           </div>
@@ -94,17 +94,17 @@ export const Journey: React.FC = () => {
                   >
                     {wk.week}
                   </span>
-                  <span className="text-xs font-mono text-[#9E9EA7]">{idx + 1}/4</span>
+                  <span className="text-xs font-mono text-[#D1CBC0]">{idx + 1}/4</span>
                 </div>
 
-                <h4 className="font-sans-display font-semibold text-[#F7F4EE] text-sm mb-4 group-hover:text-[#C8A96A] transition-colors">
+                <h4 className="font-sans-display font-semibold text-[#FFFFFF] text-sm mb-4 group-hover:text-[#C8A96A] transition-colors">
                   {wk.title}
                 </h4>
 
                 <ul className="space-y-2">
                   {wk.tasks.map((task, ti) => (
-                    <li key={ti} className="flex items-start gap-2 text-xs text-[#9E9EA7] font-light">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96A]/60 shrink-0 mt-1.5" />
+                    <li key={ti} className="flex items-start gap-2 text-sm text-[#D1CBC0] font-light">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96A]/60 shrink-0 mt-2" />
                       <span>{task}</span>
                     </li>
                   ))}
@@ -132,7 +132,7 @@ export const Journey: React.FC = () => {
           </div>
           <div className="flex justify-between mt-2">
             {INTERNSHIP_WEEKS.map((wk, idx) => (
-              <span key={idx} className="text-[10px] font-mono text-[#9E9EA7]">{wk.week}</span>
+              <span key={idx} className="text-[10px] sm:text-xs font-mono text-[#D1CBC0]">{wk.week}</span>
             ))}
           </div>
         </div>
@@ -158,13 +158,13 @@ export const Journey: React.FC = () => {
                     isActive
                       ? 'bg-[#C8A96A] text-[#0D0D0F] scale-110 shadow-[0_4px_24px_rgba(200,169,106,0.4)] ring-4 ring-[#C8A96A]/20'
                       : isPast
-                      ? 'bg-[#4A1E28] text-[#F7F4EE] border border-[#C8A96A]/40'
-                      : 'bg-[#121215] text-[#9E9EA7] border border-white/10 group-hover:border-white/30'
+                      ? 'bg-[#4A1E28] text-[#FFFFFF] border border-[#C8A96A]/40'
+                      : 'bg-[#121215] text-[#D1CBC0] border border-white/10 group-hover:border-white/30'
                   }`}>
                     {stage.step}
                   </div>
-                  <span className={`text-xs font-sans-display font-medium whitespace-nowrap transition-colors ${
-                    isActive ? 'text-[#F7F4EE]' : 'text-[#9E9EA7]'
+                  <span className={`text-sm font-sans-display font-medium whitespace-nowrap transition-colors ${
+                    isActive ? 'text-[#FFFFFF]' : 'text-[#D1CBC0]'
                   }`}>
                     {stage.title}
                   </span>
@@ -190,14 +190,14 @@ export const Journey: React.FC = () => {
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-4xl font-sans-display font-bold text-[#F7F4EE] tracking-tight">
+              <h3 className="text-2xl sm:text-4xl font-sans-display font-bold text-[#FFFFFF] tracking-tight">
                 {currentStage.title}
               </h3>
-              <p className="text-sm text-[#C8A96A] font-serif-editorial italic">
+              <p className="text-base text-[#C8A96A] font-serif-editorial italic">
                 — {currentStage.subtitle}
               </p>
 
-              <p className="text-sm sm:text-base text-[#9E9EA7] leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-[#D1CBC0] leading-loose font-light">
                 {currentStage.description}
               </p>
             </div>
@@ -210,10 +210,10 @@ export const Journey: React.FC = () => {
                 <h4 className="text-xs font-mono uppercase text-[#C8A96A] flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-[#C8A96A]" /> Key Deliverables
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {(currentStage.responsibilities || []).map((resp, idx) => (
-                    <li key={idx} className="text-xs text-[#9E9EA7] flex items-start gap-2 font-light">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96A] shrink-0 mt-1.5" />
+                    <li key={idx} className="text-sm text-[#D1CBC0] flex items-start gap-2 font-light">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96A] shrink-0 mt-2" />
                       <span>{resp}</span>
                     </li>
                   ))}
@@ -222,13 +222,13 @@ export const Journey: React.FC = () => {
 
               {/* Perks Box */}
               <div className="p-6 rounded-2xl bg-[#C8A96A]/10 border border-[#C8A96A]/20 space-y-3">
-                <h4 className="text-xs font-mono uppercase text-[#F7F4EE] flex items-center gap-2">
+                <h4 className="text-xs font-mono uppercase text-[#FFFFFF] flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#C8A96A]" /> Stage Milestones
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {(currentStage.unlockedPerks || []).map((perk, idx) => (
-                    <li key={idx} className="text-xs text-[#F7F4EE] flex items-start gap-2 font-medium">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96A] shrink-0 mt-1.5" />
+                    <li key={idx} className="text-sm text-[#FFFFFF] flex items-start gap-2 font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96A] shrink-0 mt-2" />
                       <span>{perk}</span>
                     </li>
                   ))}

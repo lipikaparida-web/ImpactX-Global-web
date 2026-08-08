@@ -23,7 +23,7 @@ export const SocialProofBanner: React.FC = () => {
                 className="w-12 h-12 rounded-full border-2 border-[#0A0A0C] bg-[#1A1A1E] overflow-hidden shadow-lg"
               >
                 <img 
-                  src={`https://i.pravatar.cc/100?img=${i + 12}`} 
+                  src={`/avatars/wizard-${i}.png`} 
                   alt="Recent Applicant" 
                   className="w-full h-full object-cover" 
                 />

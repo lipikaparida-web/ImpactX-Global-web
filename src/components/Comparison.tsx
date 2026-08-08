@@ -1,6 +1,7 @@
 import React from 'react';
 import { COMPARISON_ITEMS } from '../data/impactData';
 import { XCircle, CheckCircle2, ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const Comparison: React.FC = () => {
   return (
@@ -8,7 +9,13 @@ export const Comparison: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
 
         {/* ── Section Header — compact, side-by-side on wide screens ── */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10"
+        >
           <div className="space-y-3">
             <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md inline-block">
               04. What Makes Us Different
@@ -23,7 +30,7 @@ export const Comparison: React.FC = () => {
           <p className="text-base text-[#D1CBC0] font-light max-w-xs leading-loose shrink-0">
             Every pillar of a typical internship, rebuilt from scratch for real impact.
           </p>
-        </div>
+        </motion.div>
 
         {/* ── Single Unified Comparison Box ── */}
         <div className="rounded-2xl bg-[#0C0C10]/60 backdrop-blur-2xl border border-[#C8A96A]/20 overflow-hidden shadow-2xl">
@@ -43,8 +50,12 @@ export const Comparison: React.FC = () => {
 
           {/* Comparison Rows — responsive stack on mobile, grid on desktop */}
           {COMPARISON_ITEMS.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
               className={`flex flex-col md:grid md:grid-cols-12 gap-0 transition-colors duration-200 hover:bg-[#C8A96A]/[0.03] ${
                 idx < COMPARISON_ITEMS.length - 1 ? 'border-b border-white/[0.05]' : ''
               }`}
@@ -77,7 +88,7 @@ export const Comparison: React.FC = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
 
           {/* Bottom CTA strip */}

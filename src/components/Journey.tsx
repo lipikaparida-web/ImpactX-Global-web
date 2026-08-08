@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { JOURNEY_STAGES } from '../data/impactData';
 import { CheckCircle2, ShieldCheck, Train, Calendar } from 'lucide-react';
+import { motion } from 'motion/react';
 
 // 4-week internship timeline weeks
 const INTERNSHIP_WEEKS = [
@@ -40,7 +41,13 @@ export const Journey: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
 
         {/* ── Section Header ── */}
-        <div className="flex flex-col items-start space-y-5">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-start space-y-5"
+        >
           <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md">
             07. The Builder Journey
           </span>
@@ -51,7 +58,7 @@ export const Journey: React.FC = () => {
           <p className="text-base sm:text-lg text-[#D1CBC0] max-w-xl leading-loose font-light">
             An eight-stage progression framework supporting you from initial application to lifelong alumni leverage.
           </p>
-        </div>
+        </motion.div>
 
         {/* ── 4-Week Internship Timeline ── */}
         <div className="mt-20">
@@ -72,9 +79,14 @@ export const Journey: React.FC = () => {
           {/* Four-week cards grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {INTERNSHIP_WEEKS.map((wk, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="relative p-6 rounded-2xl bg-[#121215]/40 backdrop-blur-xl border border-white/[0.06] hover:border-[#C8A96A]/25 transition-all duration-300 group overflow-hidden"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: idx * 0.15, ease: "easeOut" }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className="relative p-6 rounded-2xl bg-[#121215]/40 backdrop-blur-xl border border-white/[0.06] hover:border-[#C8A96A]/40 hover:shadow-[0_8px_30px_rgba(200,169,106,0.12)] transition-all duration-300 group overflow-hidden"
               >
                 {/* Subtle gradient top accent */}
                 <div
@@ -116,7 +128,7 @@ export const Journey: React.FC = () => {
                     <span className="text-[#C8A96A] text-xs">›</span>
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -176,7 +188,13 @@ export const Journey: React.FC = () => {
         </div>
 
         {/* ── Active Stage Detail Card ── */}
-        <div className="mt-10 p-8 sm:p-12 rounded-3xl bg-[#121215]/40 backdrop-blur-2xl border border-[#C8A96A]/20 shadow-2xl relative overflow-hidden">
+        <motion.div 
+          key={activeStep}
+          initial={{ opacity: 0, scale: 0.98, filter: 'blur(4px)' }}
+          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-10 p-8 sm:p-12 rounded-3xl bg-[#121215]/40 backdrop-blur-2xl border border-[#C8A96A]/20 shadow-2xl relative overflow-hidden"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             
             {/* Stage Summary */}
@@ -238,7 +256,7 @@ export const Journey: React.FC = () => {
             </div>
 
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

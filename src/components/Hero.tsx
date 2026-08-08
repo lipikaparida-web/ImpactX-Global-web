@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, ChevronRight, Compass } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface HeroProps {
   onOpenApply: () => void;
@@ -16,7 +17,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
         <div className="max-w-[840px] mx-auto text-center flex flex-col items-center space-y-8">
           
           {/* Status Eyebrow Badge */}
-          <button 
+          <motion.button 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             onClick={onOpenApply}
             className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#121215]/50 border border-[#C8A96A]/25 backdrop-blur-xl shadow-xl hover:border-[#C8A96A]/50 transition-all duration-500 group cursor-pointer"
           >
@@ -25,25 +29,40 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
               Fall Cohort Admissions Open
             </span>
             <ChevronRight className="w-3.5 h-3.5 text-[#C8A96A] group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
+          </motion.button>
 
           {/* Main Headline */}
-          <div className="space-y-2">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-sans-display font-bold text-[#F7F4EE] leading-[1.08] tracking-tight text-balance">
+          <div className="space-y-2 overflow-hidden">
+            <motion.h1 
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-4xl sm:text-6xl lg:text-7xl font-sans-display font-bold text-[#F7F4EE] leading-[1.08] tracking-tight text-balance"
+            >
               Impact Starts{' '}
               <span className="font-serif-editorial italic font-normal text-[#C8A96A] block sm:inline">
                 With You.
               </span>
-            </h1>
+            </motion.h1>
           </div>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl text-[#9E9EA7] font-light leading-relaxed text-balance max-w-2xl mx-auto">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="text-lg sm:text-xl text-[#9E9EA7] font-light leading-relaxed text-balance max-w-2xl mx-auto"
+          >
             Empowering tomorrow's wizards through real-world internships that turn ideas into impact.
-          </p>
+          </motion.p>
 
           {/* Action CTAs — symmetrical row */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
+          >
             
             {/* Primary CTA: Apply Now */}
             <button
@@ -63,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
               <span>Explore Domains</span>
             </button>
 
-          </div>
+          </motion.div>
 
         </div>
 

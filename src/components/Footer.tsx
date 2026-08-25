@@ -120,7 +120,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
             </h4>
             <ul className="space-y-2.5 text-sm font-sans text-[#D1CBC0]">
               <li><a href="#story" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Our Story</a></li>
-              <li><a href="#philosophy" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Philosophy</a></li>
               <li><a href="#programs" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Programs</a></li>
               <li><a href="#domains" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Focus Domains</a></li>
               <li><a href="#journey" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Student Journey</a></li>

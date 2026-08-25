@@ -46,7 +46,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
 
   const navLinks = [
     { label: 'Our Story', href: '#story' },
-    { label: 'Philosophy', href: '#philosophy' },
     { label: 'Programs', href: '#programs' },
     { label: 'Domains', href: '#domains' },
     { label: 'Journey', href: '#journey' },

@@ -17,8 +17,8 @@ export const OurPhilosophy: React.FC = () => {
   };
 
   return (
-    <section id="philosophy" className="py-36 sm:py-48 relative bg-transparent border-t border-white/[0.04]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <section id="philosophy" className="pt-4 sm:pt-8 relative bg-transparent">
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col items-start space-y-5">

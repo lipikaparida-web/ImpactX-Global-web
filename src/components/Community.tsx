@@ -35,11 +35,11 @@ export const Community: React.FC = () => {
         </div>
 
         {/* Hubs Grid */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-20 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
           {COMMUNITY_HUBS.map((hub) => (
             <div
               key={hub.id}
-              className="p-8 sm:p-10 rounded-3xl bg-[#121215]/35 backdrop-blur-2xl border border-[#C8A96A]/15 hover:border-[#C8A96A]/35 transition-all duration-500 flex flex-col justify-between group shadow-2xl"
+              className="min-w-[85vw] sm:min-w-0 snap-center p-8 sm:p-10 rounded-3xl bg-[#121215]/35 backdrop-blur-2xl border border-[#C8A96A]/15 hover:border-[#C8A96A]/35 transition-all duration-500 flex flex-col justify-between group shadow-2xl"
             >
               <div>
                 <div className="flex items-center justify-between mb-8">

@@ -127,13 +127,13 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ onOpenApply }) => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8">
             {ECOSYSTEM_PILLARS.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
                 <div
                   key={idx}
-                  className="p-8 rounded-3xl bg-[#121215]/35 border border-[#C8A96A]/15 hover:border-[#C8A96A]/35 transition-all duration-500 flex flex-col justify-between group backdrop-blur-2xl shadow-2xl"
+                  className="min-w-[85vw] sm:min-w-0 snap-center p-8 rounded-3xl bg-[#121215]/35 border border-[#C8A96A]/15 hover:border-[#C8A96A]/35 transition-all duration-500 flex flex-col justify-between group backdrop-blur-2xl shadow-2xl"
                 >
                   <div>
                     <div className="w-12 h-12 rounded-2xl bg-[#0D0D0F]/60 border border-[#C8A96A]/20 flex items-center justify-center mb-5 group-hover:border-[#C8A96A]/40 transition-colors">

@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SocialProofBanner } from './components/SocialProofBanner';
-import { OurStory } from './components/OurStory';
-import { OurPhilosophy } from './components/OurPhilosophy';
-import { Comparison } from './components/Comparison';
+import { DiscoverTabs } from './components/DiscoverTabs';
 import { Programs } from './components/Programs';
 import { Domains } from './components/Domains';
 import { Journey } from './components/Journey';
@@ -95,14 +93,8 @@ export default function App() {
         {/* 01.5. Social Proof / FOMO Banner */}
         <SocialProofBanner />
 
-        {/* 02. Our Story */}
-        <OurStory />
-
-        {/* 03. Our Philosophy */}
-        <OurPhilosophy />
-
-        {/* 04. What Makes Us Different */}
-        <Comparison />
+        {/* 02. Discover Tabs (Story, Philosophy, Why Us) */}
+        <DiscoverTabs />
 
         {/* 05. Core Programs */}
         <Programs

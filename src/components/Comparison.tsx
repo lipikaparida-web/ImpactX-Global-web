@@ -5,8 +5,8 @@ import { motion } from 'motion/react';
 
 export const Comparison: React.FC = () => {
   return (
-    <section className="py-24 sm:py-32 relative bg-transparent border-t border-white/[0.04]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <section className="pt-4 sm:pt-8 relative bg-transparent">
+      <div className="max-w-7xl mx-auto relative z-10">
 
         {/* ── Section Header — compact, side-by-side on wide screens ── */}
         <motion.div 

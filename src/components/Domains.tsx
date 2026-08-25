@@ -165,14 +165,14 @@ export const Domains: React.FC<DomainsProps> = ({ onSelectDomainForApply }) => {
         <div className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Department List Buttons */}
-          <div className="lg:col-span-5 space-y-3">
+          <div className="lg:col-span-5 flex flex-row overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-3 pb-4 lg:flex-col lg:overflow-x-visible lg:pb-0">
             {DEPARTMENTS.map((dept) => {
               const isActive = dept.id === activeTab;
               return (
                 <button
                   key={dept.id}
                   onClick={() => setActiveTab(dept.id)}
-                  className={`w-full p-5 sm:p-6 rounded-3xl text-left transition-all duration-500 flex items-center justify-between border cursor-pointer ${
+                  className={`w-full min-w-[75vw] sm:min-w-[50vw] lg:min-w-0 snap-center shrink-0 lg:shrink p-5 sm:p-6 rounded-3xl text-left transition-all duration-500 flex items-center justify-between border cursor-pointer ${
                     isActive
                       ? 'bg-[#18181C]/80 border-[#C8A96A]/50 shadow-[0_8px_32px_rgba(200,169,106,0.20)] backdrop-blur-2xl'
                       : 'bg-[#121215]/30 border-white/[0.05] hover:bg-[#18181C]/40 hover:border-[#C8A96A]/30 backdrop-blur-xl'

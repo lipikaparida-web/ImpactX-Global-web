@@ -22,11 +22,11 @@ export const MeetTheTeam: React.FC = () => {
         </div>
 
         {/* Team Cards Grid */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-20 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8">
           {TEAM_MEMBERS.map((member) => (
             <div
               key={member.id}
-              className="p-8 rounded-3xl bg-[#121215]/35 backdrop-blur-2xl border border-[#C8A96A]/15 hover:border-[#C8A96A]/35 transition-all duration-500 flex flex-col justify-between group shadow-2xl"
+              className="min-w-[85vw] sm:min-w-0 snap-center p-8 rounded-3xl bg-[#121215]/35 backdrop-blur-2xl border border-[#C8A96A]/15 hover:border-[#C8A96A]/35 transition-all duration-500 flex flex-col justify-between group shadow-2xl"
             >
               <div>
                 {/* Member Avatar */}

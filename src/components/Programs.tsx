@@ -40,11 +40,11 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply }) =>
         </div>
 
         {/* Programs Grid */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        <div className="mt-20 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-10">
           {PROGRAMS.map((program) => (
             <div
               key={program.id}
-              className="p-8 sm:p-10 rounded-3xl bg-[#121215]/35 backdrop-blur-2xl border border-[#C8A96A]/15 hover:border-[#C8A96A]/35 shadow-2xl transition-all duration-500 flex flex-col justify-between group relative overflow-hidden"
+              className="min-w-[85vw] sm:min-w-0 snap-center p-8 sm:p-10 rounded-3xl bg-[#121215]/35 backdrop-blur-2xl border border-[#C8A96A]/15 hover:border-[#C8A96A]/35 shadow-2xl transition-all duration-500 flex flex-col justify-between group relative overflow-hidden"
             >
               <div>
                 {/* Header Badge */}

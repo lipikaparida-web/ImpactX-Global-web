@@ -20,7 +20,6 @@ import { HogwartsCastleBackground } from './components/HogwartsCastleBackground'
 import { HogwartsTrainBackground } from './components/HogwartsTrainBackground';
 import { MagicWandCursor } from './components/MagicWandCursor';
 import { PlatformGateway } from './components/PlatformGateway';
-import { ThemePlayer } from './components/ThemePlayer';
 import { DomainId } from './types';
 
 export default function App() {
@@ -63,15 +62,11 @@ export default function App() {
       {showPlatformGateway && (
         <PlatformGateway onEnterWebsite={() => {
           setShowPlatformGateway(false);
-          // Play the magical theme song as they enter
-          window.dispatchEvent(new Event('start-theme-music'));
         }} />
       )}
 
       {/* ── Magic Wand Cursor — golden dust + spell bursts ── */}
       <MagicWandCursor />
-      
-      <ThemePlayer />
 
       {/* ── Layer 0: Hogwarts Castle — immersive fixed background ── */}
       <HogwartsCastleBackground />

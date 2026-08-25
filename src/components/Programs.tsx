@@ -100,16 +100,10 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply }) =>
                   View Details
                 </button>
                 <button
-                  onClick={() => !program.comingSoon && onSelectProgramToApply(program.id)}
-                  disabled={program.comingSoon}
-                  className={`py-3 px-5 text-xs font-semibold rounded-full flex items-center gap-2 transition-all ${
-                    program.comingSoon
-                      ? 'bg-white/5 text-[#9E9EA7] cursor-not-allowed border border-white/5'
-                      : 'text-[#0D0D0F] bg-[#F7F4EE] hover:bg-white shadow-[0_4px_20px_rgba(247,244,238,0.15)] cursor-pointer'
-                  }`}
+                  disabled
+                  className="py-3 px-5 text-xs font-semibold rounded-full flex items-center gap-2 transition-all bg-white/5 text-[#9E9EA7] cursor-not-allowed border border-white/10"
                 >
-                  <span>{program.comingSoon ? 'Coming Soon' : 'Apply'}</span>
-                  {!program.comingSoon && <ArrowRight className="w-3.5 h-3.5" />}
+                  <span>Applications Closed</span>
                 </button>
               </div>
 
@@ -173,21 +167,10 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply }) =>
                 Close
               </button>
               <button
-                onClick={() => {
-                  if (selectedProgram.comingSoon) return;
-                  const id = selectedProgram.id;
-                  setSelectedProgram(null);
-                  onSelectProgramToApply(id);
-                }}
-                disabled={selectedProgram.comingSoon}
-                className={`px-8 py-3 text-xs font-semibold rounded-full flex items-center gap-2 transition-all ${
-                  selectedProgram.comingSoon
-                    ? 'bg-white/5 text-[#9E9EA7] cursor-not-allowed border border-white/5'
-                    : 'text-[#0D0D0F] bg-[#F7F4EE] hover:bg-white shadow-[0_4px_20px_rgba(247,244,238,0.15)] cursor-pointer'
-                }`}
+                disabled
+                className="px-8 py-3 text-xs font-semibold rounded-full flex items-center gap-2 transition-all bg-white/5 text-[#9E9EA7] cursor-not-allowed border border-white/10"
               >
-                <span>{selectedProgram.comingSoon ? 'Coming Soon' : 'Apply for this Track'}</span>
-                {!selectedProgram.comingSoon && <ArrowRight className="w-4 h-4" />}
+                <span>Applications Closed</span>
               </button>
             </div>
           </div>

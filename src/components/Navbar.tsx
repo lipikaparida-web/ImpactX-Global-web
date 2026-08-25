@@ -112,20 +112,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
             Explore Domains
           </a>
           <button
-            onClick={onOpenApply}
-            className="px-6 py-2.5 text-sm font-semibold text-[#0D0D0F] bg-[#FFFFFF] hover:bg-[#F7F4EE] rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.15)] hover:shadow-[0_6px_28px_rgba(200,169,106,0.35)] transition-all duration-300 transform hover:scale-[1.02] cursor-pointer whitespace-nowrap"
+            disabled
+            className="px-6 py-2.5 text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 rounded-full cursor-not-allowed whitespace-nowrap"
           >
-            Apply for Cohort
+            Applications Closed
           </button>
         </div>
 
         {/* Mobile Toggle Button */}
         <div className="pointer-events-auto xl:hidden flex items-center gap-2 shrink-0">
           <button
-            onClick={onOpenApply}
-            className="sm:hidden px-4 py-2 text-sm font-semibold text-[#0D0D0F] bg-[#FFFFFF] rounded-full shadow-md whitespace-nowrap"
+            disabled
+            className="sm:hidden px-4 py-2 text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 rounded-full cursor-not-allowed whitespace-nowrap"
           >
-            Apply
+            Closed
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -155,14 +155,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
               ))}
             </div>
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenApply();
-              }}
-              className="w-full py-3 px-4 text-sm font-semibold text-[#0D0D0F] bg-[#FFFFFF] hover:bg-[#F7F4EE] transition-colors rounded-full text-center flex items-center justify-center gap-2 shadow-lg"
+              disabled
+              className="w-full py-3 px-4 text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 rounded-full text-center flex items-center justify-center gap-2 cursor-not-allowed"
             >
-              <span>Apply for Global Cohort</span>
-              <ArrowUpRight className="w-4 h-4 text-[#0D0D0F]" />
+              <span>Applications Closed</span>
             </button>
           </div>
         </div>

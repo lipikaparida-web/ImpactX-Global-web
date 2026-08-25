@@ -86,12 +86,10 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ onOpenApply }) => {
 
               <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <button
-                  onClick={onOpenApply}
-                  className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#0D0D0F] bg-[#F7F4EE] hover:bg-white transition-all duration-300 shadow-[0_4px_24px_rgba(247,244,238,0.18)] hover:shadow-[0_8px_32px_rgba(200,169,106,0.35)] flex items-center justify-center gap-2.5 group cursor-pointer"
+                  disabled
+                  className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 flex items-center justify-center gap-2.5 cursor-not-allowed"
                 >
-                  <Compass className="w-4 h-4 text-[#C8A96A]" />
-                  <span>Apply From Your Country</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <span>Applications Closed</span>
                 </button>
               </div>
             </div>

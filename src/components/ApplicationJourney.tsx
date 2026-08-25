@@ -69,12 +69,10 @@ export const ApplicationJourney: React.FC<ApplicationJourneyProps> = ({ onOpenAp
           </div>
 
           <button
-            onClick={onOpenApply}
-            className="px-9 py-4 text-xs sm:text-sm font-semibold text-[#0D0D0F] bg-[#F7F4EE] hover:bg-white rounded-full transition-all duration-300 shadow-[0_4px_24px_rgba(247,244,238,0.18)] hover:shadow-[0_8px_32px_rgba(200,169,106,0.35)] flex items-center gap-3 cursor-pointer shrink-0 relative z-10"
+            disabled
+            className="px-9 py-4 text-xs sm:text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 rounded-full flex items-center gap-3 cursor-not-allowed shrink-0 relative z-10"
           >
-            <Compass className="w-4 h-4 text-[#C8A96A]" />
-            <span>Submit Application</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Applications Closed</span>
           </button>
         </div>
 

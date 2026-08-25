@@ -39,11 +39,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
           <div className="flex items-center gap-4 shrink-0">
             {onOpenApply && (
               <button
-                onClick={onOpenApply}
-                className="px-6 py-3 rounded-full text-sm font-semibold text-[#0D0D0F] bg-[#FFFFFF] hover:bg-[#F7F4EE] transition-all duration-300 shadow-[0_4px_24px_rgba(255,255,255,0.18)] hover:shadow-[0_8px_32px_rgba(200,169,106,0.35)] flex items-center gap-2 cursor-pointer"
+                disabled
+                className="px-6 py-3 rounded-full text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 cursor-not-allowed flex items-center gap-2"
               >
-                <Compass className="w-3.5 h-3.5 text-[#C8A96A]" />
-                <span>Apply for Cohort</span>
+                <span>Applications Closed</span>
               </button>
             )}
             <a

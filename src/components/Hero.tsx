@@ -24,9 +24,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
             onClick={onOpenApply}
             className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#121215]/50 border border-[#C8A96A]/25 backdrop-blur-xl shadow-xl hover:border-[#C8A96A]/50 transition-all duration-500 group cursor-pointer"
           >
-            <span className="w-2 h-2 rounded-full bg-[#C8A96A] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#C8A96A]" />
             <span className="text-xs font-mono text-[#9E9EA7] tracking-widest uppercase">
-              Fall Cohort Admissions Open
+              Batch/Cohort Admissions Closed
             </span>
             <ChevronRight className="w-3.5 h-3.5 text-[#C8A96A] group-hover:translate-x-1 transition-transform duration-300" />
           </motion.button>
@@ -39,6 +39,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
               transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="text-4xl sm:text-6xl lg:text-7xl font-sans-display font-bold text-[#F7F4EE] leading-[1.08] tracking-tight text-balance"
             >
+              <span className="sr-only">ImpactX Global - </span>
               Impact Starts{' '}
               <span className="font-serif-editorial italic font-normal text-[#C8A96A] block sm:inline">
                 With You.

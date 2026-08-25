@@ -30,17 +30,17 @@ export const SocialProofBanner: React.FC = () => {
               </div>
             ))}
             <div className="w-12 h-12 rounded-full border-2 border-[#0A0A0C] bg-[#C8A96A] flex items-center justify-center text-sm font-bold text-[#0D0D0F] shadow-lg z-10">
-              +50
+              100+
             </div>
           </div>
 
           {/* Text Content */}
           <div className="text-center sm:text-left">
             <h3 className="text-lg sm:text-xl font-semibold text-[#F7F4EE] leading-tight">
-              Join 50+ visionary builders
+              Applications are closed for this Batch/Cohort
             </h3>
             <p className="text-base text-[#9E9EA7] mt-1">
-              who have already applied in the last <span className="text-[#C8A96A] font-medium">48 hours</span>. Spots are filling fast.
+              We received <span className="text-[#C8A96A] font-medium">100+</span> applications and shortlisted <span className="text-[#C8A96A] font-medium">30</span> after a proper interview and onboarding process.
             </p>
           </div>
         </div>

@@ -66,10 +66,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
           >
             
             <button
-              disabled
-              className="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 flex items-center justify-center gap-3 cursor-not-allowed"
+              onClick={onOpenApply}
+              className="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] shadow-[0_0_20px_rgba(200,169,106,0.3)] hover:shadow-[0_0_30px_rgba(200,169,106,0.5)] transition-all duration-500 flex items-center justify-center gap-3 cursor-pointer"
             >
-              <span>Applications Closed</span>
+              <span>Apply Now</span>
+              <ArrowRight className="w-4 h-4" />
             </button>
 
             {/* Secondary CTA: Explore Domains */}

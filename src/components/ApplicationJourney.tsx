@@ -69,10 +69,10 @@ export const ApplicationJourney: React.FC<ApplicationJourneyProps> = ({ onOpenAp
           </div>
 
           <button
-            disabled
-            className="px-9 py-4 text-xs sm:text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 rounded-full flex items-center gap-3 cursor-not-allowed shrink-0 relative z-10"
+            onClick={onOpenApply}
+            className="px-9 py-4 text-xs sm:text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] rounded-full flex items-center gap-3 cursor-pointer shrink-0 relative z-10 transition-colors"
           >
-            <span>Applications Closed</span>
+            <span>Apply Now</span>
           </button>
         </div>
 

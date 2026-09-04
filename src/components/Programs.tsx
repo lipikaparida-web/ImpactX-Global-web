@@ -100,10 +100,10 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply }) =>
                   View Details
                 </button>
                 <button
-                  disabled
-                  className="py-3 px-5 text-xs font-semibold rounded-full flex items-center gap-2 transition-all bg-white/5 text-[#9E9EA7] cursor-not-allowed border border-white/10"
+                  onClick={() => onSelectProgramToApply(program.id)}
+                  className="py-3 px-5 text-xs font-semibold rounded-full flex items-center gap-2 transition-all bg-[#C8A96A] text-[#0D0D0F] hover:bg-[#E2C78E] cursor-pointer"
                 >
-                  <span>Applications Closed</span>
+                  <span>Apply Now</span>
                 </button>
               </div>
 
@@ -167,10 +167,10 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply }) =>
                 Close
               </button>
               <button
-                disabled
-                className="px-8 py-3 text-xs font-semibold rounded-full flex items-center gap-2 transition-all bg-white/5 text-[#9E9EA7] cursor-not-allowed border border-white/10"
+                onClick={() => onSelectProgramToApply(selectedProgram.id)}
+                className="px-8 py-3 text-xs font-semibold rounded-full flex items-center gap-2 transition-all bg-[#C8A96A] text-[#0D0D0F] hover:bg-[#E2C78E] cursor-pointer"
               >
-                <span>Applications Closed</span>
+                <span>Apply Now</span>
               </button>
             </div>
           </div>

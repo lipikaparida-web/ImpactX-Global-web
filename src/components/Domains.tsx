@@ -280,10 +280,10 @@ export const Domains: React.FC<DomainsProps> = ({ onSelectDomainForApply }) => {
             {/* ELEGANT CTA BUTTON */}
             <div className="pt-4">
               <button
-                disabled
-                className="w-full py-4 px-8 rounded-full text-xs sm:text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 flex items-center justify-center gap-3 cursor-not-allowed"
+                onClick={() => onSelectDomainForApply(id)}
+                className="w-full py-4 px-8 rounded-full text-xs sm:text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] shadow-[0_0_20px_rgba(200,169,106,0.2)] flex items-center justify-center gap-3 cursor-pointer transition-colors"
               >
-                <span>Applications Closed</span>
+                <span>Apply Now</span>
               </button>
             </div>
 

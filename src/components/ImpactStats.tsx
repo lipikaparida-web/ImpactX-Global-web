@@ -86,10 +86,10 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ onOpenApply }) => {
 
               <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <button
-                  disabled
-                  className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 flex items-center justify-center gap-2.5 cursor-not-allowed"
+                  onClick={onOpenApply}
+                  className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] flex items-center justify-center gap-2.5 cursor-pointer transition-colors"
                 >
-                  <span>Applications Closed</span>
+                  <span>Apply Now</span>
                 </button>
               </div>
             </div>

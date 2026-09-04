@@ -111,10 +111,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
             Explore Domains
           </a>
           <button
-            disabled
-            className="px-6 py-2.5 text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 rounded-full cursor-not-allowed whitespace-nowrap"
+            onClick={onOpenApply}
+            className="px-6 py-2.5 text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] rounded-full cursor-pointer whitespace-nowrap transition-colors"
           >
-            Applications Closed
+            Apply Now
           </button>
         </div>
 
@@ -154,10 +154,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
               ))}
             </div>
             <button
-              disabled
-              className="w-full py-3 px-4 text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 rounded-full text-center flex items-center justify-center gap-2 cursor-not-allowed"
+              onClick={() => { setMobileMenuOpen(false); onOpenApply(); }}
+              className="w-full py-3 px-4 text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] rounded-full text-center flex items-center justify-center gap-2 cursor-pointer transition-colors"
             >
-              <span>Applications Closed</span>
+              <span>Apply Now</span>
             </button>
           </div>
         </div>

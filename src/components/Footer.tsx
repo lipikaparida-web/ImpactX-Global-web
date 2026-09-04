@@ -39,10 +39,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
           <div className="flex items-center gap-4 shrink-0">
             {onOpenApply && (
               <button
-                disabled
-                className="px-6 py-3 rounded-full text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 cursor-not-allowed flex items-center gap-2"
+                onClick={onOpenApply}
+                className="px-6 py-3 rounded-full text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] cursor-pointer flex items-center gap-2 transition-colors"
               >
-                <span>Applications Closed</span>
+                <span>Apply Now</span>
               </button>
             )}
             <a

@@ -50,7 +50,7 @@ export default function App() {
   }, []);
 
   const handleOpenApplyWithDomain = (domainId: DomainId | string) => {
-    window.open('https://forms.gle/P3ACUpZGXyGTVYhRA-', '_blank', 'noopener,noreferrer');
+    window.open('https://forms.gle/n4QQ2xfUNDmXSbQEA', '_blank', 'noopener,noreferrer');
   };
 
   return (

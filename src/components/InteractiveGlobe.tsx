@@ -69,6 +69,17 @@ export const GLOBAL_COUNTRIES: CountryNode[] = [
     lng: 105.3188,
     color: '#E6B566',
   },
+  {
+    id: 'south-africa',
+    name: 'South Africa',
+    flag: '🇿🇦',
+    status: 'launching_soon',
+    statusText: 'Launching Soon • Applications Open',
+    caption: 'African innovation & community leadership chapter.',
+    lat: -30.5595,
+    lng: 22.9375,
+    color: '#E6B566',
+  },
 ];
 
 // World Landmass Dot Grid Data (Simplified continents lat/lng)

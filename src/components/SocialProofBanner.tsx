@@ -37,11 +37,8 @@ export const SocialProofBanner: React.FC = () => {
           {/* Text Content */}
           <div className="text-center sm:text-left">
             <h3 className="text-lg sm:text-xl font-semibold text-[#F7F4EE] leading-tight">
-              Applications are open for this Batch/Cohort
+              Applications are OPEN for BATCH-2(Winter Intake)
             </h3>
-            <p className="text-base text-[#9E9EA7] mt-1">
-              We received <span className="text-[#C8A96A] font-medium">100+</span> applications and shortlisted <span className="text-[#C8A96A] font-medium">30</span> after a proper interview and onboarding process.
-            </p>
           </div>
         </div>
       </motion.div>

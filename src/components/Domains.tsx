@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { DomainId } from '../types';
-import { ArrowRight, BookOpen, Users, Rocket, Megaphone, Code, Layers, Share2, Palette, Check, Compass } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, Rocket, Megaphone, Code, Layers, Share2, Palette, Check, Compass, BrainCircuit } from 'lucide-react';
 
 interface DomainsProps {
   onSelectDomainForApply: (domainId: DomainId) => void;
@@ -20,8 +20,19 @@ interface DepartmentData {
 
 const DEPARTMENTS: DepartmentData[] = [
   {
-    id: 'research',
+    id: 'ai-ml',
     number: '01',
+    title: 'AI / ML',
+    subtitle: 'Intelligence & Automation',
+    philosophy: 'We turn data into intelligence through machine learning, intelligent systems, and AI-driven innovation.',
+    youWillBuild: ['Machine Learning Models', 'AI Applications', 'Predictive Systems', 'Data-Driven Solutions', 'AI Agents', 'Computer Vision'],
+    skills: ['Python', 'Machine Learning', 'Data Analysis', 'Model Development', 'Prompt Engineering', 'AI Tools & APIs', 'Problem Solving'],
+    mentors: ['AI/ML Practitioners', 'Data Scientists', 'AI Engineers', 'Industry Mentors'],
+    ctaText: 'Join AI/ML Department',
+  },
+  {
+    id: 'research',
+    number: '02',
     title: 'Research & Documentation',
     subtitle: 'Knowledge Architecture',
     philosophy: 'We transform knowledge into action through research, policy, and evidence-driven innovation.',
@@ -32,7 +43,7 @@ const DEPARTMENTS: DepartmentData[] = [
   },
   {
     id: 'hr',
-    number: '02',
+    number: '03',
     title: 'Human Resources & People',
     subtitle: 'People Operations',
     philosophy: 'We structure high-trust team dynamics, nurture student potential, and architect thriving communities.',
@@ -43,7 +54,7 @@ const DEPARTMENTS: DepartmentData[] = [
   },
   {
     id: 'entrepreneurship',
-    number: '03',
+    number: '04',
     title: 'Entrepreneurship & Innovation',
     subtitle: 'Innovation Lab',
     philosophy: 'We incubate venture-scale ideas from initial thesis to validated prototype and market traction.',
@@ -54,7 +65,7 @@ const DEPARTMENTS: DepartmentData[] = [
   },
   {
     id: 'marketing',
-    number: '04',
+    number: '05',
     title: 'Marketing & Communications',
     subtitle: 'Brand Strategy',
     philosophy: 'We craft compelling, hype-free narratives that position ideas for global adoption and authority.',
@@ -65,7 +76,7 @@ const DEPARTMENTS: DepartmentData[] = [
   },
   {
     id: 'web-dev',
-    number: '05',
+    number: '06',
     title: 'Web Development',
     subtitle: 'Digital Engineering',
     philosophy: 'We engineer resilient digital platforms, open infrastructure, and high-performance web systems.',
@@ -76,7 +87,7 @@ const DEPARTMENTS: DepartmentData[] = [
   },
   {
     id: 'project-mgmt',
-    number: '06',
+    number: '07',
     title: 'Project Management',
     subtitle: 'Execution Systems',
     philosophy: 'We orchestrate cross-functional teams to translate ambitious vision into disciplined execution.',
@@ -87,7 +98,7 @@ const DEPARTMENTS: DepartmentData[] = [
   },
   {
     id: 'social-media',
-    number: '07',
+    number: '08',
     title: 'Social Media',
     subtitle: 'Community Growth',
     philosophy: 'We expand brand presence and cultivate authentic engagement across global digital networks.',
@@ -98,8 +109,8 @@ const DEPARTMENTS: DepartmentData[] = [
   },
   {
     id: 'graphic-design',
-    number: '08',
-    title: 'Graphic & UI/UX Design',
+    number: '09',
+    title: 'Graphic Design',
     subtitle: 'Visual Architecture',
     philosophy: 'We design intuitive interfaces, iconic brand identities, and editorial visual experiences.',
     youWillBuild: ['Design Systems', 'Interface Mockups', 'Brand Identity Toolkits', 'Vector Artworks', 'Interactive Prototypes'],
@@ -125,12 +136,13 @@ const DepartmentArtwork: React.FC<{ id: DomainId }> = ({ id }) => {
 };
 
 export const Domains: React.FC<DomainsProps> = ({ onSelectDomainForApply }) => {
-  const [activeTab, setActiveTab] = useState<DomainId>('research');
+  const [activeTab, setActiveTab] = useState<DomainId>('ai-ml');
 
   const activeDept = DEPARTMENTS.find((d) => d.id === activeTab) || DEPARTMENTS[0];
 
   const getDepartmentIcon = (id: DomainId) => {
     switch (id) {
+      case 'ai-ml': return <BrainCircuit className="w-4 h-4" />;
       case 'research': return <BookOpen className="w-4 h-4" />;
       case 'hr': return <Users className="w-4 h-4" />;
       case 'entrepreneurship': return <Rocket className="w-4 h-4" />;

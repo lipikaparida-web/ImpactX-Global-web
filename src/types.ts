@@ -16,6 +16,7 @@ export interface Program {
 }
 
 export type DomainId = 
+  | 'ai-ml'
   | 'research' 
   | 'hr' 
   | 'entrepreneurship' 

@@ -174,6 +174,17 @@ export const PROGRAMS: Program[] = [
 
 export const DOMAINS: Domain[] = [
   {
+    id: 'ai-ml',
+    name: 'AI / ML',
+    tagline: 'We turn data into intelligence through machine learning, intelligent systems, and AI-driven innovation.',
+    purpose: 'Build predictive systems, data-driven solutions, and AI agents to solve complex global challenges.',
+    skills: ['Python', 'Machine Learning', 'Data Analysis', 'Model Development', 'Prompt Engineering', 'AI Tools & APIs', 'Problem Solving'],
+    mentorRole: 'AI/ML Practitioners, Data Scientists, AI Engineers, Industry Mentors',
+    outcomes: ['Machine Learning Models', 'AI Applications', 'Predictive Systems', 'Data-Driven Solutions', 'AI Agents', 'Computer Vision'],
+    activeProjectsCount: 14,
+    featuredProjects: ['Predictive Healthcare Diagnostics', 'Autonomous Climate Monitors']
+  },
+  {
     id: 'research',
     name: 'Research & Documentation',
     tagline: 'Transforming complex data into actionable whitepapers and policy frameworks.',

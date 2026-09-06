@@ -44,7 +44,7 @@ const DEPARTMENTS: DepartmentData[] = [
   {
     id: 'hr',
     number: '03',
-    title: 'Human Resources & People',
+    title: 'Human Resources & Talent Acquisition',
     subtitle: 'People Operations',
     philosophy: 'We structure high-trust team dynamics, nurture student potential, and architect thriving communities.',
     youWillBuild: ['Selection Frameworks', 'Onboarding Systems', 'Talent Directories', 'Mentorship Programs', 'Culture Playbooks'],

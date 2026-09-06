@@ -219,7 +219,7 @@ export const DOMAINS: Domain[] = [
   },
   {
     id: 'hr',
-    name: 'Human Resources & Talent',
+    name: 'Human Resources & Talent Acquisition',
     tagline: 'Nurturing student potential and structuring high-trust team dynamics.',
     purpose: 'Architect cohort onboarding, conduct candidate interviews, evaluate peer feedback, and cultivate community health.',
     skills: ['Behavioral Interviewing', 'Onboarding Experience Design', 'Conflict Resolution', 'Talent Analytics'],

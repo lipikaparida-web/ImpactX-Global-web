@@ -459,29 +459,29 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: 'team-3',
-    name: 'Ms. Snehasikta Prusty',
-    role: 'People & Culture Lead',
+    name: 'Mr. Sourav Panda',
+    role: 'Chief Operating Officer (COO)',
     chapter: 'Global HQ',
     university: 'ImpactX Global',
-    bio: 'Designing recruitment, community engagement, onboarding experiences, and a culture that enables every member to contribute meaningfully. Building a community where talented individuals collaborate, grow, and thrive through trust, purpose, and shared ambition.',
-    quote: 'Great organizations are remembered not only for what they build, but for how they make people grow.',
+    bio: 'Overseeing all operational functions of ImpactX Global—streamlining systems, driving cross-functional execution, and ensuring every initiative is delivered with precision. Transforming strategic vision into measurable outcomes by building robust processes that scale.',
+    quote: 'Operations done right don\'t slow things down—they set them free.',
+    avatar: '/people-sourav.png',
+    linkedin: 'https://www.linkedin.com/in/sourav-panda-896620307?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+    instagram: 'https://www.instagram.com/sourav_panda14?igsh=djB0Zml4ems2eGk=',
+    domain: 'Operations & Execution'
+  },
+  {
+    id: 'team-4',
+    name: 'Ms. Snehasikta Prusty',
+    role: 'Chief People Officer (CPO)',
+    chapter: 'Global HQ',
+    university: 'ImpactX Global',
+    bio: 'Championing the people strategy at ImpactX Global—leading talent acquisition, culture building, and community growth. Creating an environment where every member feels valued, inspired, and empowered to do their best work.',
+    quote: 'The greatest asset of any organization is the people who believe in its mission.',
     avatar: '/people-snehasikta.jpg',
     linkedin: 'https://www.linkedin.com/in/sneha-prusty-877aa2362?utm_source=share_via&utm_content=profile&utm_medium=member_android',
     instagram: 'https://www.instagram.com/sneha_prusty?igsh=b3Exd3luaW1wcnhi',
     domain: 'People & Culture'
-  },
-  {
-    id: 'team-4',
-    name: 'Mr. Sourav Panda',
-    role: 'Core Management Lead',
-    chapter: 'Global HQ',
-    university: 'ImpactX Global',
-    bio: 'Coordinating operations, project workflows, execution systems, and organizational management to ensure seamless collaboration across every initiative. Driving operational excellence by transforming vision into structured execution and measurable outcomes.',
-    quote: 'Execution is where vision earns its credibility.',
-    avatar: '/people-sourav.png',
-    linkedin: 'https://www.linkedin.com/in/sourav-panda-896620307?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-    instagram: 'https://www.instagram.com/sourav_panda14?igsh=djB0Zml4ems2eGk=',
-    domain: 'Core Management'
   }
 ];
 

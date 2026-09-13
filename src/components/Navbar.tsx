@@ -121,12 +121,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
         {/* Mobile Toggle Button */}
         <div className="pointer-events-auto xl:hidden flex items-center gap-2 shrink-0">
           <button
-            disabled
-            className="sm:hidden px-4 py-2 text-sm font-semibold text-[#9E9EA7] bg-white/5 border border-white/10 rounded-full cursor-not-allowed whitespace-nowrap"
-          >
-            Closed
-          </button>
-          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2.5 rounded-full bg-[#121215]/70 border border-[#C8A96A]/20 backdrop-blur-xl text-[#D1CBC0] hover:text-[#FFFFFF] transition-colors"
             aria-label="Toggle menu"

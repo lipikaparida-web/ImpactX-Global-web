@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Instagram, Linkedin, Mail, ShieldCheck, Terminal, Compass } from 'lucide-react';
+import { ArrowUp, Instagram, Linkedin, Mail, ShieldCheck, Terminal, Compass, Phone } from 'lucide-react';
 import { ImpactXLogo } from './ImpactXLogo';
 
 interface FooterProps {
@@ -109,6 +109,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
                 aria-label="Email"
               >
                 <Mail className="w-4 h-4" />
+              </a>
+              <a
+                href="tel:+918018949822"
+                className="w-10 h-10 rounded-xl bg-[#0D0D0F]/60 border border-white/10 flex items-center justify-center text-[#D1CBC0] hover:text-[#C8A96A] hover:border-[#C8A96A]/30 transition-all"
+                aria-label="Phone"
+                title="+91 8018949822"
+              >
+                <Phone className="w-4 h-4" />
               </a>
             </div>
           </div>

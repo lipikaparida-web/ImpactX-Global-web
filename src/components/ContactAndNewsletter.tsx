@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Linkedin, Instagram, ArrowRight, CheckCircle2, Compass } from 'lucide-react';
+import { Mail, MessageSquare, Linkedin, Instagram, ArrowRight, CheckCircle2, Compass, Phone } from 'lucide-react';
 
 export const ContactAndNewsletter: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -80,8 +80,19 @@ export const ContactAndNewsletter: React.FC = () => {
                 </div>
               </a>
 
-
-
+              <a
+                href="tel:+918018949822"
+                className="col-span-2 p-5 rounded-2xl bg-[#121215]/35 backdrop-blur-2xl border border-[#C8A96A]/15 hover:border-[#C8A96A]/35 transition-all flex items-center gap-4 group shadow-xl"
+              >
+                <div className="p-3 rounded-xl bg-[#0D0D0F]/60 text-[#C8A96A]">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-xs font-semibold text-[#F7F4EE] group-hover:text-[#C8A96A] transition-colors block">Call Us</span>
+                  <span className="text-[10px] text-[#9E9EA7] font-mono leading-tight block">+91 8018949822</span>
+                  <span className="text-[10px] text-[#9E9EA7] font-mono leading-tight block">Mon – Fri, 10 AM – 6 PM IST</span>
+                </div>
+              </a>
               <a
                 href="https://www.linkedin.com/company/135644013"
                 target="_blank"

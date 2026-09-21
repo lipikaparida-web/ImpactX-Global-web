@@ -140,3 +140,75 @@ export interface ApplicationFormData {
   weeklyCommitmentHours: string;
   agreeToTerms: boolean;
 }
+
+// ─── Alumni Network Types ────────────────────────────────────────────────────
+
+export type CardDownloadFormat = 'png' | 'jpg' | 'pdf';
+
+export type AlumniCardTheme = 'obsidian' | 'midnight' | 'forest';
+
+export interface AlumniCardConfig {
+  theme: AlumniCardTheme;
+  photoUrl: string;
+  name: string;
+  domainName: string;
+  domainId: DomainId | string;
+  batchCode: string;        // e.g. "Batch 08"
+  cohortYear: string;       // e.g. "2025"
+  credentialId: string;     // e.g. "IX-ALUM-2025-0842"
+  cohortName?: string;      // e.g. "Summer 2025"
+  university?: string;
+}
+
+export interface CohortInfo {
+  id: string;
+  name: string;
+  year: number;
+  status: 'upcoming' | 'active' | 'completed';
+  start_date?: string;
+  end_date?: string;
+}
+
+export interface BatchInfo {
+  id: string;
+  cohort_id: string;
+  batch_code: string;
+  domain_id: DomainId | string;
+  graduation_date?: string;
+  mentor_lead?: string;
+  cohort?: CohortInfo;
+}
+
+export interface AlumniProject {
+  id: string;
+  title: string;
+  repo_url?: string;
+  live_demo_url?: string;
+  case_study?: string;
+}
+
+export interface AlumniMember {
+  id: string;
+  // From interns table
+  full_name: string;
+  email: string;
+  university?: string;
+  country?: string;
+  photo_url?: string;
+  linkedin_url?: string;
+  github_url?: string;
+  batch?: BatchInfo;
+  projects?: AlumniProject[];
+  // From alumni_profiles table
+  credential_id: string;
+  slug: string;
+  current_company?: string;
+  current_role?: string;
+  bio?: string;
+  top_skills?: string[];
+  is_mentor_available: boolean;
+  is_public: boolean;
+  card_customization?: Partial<AlumniCardConfig>;
+  portfolio_url?: string;
+  graduation_year: string;
+}

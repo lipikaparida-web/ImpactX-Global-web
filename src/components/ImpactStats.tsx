@@ -77,7 +77,7 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ onOpenApply }) => {
               </div>
 
               <h3 className="text-2xl font-sans-display font-bold text-[#F7F4EE] tracking-tight">
-                Applications Open Worldwide
+                Applications Closed Worldwide
               </h3>
 
               <p className="text-sm text-[#9E9EA7] mt-3 leading-relaxed font-light">
@@ -89,7 +89,7 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ onOpenApply }) => {
                   onClick={onOpenApply}
                   className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] flex items-center justify-center gap-2.5 cursor-pointer transition-colors"
                 >
-                  <span>Apply Now</span>
+                  <span>Applications Closed</span>
                 </button>
               </div>
             </div>

@@ -28,7 +28,7 @@ const DEPARTMENTS: DepartmentData[] = [
     youWillBuild: ['Machine Learning Models', 'AI Applications', 'Predictive Systems', 'Data-Driven Solutions', 'AI Agents', 'Computer Vision'],
     skills: ['Python', 'Machine Learning', 'Data Analysis', 'Model Development', 'Prompt Engineering', 'AI Tools & APIs', 'Problem Solving'],
     mentors: ['AI/ML Practitioners', 'Data Scientists', 'AI Engineers', 'Industry Mentors'],
-    ctaText: 'Join AI/ML Department',
+    ctaText: 'Applications Closed',
   },
   {
     id: 'research',
@@ -39,7 +39,7 @@ const DEPARTMENTS: DepartmentData[] = [
     youWillBuild: ['Research Papers', 'Policy Reports', 'AI Documentation', 'Whitepapers', 'Technical Blogs'],
     skills: ['Academic Writing', 'Data Analysis', 'Scientific Communication', 'Critical Thinking', 'Documentation Systems'],
     mentors: ['Industry Researchers', 'Academic Fellows', 'Policy Experts', 'Domain Advisors'],
-    ctaText: 'Join Research Department',
+    ctaText: 'Applications Closed',
   },
   {
     id: 'hr',
@@ -50,7 +50,7 @@ const DEPARTMENTS: DepartmentData[] = [
     youWillBuild: ['Selection Frameworks', 'Onboarding Systems', 'Talent Directories', 'Mentorship Programs', 'Culture Playbooks'],
     skills: ['People Analytics', 'Talent Operations', 'Behavioral Interviewing', 'Culture Architecture', 'Leadership Coaching'],
     mentors: ['People Operations Directors', 'Talent Leads', 'Executive Coaches'],
-    ctaText: 'Join Human Resources Department',
+    ctaText: 'Applications Closed',
   },
   {
     id: 'entrepreneurship',
@@ -61,7 +61,7 @@ const DEPARTMENTS: DepartmentData[] = [
     youWillBuild: ['MVP Prototypes', 'Investor Pitch Decks', 'Financial Models', 'Go-To-Market Plans', 'Pilot Studies'],
     skills: ['Lean Startup Methodology', 'Financial Modeling', 'Customer Discovery', 'Venture Strategy', 'Product Pitching'],
     mentors: ['Venture Partners', 'Serial Founders', 'Product Leads'],
-    ctaText: 'Join Entrepreneurship Department',
+    ctaText: 'Applications Closed',
   },
   {
     id: 'marketing',
@@ -72,7 +72,7 @@ const DEPARTMENTS: DepartmentData[] = [
     youWillBuild: ['Brand Toolkits', 'Editorial Case Studies', 'Growth Funnels', 'Press Releases', 'Content Strategies'],
     skills: ['Editorial Strategy', 'SEO & Content Architecture', 'Growth Analytics', 'Brand Positioning', 'Copywriting'],
     mentors: ['Head of Growth', 'Brand Strategists', 'Creative Directors'],
-    ctaText: 'Join Marketing Department',
+    ctaText: 'Applications Closed',
   },
   {
     id: 'web-dev',
@@ -83,7 +83,7 @@ const DEPARTMENTS: DepartmentData[] = [
     youWillBuild: ['Production Web Applications', 'Open-Source Libraries', 'API Gateways', 'Design Systems', 'Interactive Platforms'],
     skills: ['Full-Stack Engineering', 'TypeScript & React', 'System Architecture', 'API Design', 'Performance Optimization'],
     mentors: ['Principal Engineers', 'Full-Stack Leads', 'Open Source Contributors'],
-    ctaText: 'Join Web Development Department',
+    ctaText: 'Applications Closed',
   },
   {
     id: 'project-mgmt',
@@ -94,7 +94,7 @@ const DEPARTMENTS: DepartmentData[] = [
     youWillBuild: ['Sprint System Frameworks', 'Product Roadmaps', 'Execution Dashboards', 'Resource Models', 'Operations Logs'],
     skills: ['Agile & Scrum Methodologies', 'Sprint Operations', 'Risk Management', 'Stakeholder Alignment', 'Product Analytics'],
     mentors: ['Technical Product Managers', 'Operations Directors', 'Scrum Masters'],
-    ctaText: 'Join Project Management Department',
+    ctaText: 'Applications Closed',
   },
   {
     id: 'social-media',
@@ -105,7 +105,7 @@ const DEPARTMENTS: DepartmentData[] = [
     youWillBuild: ['Content Ecosystems', 'Visual Storytelling Reels', 'Thought Leadership Series', 'Community Handbooks', 'Campaign Strategy'],
     skills: ['Community Architecture', 'Visual Storytelling', 'Audience Growth', 'Content Operations', 'Analytics & Insights'],
     mentors: ['Creative Directors', 'Head of Community', 'Growth Managers'],
-    ctaText: 'Join Social Media Department',
+    ctaText: 'Applications Closed',
   },
   {
     id: 'graphic-design',
@@ -116,7 +116,7 @@ const DEPARTMENTS: DepartmentData[] = [
     youWillBuild: ['Design Systems', 'Interface Mockups', 'Brand Identity Toolkits', 'Vector Artworks', 'Interactive Prototypes'],
     skills: ['Figma & Interface Architecture', 'Typography & Layout', 'Design Systems', 'User Research', 'Visual Identity'],
     mentors: ['Design Directors', 'UI/UX Architects', 'Brand Identity Designers'],
-    ctaText: 'Join Graphic Design Department',
+    ctaText: 'Applications Closed',
   },
 ];
 
@@ -292,10 +292,10 @@ export const Domains: React.FC<DomainsProps> = ({ onSelectDomainForApply }) => {
             {/* ELEGANT CTA BUTTON */}
             <div className="pt-4">
               <button
-                onClick={() => onSelectDomainForApply(id)}
+                onClick={() => onSelectDomainForApply(activeDept.id)}
                 className="w-full py-4 px-8 rounded-full text-xs sm:text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] shadow-[0_0_20px_rgba(200,169,106,0.2)] flex items-center justify-center gap-3 cursor-pointer transition-colors"
               >
-                <span>Apply Now</span>
+                <span>Applications Closed</span>
               </button>
             </div>
 

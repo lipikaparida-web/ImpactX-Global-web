@@ -51,6 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
     { label: 'Journey', href: '#journey' },
     { label: 'Team', href: '#team' },
     { label: 'Impact', href: '#impact' },
+    { label: 'Alumni', href: '#alumni' },
     { label: 'FAQ', href: '#faq' },
   ];
 
@@ -114,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
             onClick={onOpenApply}
             className="px-6 py-2.5 text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] rounded-full cursor-pointer whitespace-nowrap transition-colors"
           >
-            Apply Now
+            Applications Closed
           </button>
         </div>
 
@@ -151,7 +152,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
               onClick={() => { setMobileMenuOpen(false); onOpenApply(); }}
               className="w-full py-3 px-4 text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] rounded-full text-center flex items-center justify-center gap-2 cursor-pointer transition-colors"
             >
-              <span>Apply Now</span>
+              <span>Applications Closed</span>
             </button>
           </div>
         </div>

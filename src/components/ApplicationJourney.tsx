@@ -64,7 +64,7 @@ export const ApplicationJourney: React.FC<ApplicationJourneyProps> = ({ onOpenAp
               Ready to Build What Matters?
             </h3>
             <p className="text-xs sm:text-base text-[#9E9EA7] max-w-xl font-light">
-              Applications for our upcoming Global Cohort are now open. Takes less than 15 minutes to share your profile.
+              Applications for our upcoming Global Cohort are now closed. Follow our announcements for future intake dates.
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export const ApplicationJourney: React.FC<ApplicationJourneyProps> = ({ onOpenAp
             onClick={onOpenApply}
             className="px-9 py-4 text-xs sm:text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] rounded-full flex items-center gap-3 cursor-pointer shrink-0 relative z-10 transition-colors"
           >
-            <span>Apply Now</span>
+            <span>Applications Closed</span>
           </button>
         </div>
 

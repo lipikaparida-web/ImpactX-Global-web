@@ -18,7 +18,10 @@ import { HogwartsCastleBackground } from './components/HogwartsCastleBackground'
 import { HogwartsTrainBackground } from './components/HogwartsTrainBackground';
 import { MagicWandCursor } from './components/MagicWandCursor';
 import { PlatformGateway } from './components/PlatformGateway';
-import { DomainId } from './types';
+import { AlumniNetwork } from './components/AlumniNetwork';
+import { AlumniCardStudio } from './components/alumni/AlumniCardStudio';
+import { AlumniAuthModal } from './components/alumni/AlumniAuthModal';
+import { DomainId, AlumniCardConfig } from './types';
 
 export default function App() {
   const [showPlatformGateway, setShowPlatformGateway] = useState(true);
@@ -26,10 +29,17 @@ export default function App() {
   const [preselectedDomain, setPreselectedDomain] = useState<DomainId | string>('research');
   const [activeSection, setActiveSection] = useState('hero');
 
+  // Alumni card studio state
+  const [isCardStudioOpen, setIsCardStudioOpen] = useState(false);
+  const [cardStudioPrefill, setCardStudioPrefill] = useState<Partial<AlumniCardConfig> | undefined>(undefined);
+
+  // Alumni auth modal state
+  const [isAlumniAuthOpen, setIsAlumniAuthOpen] = useState(false);
+
   // Active section tracker on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['story', 'philosophy', 'programs', 'domains', 'journey', 'team', 'impact', 'faq'];
+      const sections = ['story', 'philosophy', 'programs', 'domains', 'journey', 'team', 'impact', 'alumni', 'faq'];
       const scrollPos = window.scrollY + 200;
 
       for (const sec of sections) {
@@ -51,6 +61,11 @@ export default function App() {
 
   const handleOpenApplyWithDomain = (domainId: DomainId | string) => {
     window.open('https://forms.gle/n4QQ2xfUNDmXSbQEA', '_blank', 'noopener,noreferrer');
+  };
+
+  const handleOpenCardStudio = (prefill?: Partial<AlumniCardConfig>) => {
+    setCardStudioPrefill(prefill);
+    setIsCardStudioOpen(true);
   };
 
   return (
@@ -120,6 +135,11 @@ export default function App() {
           onOpenApply={() => handleOpenApplyWithDomain('research')}
         />
 
+        {/* 11. Alumni Network */}
+        <AlumniNetwork
+          onOpenCardStudio={handleOpenCardStudio}
+        />
+
         {/* 12. Application Journey */}
         <ApplicationJourney
           onOpenApply={() => handleOpenApplyWithDomain('research')}
@@ -141,6 +161,23 @@ export default function App() {
         isOpen={isApplyModalOpen}
         onClose={() => setIsApplyModalOpen(false)}
         preselectedDomain={preselectedDomain}
+      />
+
+      {/* Alumni Card Studio Modal */}
+      <AlumniCardStudio
+        isOpen={isCardStudioOpen}
+        onClose={() => setIsCardStudioOpen(false)}
+        prefill={cardStudioPrefill}
+      />
+
+      {/* Alumni Auth Modal */}
+      <AlumniAuthModal
+        isOpen={isAlumniAuthOpen}
+        onClose={() => setIsAlumniAuthOpen(false)}
+        onAuthSuccess={() => {
+          setIsAlumniAuthOpen(false);
+          setIsCardStudioOpen(true);
+        }}
       />
 
     </div>

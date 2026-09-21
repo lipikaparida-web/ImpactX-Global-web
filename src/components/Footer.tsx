@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#C8A96A] animate-pulse" />
               <span className="text-xs font-mono text-[#C8A96A] uppercase tracking-wider font-semibold">
-                Global Cohort Applications Open
+                Global Cohort Applications Closed
               </span>
             </div>
             <h3 className="text-xl sm:text-2xl font-sans-display font-bold text-[#FFFFFF] tracking-tight">
@@ -42,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
                 onClick={onOpenApply}
                 className="px-6 py-3 rounded-full text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] cursor-pointer flex items-center gap-2 transition-colors"
               >
-                <span>Apply Now</span>
+                <span>Applications Closed</span>
               </button>
             )}
             <a

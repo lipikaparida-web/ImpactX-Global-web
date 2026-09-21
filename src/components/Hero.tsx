@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
           >
             <span className="w-2 h-2 rounded-full bg-[#C8A96A]" />
             <span className="text-xs font-mono text-[#9E9EA7] tracking-widest uppercase">
-              Fall Applications are open
+              Applications are closed
             </span>
             <ChevronRight className="w-3.5 h-3.5 text-[#C8A96A] group-hover:translate-x-1 transition-transform duration-300" />
           </motion.button>
@@ -69,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
               onClick={onOpenApply}
               className="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] shadow-[0_0_20px_rgba(200,169,106,0.3)] hover:shadow-[0_0_30px_rgba(200,169,106,0.5)] transition-all duration-500 flex items-center justify-center gap-3 cursor-pointer"
             >
-              <span>Apply Now</span>
+              <span>Applications Closed</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 

@@ -52,13 +52,13 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
             {/* Header */}
             <div className="space-y-2.5 mb-8 text-left">
               <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md">
-                Global Cohort Application
+                Global Cohort • Applications Closed
               </span>
               <h2 className="text-2xl sm:text-3xl font-sans-display font-bold text-[#F7F4EE] pt-2">
-                Apply for ImpactX Global
+                Applications are Currently Closed
               </h2>
               <p className="text-xs sm:text-sm text-[#9E9EA7] font-light">
-                Tell us about your background and what you want to build. No artificial standardized tests required.
+                Applications for BATCH-2 (Winter Intake) are currently closed. Submit your profile below to join the priority waitlist for our next intake.
               </p>
             </div>
 
@@ -219,7 +219,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                   type="submit"
                   className="px-7 py-3 text-xs font-semibold text-[#0D0D0F] bg-[#F7F4EE] hover:bg-white rounded-full transition-all flex items-center gap-2 cursor-pointer shadow-md"
                 >
-                  <span>Submit Application</span>
+                  <span>Join Waitlist</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -235,25 +235,25 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
 
             <div className="space-y-2">
               <h3 className="text-2xl font-sans-display font-bold text-[#F7F4EE]">
-                Application Received!
+                Waitlist Request Received!
               </h3>
               <p className="text-xs sm:text-sm text-[#9E9EA7] max-w-md mx-auto font-light">
-                Thank you, <strong className="text-[#F7F4EE]">{formData.fullName}</strong>. Your profile has been assigned to our <span className="text-[#C8A96A] font-mono">{formData.primaryDomain}</span> domain lead.
+                Thank you, <strong className="text-[#F7F4EE]">{formData.fullName}</strong>. You have been added to the priority waitlist for our <span className="text-[#C8A96A] font-mono">{formData.primaryDomain}</span> domain track.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#0D0D0F]/80 border border-[#C8A96A]/20 text-left max-w-md mx-auto space-y-3 text-xs font-mono">
               <div className="flex justify-between text-[#9E9EA7]">
                 <span>Status</span>
-                <span className="text-[#C8A96A]">Portfolio Review in Progress</span>
+                <span className="text-[#C8A96A]">Priority Waitlist Confirmed</span>
               </div>
               <div className="flex justify-between text-[#9E9EA7]">
-                <span>Estimated Response</span>
-                <span className="text-[#F7F4EE]">3-5 Business Days</span>
+                <span>Estimated Next Intake</span>
+                <span className="text-[#F7F4EE]">Upcoming Cohort Announcement</span>
               </div>
               <div className="flex justify-between text-[#9E9EA7]">
-                <span>Target Cohort</span>
-                <span className="text-[#C8A96A]">Global Cohort</span>
+                <span>Target Track</span>
+                <span className="text-[#C8A96A]">{formData.primaryDomain}</span>
               </div>
             </div>
 

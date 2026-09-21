@@ -37,7 +37,7 @@ export const SocialProofBanner: React.FC = () => {
           {/* Text Content */}
           <div className="text-center sm:text-left">
             <h3 className="text-lg sm:text-xl font-semibold text-[#F7F4EE] leading-tight">
-              Applications are OPEN for BATCH-2(Winter Intake)
+              Applications are Closed for BATCH-2(Winter Intake)
             </h3>
           </div>
         </div>

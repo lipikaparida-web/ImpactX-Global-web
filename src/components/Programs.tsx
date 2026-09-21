@@ -103,7 +103,7 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply }) =>
                   onClick={() => onSelectProgramToApply(program.id)}
                   className="py-3 px-5 text-xs font-semibold rounded-full flex items-center gap-2 transition-all bg-[#C8A96A] text-[#0D0D0F] hover:bg-[#E2C78E] cursor-pointer"
                 >
-                  <span>Apply Now</span>
+                  <span>Applications Closed</span>
                 </button>
               </div>
 
@@ -170,7 +170,7 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply }) =>
                 onClick={() => onSelectProgramToApply(selectedProgram.id)}
                 className="px-8 py-3 text-xs font-semibold rounded-full flex items-center gap-2 transition-all bg-[#C8A96A] text-[#0D0D0F] hover:bg-[#E2C78E] cursor-pointer"
               >
-                <span>Apply Now</span>
+                <span>Applications Closed</span>
               </button>
             </div>
           </div>

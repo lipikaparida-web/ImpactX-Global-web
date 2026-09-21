@@ -7,12 +7,15 @@ import type { Database } from './supabase.types';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const env = (import.meta as any).env as Record<string, string | undefined>;
 
-const supabaseUrl = env.VITE_SUPABASE_URL ?? '';
-const supabaseAnonKey = env.VITE_SUPABASE_ANON_KEY ?? '';
-
-// Returns a no-op client if env vars are not configured (dev/demo mode)
-export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey);
+const supabaseUrl = env?.VITE_SUPABASE_URL ?? '';
+const supabaseAnonKey = env?.VITE_SUPABASE_ANON_KEY ?? '';
 
 export const isSupabaseConfigured =
-  supabaseUrl.length > 0 && supabaseAnonKey.length > 0;
+  Boolean(supabaseUrl && supabaseAnonKey && supabaseUrl.startsWith('http'));
+
+// Fallback dummy credentials to prevent @supabase/supabase-js from throwing on initialization
+export const supabase = createClient<Database>(
+  isSupabaseConfigured ? supabaseUrl : 'https://placeholder-project.supabase.co',
+  isSupabaseConfigured ? supabaseAnonKey : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummy'
+);
 

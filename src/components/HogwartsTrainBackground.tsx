@@ -30,18 +30,14 @@ export const HogwartsTrainBackground: React.FC = () => {
     let animId: number;
     let W = window.innerWidth;
     let H = window.innerHeight;
-    let dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     const resize = () => {
       W = window.innerWidth;
       H = window.innerHeight;
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = Math.floor(W * dpr);
-      canvas.height = Math.floor(H * dpr);
+      canvas.width = W;
+      canvas.height = H;
       canvas.style.width = `${W}px`;
       canvas.style.height = `${H}px`;
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpr, dpr);
     };
 
     resize();
@@ -65,6 +61,7 @@ export const HogwartsTrainBackground: React.FC = () => {
     const smokes: Smoke[] = [];
 
     const spawnSmoke = (ox: number, oy: number) => {
+      if (smokes.length > 25) return;
       smokes.push({
         x: ox, y: oy,
         vx: -(Math.random() * 0.8 + 0.4) - TRAIN_SPEED,
@@ -72,7 +69,7 @@ export const HogwartsTrainBackground: React.FC = () => {
         r: 8 + Math.random() * 6,
         maxR: 55 + Math.random() * 70,
         alpha: 0.28 + Math.random() * 0.18,
-        life: 0, maxLife: 130 + Math.random() * 80,
+        life: 0, maxLife: 100 + Math.random() * 50,
       });
     };
 
@@ -86,11 +83,12 @@ export const HogwartsTrainBackground: React.FC = () => {
     const sparks: Spark[] = [];
 
     const spawnSpark = (ox: number, oy: number) => {
+      if (sparks.length > 20) return;
       sparks.push({
         x: ox, y: oy,
         vx: -(Math.random() * 3 + 1) - TRAIN_SPEED,
         vy: -(Math.random() * 2.5) + Math.random() * 1.5,
-        life: 0, maxLife: 35 + Math.random() * 25,
+        life: 0, maxLife: 30 + Math.random() * 20,
         size: 1.5 + Math.random() * 2,
         hue: 30 + Math.random() * 30,
       });
@@ -519,10 +517,12 @@ export const HogwartsTrainBackground: React.FC = () => {
         ctx.beginPath();
         ctx.arc(sp.x, sp.y, sp.size * (1 - lifeRatio * 0.5), 0, Math.PI * 2);
         ctx.fillStyle = `hsla(${sp.hue}, 95%, 65%, ${a})`;
-        ctx.shadowColor = `hsla(${sp.hue}, 95%, 65%, 0.8)`;
-        ctx.shadowBlur = 4;
         ctx.fill();
-        ctx.shadowBlur = 0;
+      }
+
+      if (document.hidden) {
+        animId = requestAnimationFrame(render);
+        return;
       }
 
       animId = requestAnimationFrame(render);

@@ -36,27 +36,30 @@ export default function App() {
   // Alumni auth modal state
   const [isAlumniAuthOpen, setIsAlumniAuthOpen] = useState(false);
 
-  // Active section tracker on scroll
+  // Active section tracker via IntersectionObserver (zero scroll event overhead)
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['story', 'philosophy', 'programs', 'domains', 'journey', 'team', 'impact', 'alumni', 'faq'];
-      const scrollPos = window.scrollY + 200;
-
-      for (const sec of sections) {
-        const el = document.getElementById(sec);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSection(sec);
+    const sections = ['story', 'philosophy', 'programs', 'domains', 'journey', 'team', 'impact', 'alumni', 'faq'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
             break;
           }
         }
+      },
+      {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0,
       }
-    };
+    );
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const handleOpenApplyWithDomain = (domainId: DomainId | string) => {

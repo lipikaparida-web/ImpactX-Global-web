@@ -140,28 +140,46 @@ export const InteractiveGlobe: React.FC<InteractiveGlobeProps> = ({ onSelectCoun
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let animationFrameId: number;
+    let animationFrameId: number | null = null;
     let particleTime = 0;
+    let isVisible = false;
+
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const displayWidth = canvas.clientWidth || 500;
+      const displayHeight = canvas.clientHeight || 420;
+      canvas.width = Math.floor(displayWidth * dpr);
+      canvas.height = Math.floor(displayHeight * dpr);
+    };
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      isVisible = entry ? entry.isIntersecting : true;
+      if (isVisible && !animationFrameId) {
+        render();
+      }
+    }, { threshold: 0.05 });
+
+    observer.observe(canvas);
 
     const render = () => {
-      const width = canvas.width;
-      const height = canvas.height;
-      const dpr = window.devicePixelRatio || 1;
-
-      // Handle retina canvas sizing
-      if (canvas.width !== canvas.clientWidth * dpr || canvas.height !== canvas.clientHeight * dpr) {
-        canvas.width = canvas.clientWidth * dpr;
-        canvas.height = canvas.clientHeight * dpr;
+      if (!isVisible || document.hidden) {
+        animationFrameId = null;
+        return;
       }
 
-      ctx.save();
-      ctx.scale(dpr, dpr);
-      const displayWidth = canvas.clientWidth;
-      const displayHeight = canvas.clientHeight;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const displayWidth = canvas.clientWidth || 500;
+      const displayHeight = canvas.clientHeight || 420;
       const cx = displayWidth / 2;
       const cy = displayHeight / 2;
       const radius = Math.min(displayWidth, displayHeight) * 0.38;
 
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
       ctx.clearRect(0, 0, displayWidth, displayHeight);
 
       // Auto-rotation when not dragging
@@ -399,7 +417,9 @@ export const InteractiveGlobe: React.FC<InteractiveGlobeProps> = ({ onSelectCoun
     render();
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
+      window.removeEventListener('resize', resize);
     };
   }, [activeCountry, isHovered]);
 

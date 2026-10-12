@@ -35,8 +35,8 @@ export const OurStory: React.FC = () => {
       step: '05',
       title: 'Global Peer & Mentor Network',
       icon: Globe,
-      tag: '38+ Nations',
-      desc: 'Lifelong relationships with elite builders, venture partners, and distinguished domain advisors across 38+ countries.'
+      tag: 'Worldwide Network',
+      desc: 'Lifelong relationships with elite builders, venture partners, and distinguished domain advisors worldwide.'
     },
     {
       step: '06',

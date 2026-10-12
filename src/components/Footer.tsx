@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
               Ready to build real software & publish research?
             </h3>
             <p className="text-sm sm:text-base text-[#D1CBC0] font-light">
-              Join students and innovators from 38+ countries in our upcoming Global Cohort.
+              Join students and innovators worldwide in our upcoming Global Cohort.
             </p>
           </div>
 
@@ -165,7 +165,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
               </li>
               <li>
                 <a href="#impact" className="text-[#C8A96A] hover:underline text-xs font-mono mt-2 inline-block">
-                  View All 38+ Locations →
+                  View Global Locations →
                 </a>
               </li>
             </ul>

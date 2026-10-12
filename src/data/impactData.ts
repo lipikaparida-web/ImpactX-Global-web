@@ -12,7 +12,7 @@ import {
 } from '../types';
 
 export const HERO_STATS = [
-  { label: 'Active Countries', value: '38+' },
+  { label: 'Global Reach', value: 'Worldwide' },
   { label: 'Projects Shipped', value: '140+' },
   { label: 'Student Leaders', value: '2,400+' },
   { label: 'Mentorship Hours', value: '18,500+' }
@@ -115,7 +115,7 @@ export const PROGRAMS: Program[] = [
     keyTakeaways: [
       'Hands-on experience running 15+ person multidisciplinary teams',
       'Crisis management and stakeholder communication framing',
-      'Direct access to global non-profit leadership summits'
+      'Direct access to global leadership summits'
     ],
     badge: 'Coming Soon',
     comingSoon: true
@@ -158,14 +158,14 @@ export const PROGRAMS: Program[] = [
     id: 'global-impact',
     title: 'Global Impact Projects',
     subtitle: 'Solving Real Community Challenges',
-    description: 'Cross-border initiatives tackling clean water monitoring, accessible open education platforms, micro-finance tools, and non-profit digital transformation.',
+    description: 'Cross-border initiatives tackling clean water monitoring, accessible open education platforms, micro-finance tools, and community digital transformation.',
     duration: '4 Weeks',
     commitment: '10-15 hrs/week',
     format: 'Remote',
     idealFor: 'Purpose-driven engineers, designers, and strategists seeking high social leverage.',
     iconName: 'Sparkles',
     keyTakeaways: [
-      'Direct collaboration with verified international non-profits',
+      'Direct collaboration with verified international mission-driven organizations',
       'Deploying code to active end-users in developing regions',
       'Documented social impact metrics and testimonial reports'
     ]
@@ -530,7 +530,7 @@ export const COMMUNITY_HUBS: CommunityHub[] = [
     id: 'hub-5',
     title: 'ImpactX Hackathons',
     type: 'Hackathons',
-    description: 'Rapid prototyping sprints tackling urgent open-source challenges sponsored by non-profit partners.',
+    description: 'Rapid prototyping sprints tackling urgent open-source challenges sponsored by mission-driven partners.',
     cadence: 'Quarterly',
     participants: '30+ Squads',
     icon: 'Zap',
@@ -559,7 +559,7 @@ export const COMMUNITY_HUBS: CommunityHub[] = [
 ];
 
 export const IMPACT_STATS: ImpactStat[] = [
-  { id: 'countries', label: 'Active Countries', value: 38, suffix: '+', description: 'Student-led chapters across 6 continents' },
+  { id: 'chapters', label: 'Global Footprint', value: 6, suffix: ' Continents', description: 'Student-led chapters across continents worldwide' },
   { id: 'projects', label: 'Real Projects Shipped', value: 142, suffix: '', description: 'Production web apps, research papers & campaigns' },
   { id: 'students', label: 'Students Transformed', value: 2450, suffix: '+', description: 'Graduates now building impactful careers' },
   { id: 'hours', label: 'Mentorship Hours', value: 18500, suffix: 'h+', description: 'Dedicated 1:1 engineering & strategy guidance' },
@@ -666,7 +666,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-1',
     category: 'General',
     question: 'Is ImpactX Global completely free for students?',
-    answer: 'Yes, 100% free. ImpactX is a global non-profit organization funded by university grants, philanthropy, and industry partners. We will never charge students a single cent to join, learn, or build.'
+    answer: 'Yes, 100% free. ImpactX is a global organization funded by university grants, philanthropy, and industry partners. We will never charge students a single cent to join, learn, or build.'
   },
   {
     id: 'faq-2',

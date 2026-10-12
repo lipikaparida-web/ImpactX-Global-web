@@ -163,11 +163,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
                 <span>🇷🇺 Russia</span>
                 <span className="text-[11px] font-mono text-[#D1CBC0] opacity-60">Soon</span>
               </li>
-              <li>
-                <a href="#impact" className="text-[#C8A96A] hover:underline text-xs font-mono mt-2 inline-block">
-                  View Global Locations →
-                </a>
-              </li>
             </ul>
           </div>
 

@@ -374,25 +374,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
 
           {/* ── Right Actions ── */}
           <div className="flex items-center gap-2 shrink-0">
-            {/* Quick Explore Link (Desktop) */}
+            {/* Prominent CTA */}
             <a
               href="#domains"
               onClick={(e) => {
                 e.preventDefault();
                 handleLinkClick('#domains');
               }}
-              className="hidden md:inline-flex text-xs font-medium text-[#D1CBC0] hover:text-[#FFFFFF] px-3 py-1.5 rounded-full hover:bg-white/[0.05] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A]"
+              className="px-4 py-2 sm:px-5 sm:py-2 text-xs font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] rounded-full cursor-pointer whitespace-nowrap transition-all duration-200 shadow-[0_2px_12px_rgba(200,169,106,0.3)] hover:shadow-[0_4px_16px_rgba(200,169,106,0.45)] active:scale-98 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               Explore Domains
             </a>
-
-            {/* Prominent CTA */}
-            <button
-              onClick={onOpenApply}
-              className="px-4 py-2 sm:px-5 sm:py-2 text-xs font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] rounded-full cursor-pointer whitespace-nowrap transition-all duration-200 shadow-[0_2px_12px_rgba(200,169,106,0.3)] hover:shadow-[0_4px_16px_rgba(200,169,106,0.45)] active:scale-98 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-            >
-              Applications Closed
-            </button>
 
             {/* Mobile Hamburger Toggle */}
             <button
@@ -495,16 +487,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
 
             {/* Mobile Actions */}
             <div className="pt-2 border-t border-white/[0.08] space-y-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenApply();
+              <a
+                href="#domains"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick('#domains');
                 }}
                 className="w-full py-3 px-4 text-xs font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] rounded-full flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-lg"
               >
-                <span>Applications Closed</span>
+                <span>Explore Domains</span>
                 <ChevronRight className="w-3.5 h-3.5" />
-              </button>
+              </a>
             </div>
 
           </div>

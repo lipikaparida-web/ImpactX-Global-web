@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { SocialProofBanner } from './components/SocialProofBanner';
 import { DiscoverTabs } from './components/DiscoverTabs';
 import { PathwaysTabs } from './components/PathwaysTabs';
 import { ExperienceTabs } from './components/ExperienceTabs';
@@ -125,9 +124,6 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
         />
-
-        {/* 01.5. Social Proof / FOMO Banner */}
-        <SocialProofBanner />
 
         {/* 02. Discover ImpactX Hub (Our Story, Philosophy, Why Us, Leadership & Team) */}
         <DiscoverTabs />

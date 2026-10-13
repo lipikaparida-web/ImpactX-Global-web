@@ -195,17 +195,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
 
         {/* Bottom Legal & Back to Top Row */}
         <div className="pt-8 flex flex-col gap-6 font-mono text-xs text-[#D1CBC0]">
-          <div className="relative flex flex-col items-center justify-center gap-6 sm:gap-4">
-            <div className="flex flex-col items-center gap-1 text-center">
-              <span>Student-led Movement. Headquartered in India. Built for students worldwide.</span>
-              <span className="text-white/40 text-[11px]">
-                All content, trademarks, and user rights are strictly protected for safety and legal purposes.
-              </span>
-            </div>
-
+          <div className="flex items-center justify-end">
             <button
               onClick={scrollToTop}
-              className="sm:absolute sm:right-0 flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0D0D0F]/60 border border-white/10 hover:border-[#C8A96A]/40 text-[#FFFFFF] transition-all cursor-pointer hover:text-[#C8A96A]"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0D0D0F]/60 border border-white/10 hover:border-[#C8A96A]/40 text-[#FFFFFF] transition-all cursor-pointer hover:text-[#C8A96A]"
               title="Back to top"
             >
               <span>Back to Top</span>

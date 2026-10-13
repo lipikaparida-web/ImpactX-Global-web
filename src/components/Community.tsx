@@ -17,15 +17,15 @@ export const Community: React.FC = () => {
   };
 
   return (
-    <section className="py-36 sm:py-48 relative bg-transparent border-t border-white/[0.04]">
+    <section id="community" className="py-12 sm:py-16 lg:py-20 relative bg-transparent border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col items-start space-y-5">
+        <div className="flex flex-col items-start space-y-4">
           <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md">
             09. The Global Campus
           </span>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-sans-display font-bold text-[#F7F4EE] tracking-tight max-w-3xl leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans-display font-bold text-[#F7F4EE] tracking-tight max-w-3xl leading-tight">
             A 24/7 Peer Ecosystem. <br />
             <span className="font-serif-editorial italic font-normal text-[#C8A96A]">Where Builders Connect & Flourish.</span>
           </h2>
@@ -35,7 +35,7 @@ export const Community: React.FC = () => {
         </div>
 
         {/* Hubs Grid */}
-        <div className="mt-20 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
+        <div className="mt-10 sm:mt-12 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-6 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
           {COMMUNITY_HUBS.map((hub) => (
             <div
               key={hub.id}

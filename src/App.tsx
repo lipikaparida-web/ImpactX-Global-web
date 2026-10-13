@@ -3,13 +3,11 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SocialProofBanner } from './components/SocialProofBanner';
 import { DiscoverTabs } from './components/DiscoverTabs';
-import { Programs } from './components/Programs';
-import { Domains } from './components/Domains';
-import { Journey } from './components/Journey';
-import { MeetTheTeam } from './components/MeetTheTeam';
-import { Community } from './components/Community';
+import { PathwaysTabs } from './components/PathwaysTabs';
+import { ExperienceTabs } from './components/ExperienceTabs';
 import { ImpactStats } from './components/ImpactStats';
-import { ApplicationJourney } from './components/ApplicationJourney';
+import { Community } from './components/Community';
+import { AlumniNetwork } from './components/AlumniNetwork';
 import { FAQ } from './components/FAQ';
 import { ContactAndNewsletter } from './components/ContactAndNewsletter';
 import { Footer } from './components/Footer';
@@ -18,7 +16,6 @@ import { HogwartsCastleBackground } from './components/HogwartsCastleBackground'
 import { HogwartsTrainBackground } from './components/HogwartsTrainBackground';
 import { MagicWandCursor } from './components/MagicWandCursor';
 import { PlatformGateway } from './components/PlatformGateway';
-import { AlumniNetwork } from './components/AlumniNetwork';
 import { AlumniCardStudio } from './components/alumni/AlumniCardStudio';
 import { AlumniAuthModal } from './components/alumni/AlumniAuthModal';
 import { DomainId, AlumniCardConfig } from './types';
@@ -38,7 +35,27 @@ export default function App() {
 
   // Active section tracker via IntersectionObserver (zero scroll event overhead)
   useEffect(() => {
-    const sections = ['story', 'philosophy', 'programs', 'domains', 'journey', 'team', 'impact', 'alumni', 'faq'];
+    const sections = [
+      'hero',
+      'discover',
+      'story',
+      'philosophy',
+      'why-us',
+      'team',
+      'pathways',
+      'programs',
+      'domains',
+      'experience',
+      'journey',
+      'admissions',
+      'impact',
+      'chapters',
+      'community',
+      'alumni',
+      'faq',
+      'contact',
+    ];
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -63,6 +80,7 @@ export default function App() {
   }, []);
 
   const handleOpenApplyWithDomain = (domainId: DomainId | string) => {
+    setPreselectedDomain(domainId);
     window.open('https://forms.gle/n4QQ2xfUNDmXSbQEA', '_blank', 'noopener,noreferrer');
   };
 
@@ -90,20 +108,20 @@ export default function App() {
       {/* ── Layer 1: Hogwarts Express Train — runs across ALL sections ── */}
       <HogwartsTrainBackground />
 
-      {/* Floating Glass Header Navigation */}
+      {/* Floating Glass Header Navigation with Professional Dropdowns */}
       <Navbar
         onOpenApply={() => handleOpenApplyWithDomain('research')}
         activeSection={activeSection}
       />
 
-      {/* Main Cinematic Storytelling Sections */}
+      {/* Main Cinematic Storytelling Sections (Consolidated into 7 Crisp Hubs) */}
       <main className="relative z-10">
 
-        {/* 01. Hero */}
+        {/* 01. Hero & Real-Time Intake Status */}
         <Hero
           onOpenApply={() => handleOpenApplyWithDomain('research')}
           onOpenDomains={() => {
-            const el = document.getElementById('domains');
+            const el = document.getElementById('domains') || document.getElementById('pathways');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
         />
@@ -111,52 +129,38 @@ export default function App() {
         {/* 01.5. Social Proof / FOMO Banner */}
         <SocialProofBanner />
 
-        {/* 02. Discover Tabs (Story, Philosophy, Why Us) */}
+        {/* 02. Discover ImpactX Hub (Our Story, Philosophy, Why Us, Leadership & Team) */}
         <DiscoverTabs />
 
-        {/* 05. Core Programs */}
-        <Programs
+        {/* 03. Learning Pathways Hub (Flagship Programs + 9 Specialized Domains) */}
+        <PathwaysTabs
           onSelectProgramToApply={(programId) => handleOpenApplyWithDomain(programId)}
-        />
-
-        {/* 06. Domains */}
-        <Domains
           onSelectDomainForApply={(domainId) => handleOpenApplyWithDomain(domainId)}
         />
 
-        {/* 07. Builder Journey */}
-        <Journey />
+        {/* 04. Student Experience Hub (12-Week Builder Journey + Admissions Pipeline) */}
+        <ExperienceTabs
+          onOpenApply={() => handleOpenApplyWithDomain('research')}
+        />
 
-        {/* 08. Meet The Team */}
-        <MeetTheTeam />
-
-        {/* 09. Community */}
-        <Community />
-
-        {/* 10. Impact Stats */}
+        {/* 05. International Movement & Chapters (3D Interactive Globe + Ecosystem Pillars) */}
         <ImpactStats
           onOpenApply={() => handleOpenApplyWithDomain('research')}
         />
 
-        {/* 11. Alumni Network */}
+        {/* 06. Global Campus Community & Alumni Network */}
+        <Community />
         <AlumniNetwork
           onOpenCardStudio={handleOpenCardStudio}
         />
 
-        {/* 12. Application Journey */}
-        <ApplicationJourney
-          onOpenApply={() => handleOpenApplyWithDomain('research')}
-        />
-
-        {/* 13. FAQ */}
+        {/* 07. Knowledge Base & Direct Connect */}
         <FAQ />
-
-        {/* 14. Contact & Dispatch */}
         <ContactAndNewsletter />
 
       </main>
 
-      {/* 15. Footer */}
+      {/* Compact, Organized Footer Matching Navbar Architecture */}
       <Footer onOpenApply={() => handleOpenApplyWithDomain('research')} />
 
       {/* Application Cohort Modal */}

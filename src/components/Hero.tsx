@@ -9,12 +9,12 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-36 pb-32 overflow-hidden bg-transparent z-10">
+    <section id="hero" className="relative flex flex-col justify-center pt-28 pb-10 sm:pt-36 sm:pb-14 lg:pt-40 lg:pb-16 overflow-hidden bg-transparent z-10">
       
       {/* Center-Aligned Container with Generous Spacing */}
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10 my-auto">
         
-        <div className="max-w-[840px] mx-auto text-center flex flex-col items-center space-y-8">
+        <div className="max-w-[840px] mx-auto text-center flex flex-col items-center space-y-6 sm:space-y-7">
           
           {/* Status Eyebrow Badge */}
           <motion.button 

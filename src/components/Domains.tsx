@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, Users, Rocket, Megaphone, Code, Layers, Share2, P
 
 interface DomainsProps {
   onSelectDomainForApply: (domainId: DomainId) => void;
+  embedded?: boolean;
 }
 
 interface DepartmentData {
@@ -135,7 +136,7 @@ const DepartmentArtwork: React.FC<{ id: DomainId }> = ({ id }) => {
   );
 };
 
-export const Domains: React.FC<DomainsProps> = ({ onSelectDomainForApply }) => {
+export const Domains: React.FC<DomainsProps> = ({ onSelectDomainForApply, embedded = false }) => {
   const [activeTab, setActiveTab] = useState<DomainId>('ai-ml');
 
   const activeDept = DEPARTMENTS.find((d) => d.id === activeTab) || DEPARTMENTS[0];
@@ -156,11 +157,14 @@ export const Domains: React.FC<DomainsProps> = ({ onSelectDomainForApply }) => {
   };
 
   return (
-    <section id="domains" className="py-36 sm:py-48 relative bg-transparent border-t border-white/[0.04]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <section 
+      id="domains" 
+      className={`${embedded ? 'pt-2 sm:pt-4' : 'py-12 sm:py-16 lg:py-20 border-t border-white/[0.04]'} relative bg-transparent`}
+    >
+      <div className={`${embedded ? 'w-full' : 'max-w-7xl mx-auto px-6 sm:px-12 lg:px-20'} relative z-10`}>
         
         {/* Section Header */}
-        <div className="flex flex-col items-start space-y-5">
+        <div className="flex flex-col items-start space-y-4">
           <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md">
             06. Specialized Domains
           </span>
@@ -174,7 +178,7 @@ export const Domains: React.FC<DomainsProps> = ({ onSelectDomainForApply }) => {
         </div>
 
         {/* Master-Detail Layout */}
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* Department List Buttons */}
           <div className="lg:col-span-5 flex flex-row overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-3 pb-4 lg:flex-col lg:overflow-x-visible lg:pb-0">

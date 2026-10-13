@@ -2,13 +2,20 @@ import React from 'react';
 import { TEAM_MEMBERS } from '../data/impactData';
 import { Linkedin, Github, Instagram, Quote } from 'lucide-react';
 
-export const MeetTheTeam: React.FC = () => {
+interface MeetTheTeamProps {
+  embedded?: boolean;
+}
+
+export const MeetTheTeam: React.FC<MeetTheTeamProps> = ({ embedded = false }) => {
   return (
-    <section id="team" className="py-36 sm:py-48 relative bg-transparent border-t border-white/[0.04]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <section 
+      id="team" 
+      className={`${embedded ? 'pt-4 sm:pt-8' : 'py-16 sm:py-20 lg:py-24 border-t border-white/[0.04]'} relative bg-transparent`}
+    >
+      <div className={`${embedded ? 'w-full' : 'max-w-7xl mx-auto px-6 sm:px-12 lg:px-20'} relative z-10`}>
         
         {/* Section Header */}
-        <div className="flex flex-col items-start space-y-5">
+        <div className="flex flex-col items-start space-y-4">
           <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md">
             08. Meet The Student Directors
           </span>
@@ -22,7 +29,7 @@ export const MeetTheTeam: React.FC = () => {
         </div>
 
         {/* Team Cards Grid */}
-        <div className="mt-20 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8">
+        <div className="mt-12 sm:mt-16 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-6 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8">
           {TEAM_MEMBERS.map((member) => (
             <div
               key={member.id}

@@ -33,7 +33,7 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ onOpenApply }) => {
   const [selectedCountry, setSelectedCountry] = useState<CountryNode | null>(null);
 
   return (
-    <section id="impact" className="py-36 sm:py-48 relative bg-transparent border-t border-white/[0.04] overflow-hidden">
+    <section id="impact" className="py-12 sm:py-16 lg:py-20 relative bg-transparent border-t border-white/[0.04] overflow-hidden">
       
       {/* Background Subtle Atmosphere */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-gradient-to-tr from-[#C8A96A]/08 via-[#4A1E28]/08 to-transparent blur-[150px] pointer-events-none rounded-full" />
@@ -41,7 +41,7 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ onOpenApply }) => {
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
         
         {/* Top Header & Intro Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20 sm:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-12 sm:mb-16">
           
           {/* Left Column: Headline & Narrative */}
           <div className="lg:col-span-7 space-y-6">
@@ -98,7 +98,7 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ onOpenApply }) => {
         </div>
 
         {/* Hero 3D Interactive Globe Section */}
-        <div className="my-16 sm:my-20 p-8 sm:p-12 rounded-3xl bg-[#121215]/30 border border-[#C8A96A]/15 backdrop-blur-2xl relative overflow-hidden shadow-2xl">
+        <div className="my-10 sm:my-14 p-6 sm:p-10 rounded-3xl bg-[#121215]/30 border border-[#C8A96A]/15 backdrop-blur-2xl relative overflow-hidden shadow-2xl">
           
           <div className="flex flex-col items-center text-center mb-8">
             <span className="text-xs font-mono uppercase tracking-widest text-[#9E9EA7] flex items-center gap-2">
@@ -118,7 +118,7 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ onOpenApply }) => {
         </div>
 
         {/* Ecosystem Pillars */}
-        <div id="chapters" className="mt-20 sm:mt-24">
+        <div id="chapters" className="mt-12 sm:mt-16">
           <div className="text-center mb-10">
             <h3 className="text-xs font-mono uppercase tracking-widest text-[#C8A96A]">
               Core Global Ecosystem Pillars

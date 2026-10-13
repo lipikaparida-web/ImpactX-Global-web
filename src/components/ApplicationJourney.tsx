@@ -4,12 +4,16 @@ import { ArrowRight, Compass } from 'lucide-react';
 
 interface ApplicationJourneyProps {
   onOpenApply: () => void;
+  embedded?: boolean;
 }
 
-export const ApplicationJourney: React.FC<ApplicationJourneyProps> = ({ onOpenApply }) => {
+export const ApplicationJourney: React.FC<ApplicationJourneyProps> = ({ onOpenApply, embedded = false }) => {
   return (
-    <section className="py-36 sm:py-48 relative bg-transparent border-t border-white/[0.04]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <section 
+      id="admissions" 
+      className={`${embedded ? 'pt-2 sm:pt-4' : 'py-12 sm:py-16 lg:py-20 border-t border-white/[0.04]'} relative bg-transparent`}
+    >
+      <div className={`${embedded ? 'w-full' : 'max-w-7xl mx-auto px-6 sm:px-12 lg:px-20'} relative z-10`}>
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center space-y-5">

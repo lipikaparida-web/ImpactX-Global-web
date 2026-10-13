@@ -18,11 +18,11 @@ export const FAQ: React.FC = () => {
   });
 
   return (
-    <section id="faq" className="py-36 sm:py-48 relative bg-transparent border-t border-white/[0.04]">
+    <section id="faq" className="py-12 sm:py-16 lg:py-20 relative bg-transparent border-t border-white/[0.04]">
       <div className="max-w-4xl mx-auto px-6 sm:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center space-y-5">
+        <div className="flex flex-col items-center text-center space-y-4">
           <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md">
             13. Frequently Asked Questions
           </span>
@@ -32,7 +32,7 @@ export const FAQ: React.FC = () => {
         </div>
 
         {/* Search & Category Filter Bar */}
-        <div className="mt-16 space-y-5">
+        <div className="mt-10 sm:mt-12 space-y-4">
           <div className="relative">
             <Search className="w-4 h-4 text-[#9E9EA7] absolute left-5 top-1/2 -translate-y-1/2" />
             <input

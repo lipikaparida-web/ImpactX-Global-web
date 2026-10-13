@@ -31,14 +31,21 @@ const INTERNSHIP_WEEKS = [
   },
 ];
 
-export const Journey: React.FC = () => {
+interface JourneyProps {
+  embedded?: boolean;
+}
+
+export const Journey: React.FC<JourneyProps> = ({ embedded = false }) => {
   const [activeStep, setActiveStep] = useState(1);
 
   const currentStage = JOURNEY_STAGES.find(s => s.step === activeStep) || JOURNEY_STAGES[0];
 
   return (
-    <section id="journey" className="py-36 sm:py-48 relative bg-transparent border-t border-white/[0.04]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <section 
+      id="journey" 
+      className={`${embedded ? 'pt-2 sm:pt-4' : 'py-12 sm:py-16 lg:py-20 border-t border-white/[0.04]'} relative bg-transparent`}
+    >
+      <div className={`${embedded ? 'w-full' : 'max-w-7xl mx-auto px-6 sm:px-12 lg:px-20'} relative z-10`}>
 
         {/* ── Section Header ── */}
         <motion.div 

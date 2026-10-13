@@ -5,9 +5,10 @@ import { Code2, Crown, BookOpenCheck, Globe2, Compass, Clock, Calendar, Check, A
 
 interface ProgramsProps {
   onSelectProgramToApply: (programId: string) => void;
+  embedded?: boolean;
 }
 
-export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply }) => {
+export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply, embedded = false }) => {
   const [selectedProgram, setSelectedProgram] = useState<Program | null>(null);
 
   const getProgramIcon = (iconName: string) => {
@@ -22,11 +23,14 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply }) =>
   };
 
   return (
-    <section id="programs" className="py-36 sm:py-48 relative bg-transparent border-t border-white/[0.04]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+    <section 
+      id="programs" 
+      className={`${embedded ? 'pt-2 sm:pt-4' : 'py-12 sm:py-16 lg:py-20 border-t border-white/[0.04]'} relative bg-transparent`}
+    >
+      <div className={`${embedded ? 'w-full' : 'max-w-7xl mx-auto px-6 sm:px-12 lg:px-20'} relative z-10`}>
         
         {/* Section Header */}
-        <div className="flex flex-col items-start space-y-5">
+        <div className="flex flex-col items-start space-y-4">
           <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md">
             05. Core Programs
           </span>
@@ -40,7 +44,7 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramToApply }) =>
         </div>
 
         {/* Programs Grid */}
-        <div className="mt-20 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-10">
+        <div className="mt-10 sm:mt-12 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-6 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
           {PROGRAMS.map((program) => (
             <div
               key={program.id}

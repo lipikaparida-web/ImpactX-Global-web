@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export const SocialProofBanner: React.FC = () => {
   return (
-    <section className="relative z-10 w-full py-16 flex justify-center px-6">
+    <section className="relative z-10 w-full pt-0 pb-10 sm:pb-14 flex justify-center px-6">
       <motion.div
         initial={{ opacity: 0, y: 20, scale: 0.95 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}

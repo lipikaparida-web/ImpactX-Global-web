@@ -14,7 +14,7 @@ export const ContactAndNewsletter: React.FC = () => {
   };
 
   return (
-    <section className="py-36 sm:py-48 relative bg-transparent border-t border-white/[0.04]">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 relative bg-transparent border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

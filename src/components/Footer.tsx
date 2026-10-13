@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
   };
 
   return (
-    <footer className="relative bg-transparent border-t border-white/[0.04] text-sm text-[#D1CBC0] overflow-hidden pt-20 pb-16">
+    <footer className="relative bg-transparent border-t border-white/[0.04] text-sm text-[#D1CBC0] overflow-hidden pt-12 sm:pt-16 pb-12">
       
       {/* Background Radial Atmosphere Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-t from-[#C8A96A]/08 via-[#4A1E28]/05 to-transparent blur-[140px] pointer-events-none rounded-full" />
@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
         
         {/* Top Pre-Footer CTA Bar */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-[#121215]/40 border border-[#C8A96A]/20 backdrop-blur-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-20 shadow-2xl">
+        <div className="p-6 sm:p-8 rounded-3xl bg-[#121215]/40 border border-[#C8A96A]/20 backdrop-blur-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12 sm:mb-14 shadow-2xl">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#C8A96A] animate-pulse" />
@@ -126,14 +126,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
             <h4 className="font-mono text-sm font-semibold text-[#FFFFFF] uppercase tracking-wider">
               Navigation
             </h4>
-            <ul className="space-y-2.5 text-sm font-sans text-[#D1CBC0]">
-              <li><a href="#story" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Our Story</a></li>
-              <li><a href="#programs" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Programs</a></li>
-              <li><a href="#domains" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Focus Domains</a></li>
-              <li><a href="#journey" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Student Journey</a></li>
-              <li><a href="#team" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Leadership & Team</a></li>
-              <li><a href="#impact" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Global Movement</a></li>
-              <li><a href="#faq" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-300">Frequently Asked</a></li>
+            <ul className="space-y-2 text-sm font-sans text-[#D1CBC0]">
+              <li><a href="#story" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Our Story</a></li>
+              <li><a href="#philosophy" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Our Philosophy</a></li>
+              <li><a href="#why-us" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Why Us</a></li>
+              <li><a href="#programs" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Flagship Programs</a></li>
+              <li><a href="#domains" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Focus Domains</a></li>
+              <li><a href="#journey" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Student Journey</a></li>
+              <li><a href="#team" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Leadership & Team</a></li>
+              <li><a href="#impact" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Global Movement</a></li>
+              <li><a href="#alumni" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Alumni Network</a></li>
+              <li><a href="#faq" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Frequently Asked</a></li>
+              <li><a href="#contact" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Contact & Dispatch</a></li>
             </ul>
           </div>
 
@@ -190,7 +194,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
         </div>
 
         {/* Bottom Legal & Back to Top Row */}
-        <div className="pt-10 flex flex-col gap-6 font-mono text-xs text-[#D1CBC0]">
+        <div className="pt-8 flex flex-col gap-6 font-mono text-xs text-[#D1CBC0]">
           <div className="relative flex flex-col items-center justify-center gap-6 sm:gap-4">
             <div className="flex flex-col items-center gap-1 text-center">
               <span>Student-led Movement. Headquartered in India. Built for students worldwide.</span>

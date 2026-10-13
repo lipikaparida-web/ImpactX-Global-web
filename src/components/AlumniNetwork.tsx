@@ -9,7 +9,7 @@ export const AlumniNetwork: React.FC<AlumniNetworkProps> = ({ onOpenCardStudio }
   return (
     <section
       id="alumni"
-      style={{ position: 'relative', padding: '120px 0 100px', background: 'transparent' }}
+      style={{ position: 'relative', padding: '30px 0 60px', background: 'transparent' }}
     >
       {/* Background glow */}
       <div style={{

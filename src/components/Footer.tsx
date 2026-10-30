@@ -1,215 +1,203 @@
 import React from 'react';
-import { ArrowUp, Instagram, Linkedin, Mail, ShieldCheck, Terminal, Compass, Phone } from 'lucide-react';
+import { Instagram, Linkedin, Mail, Phone, ArrowUp } from 'lucide-react';
 import { ImpactXLogo } from './ImpactXLogo';
+
+const FOOTER_LINKS = [
+  { label: 'Programmes', href: '#programmes' },
+  { label: 'Domains', href: '#domains' },
+  { label: 'Our Story', href: '#story' },
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Community', href: '#community' },
+  { label: 'Contact', href: '#contact' },
+];
+
+const SOCIAL_LINKS = [
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/impactxglobal?igsh=Mm44MTRsamQ5dWls&utm_source=qr',
+    icon: Instagram,
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/135644013',
+    icon: Linkedin,
+  },
+  {
+    label: 'Email',
+    href: 'mailto:impactxglobal26@gmail.com',
+    icon: Mail,
+  },
+  {
+    label: 'Phone',
+    href: 'tel:+918018949822',
+    icon: Phone,
+  },
+];
 
 interface FooterProps {
   onOpenApply?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenApply }) => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+export const Footer: React.FC<FooterProps> = () => {
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const handleNavClick = (href: string) => {
+    const id = href.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <footer className="relative bg-transparent border-t border-white/[0.04] text-sm text-[#D1CBC0] overflow-hidden pt-12 sm:pt-16 pb-12">
-      
-      {/* Background Radial Atmosphere Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-t from-[#C8A96A]/08 via-[#4A1E28]/05 to-transparent blur-[140px] pointer-events-none rounded-full" />
+    <footer
+      className="relative bg-transparent border-t border-white/[0.05] text-sm text-[#D1CBC0] overflow-hidden pt-12 pb-8"
+      role="contentinfo"
+    >
+      {/* Background atmosphere */}
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-gradient-to-t from-[#C8A96A]/[0.04] to-transparent blur-[120px] pointer-events-none rounded-full"
+        aria-hidden="true"
+      />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
-        
-        {/* Top Pre-Footer CTA Bar */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-[#121215]/40 border border-[#C8A96A]/20 backdrop-blur-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12 sm:mb-14 shadow-2xl">
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#C8A96A] animate-pulse" />
-              <span className="text-xs font-mono text-[#C8A96A] uppercase tracking-wider font-semibold">
-                Global Cohort Applications Closed
-              </span>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-sans-display font-bold text-[#FFFFFF] tracking-tight">
-              Ready to build real software & publish research?
-            </h3>
-            <p className="text-sm sm:text-base text-[#D1CBC0] font-light">
-              Join students and innovators worldwide in our upcoming Global Cohort.
-            </p>
-          </div>
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
 
-          <div className="flex items-center gap-4 shrink-0">
-            {onOpenApply && (
-              <button
-                onClick={onOpenApply}
-                className="px-6 py-3 rounded-full text-sm font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] cursor-pointer flex items-center gap-2 transition-colors"
-              >
-                <span>Applications Closed</span>
-              </button>
-            )}
+        {/* Main grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/[0.05]">
+
+          {/* Brand column */}
+          <div className="sm:col-span-2 lg:col-span-1 space-y-5">
             <a
-              href="#domains"
-              className="px-5 py-3 rounded-full text-sm font-medium text-[#FFFFFF] bg-[#0D0D0F]/60 border border-[#C8A96A]/20 hover:border-[#C8A96A]/40 transition-colors flex items-center gap-2 cursor-pointer"
+              href="#"
+              onClick={(e) => { e.preventDefault(); scrollToTop(); }}
+              className="inline-flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] rounded-lg"
+              aria-label="ImpactX Global — Return to top"
             >
-              <Terminal className="w-3.5 h-3.5 text-[#C8A96A]" />
-              <span>Explore Domains</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Main Footer Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/[0.05]">
-          
-          {/* Column 1: Brand & HQ Vision (Spans 2 cols on lg) */}
-          <div className="lg:col-span-2 space-y-5">
-            <a href="#" className="inline-flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-2xl bg-[#0D0D0F]/80 border border-[#C8A96A]/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-md">
-                <ImpactXLogo className="w-5 h-5 text-[#C8A96A]" />
+              <div className="w-9 h-9 rounded-full bg-[#0D0D0F] border border-[#C8A96A]/25 flex items-center justify-center shadow-inner">
+                <ImpactXLogo className="w-9 h-9" />
               </div>
-              <div className="flex flex-col">
-                <span className="font-sans-display font-bold text-base tracking-tight text-[#FFFFFF] flex items-center gap-2">
-                  IMPACTX <span className="text-[#C8A96A] font-mono text-[11px] tracking-widest uppercase bg-[#C8A96A]/10 px-2 py-0.5 rounded border border-[#C8A96A]/20">GLOBAL</span>
-                </span>
-                <span className="text-[11px] text-[#D1CBC0] font-mono tracking-widest uppercase">
-                  Student Movement
+              <div>
+                <span className="font-sans-display font-bold text-sm text-white tracking-tight">
+                  IMPACTX{' '}
+                  <span className="text-[#C8A96A] font-mono text-[10px] tracking-widest">
+                    GLOBAL
+                  </span>
                 </span>
               </div>
             </a>
 
-            <p className="text-sm sm:text-base text-[#D1CBC0] leading-relaxed max-w-sm font-light">
-              ImpactX Global is an international student movement building software, publishing research, and empowering the next generation of builders worldwide.
+            <p className="text-xs text-[#8E8E9A] leading-relaxed font-light max-w-[220px]">
+              A student-driven ecosystem connecting learners, builders, and innovators worldwide.
             </p>
 
-            <div className="flex items-center gap-2 text-xs font-mono text-[#C8A96A] bg-[#0D0D0F]/60 px-3.5 py-2 rounded-full border border-[#C8A96A]/20 w-fit">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#C8A96A]" />
-              <span>Headquartered in India • Open Worldwide</span>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href="https://www.instagram.com/impactxglobal?igsh=Mm44MTRsamQ5dWls&utm_source=qr"
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 rounded-xl bg-[#0D0D0F]/60 border border-white/10 flex items-center justify-center text-[#D1CBC0] hover:text-[#C8A96A] hover:border-[#C8A96A]/30 transition-all"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/135644013"
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 rounded-xl bg-[#0D0D0F]/60 border border-white/10 flex items-center justify-center text-[#D1CBC0] hover:text-[#C8A96A] hover:border-[#C8A96A]/30 transition-all"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="mailto:impactxglobal26@gmail.com"
-                className="w-10 h-10 rounded-xl bg-[#0D0D0F]/60 border border-white/10 flex items-center justify-center text-[#D1CBC0] hover:text-[#C8A96A] hover:border-[#C8A96A]/30 transition-all"
-                aria-label="Email"
-              >
-                <Mail className="w-4 h-4" />
-              </a>
-              <a
-                href="tel:+918018949822"
-                className="w-10 h-10 rounded-xl bg-[#0D0D0F]/60 border border-white/10 flex items-center justify-center text-[#D1CBC0] hover:text-[#C8A96A] hover:border-[#C8A96A]/30 transition-all"
-                aria-label="Phone"
-                title="+91 8018949822"
-              >
-                <Phone className="w-4 h-4" />
-              </a>
+            {/* Social icons */}
+            <div className="flex items-center gap-2">
+              {SOCIAL_LINKS.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target={social.href.startsWith('http') ? '_blank' : undefined}
+                    rel={social.href.startsWith('http') ? 'noreferrer' : undefined}
+                    aria-label={social.label}
+                    className="w-8 h-8 rounded-lg bg-[#141418] border border-white/[0.07] flex items-center justify-center text-[#8E8E9A] hover:text-[#C8A96A] hover:border-[#C8A96A]/25 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A]"
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
-          {/* Column 2: Navigation Links */}
+          {/* Navigation links */}
           <div className="space-y-4">
-            <h4 className="font-mono text-sm font-semibold text-[#FFFFFF] uppercase tracking-wider">
+            <h3 className="text-xs font-mono font-semibold text-white uppercase tracking-widest">
               Navigation
-            </h4>
-            <ul className="space-y-2 text-sm font-sans text-[#D1CBC0]">
-              <li><a href="#story" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Our Story</a></li>
-              <li><a href="#philosophy" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Our Philosophy</a></li>
-              <li><a href="#why-us" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Why Us</a></li>
-              <li><a href="#programs" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Flagship Programs</a></li>
-              <li><a href="#domains" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Focus Domains</a></li>
-              <li><a href="#journey" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Student Journey</a></li>
-              <li><a href="#team" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Leadership & Team</a></li>
-              <li><a href="#impact" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Global Movement</a></li>
-              <li><a href="#alumni" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Alumni Network</a></li>
-              <li><a href="#faq" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Frequently Asked</a></li>
-              <li><a href="#contact" className="hover:text-[#FFFFFF] hover:translate-x-1 inline-block transform transition-all duration-200">Contact & Dispatch</a></li>
+            </h3>
+            <ul className="space-y-2.5">
+              {FOOTER_LINKS.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                    className="text-xs text-[#8E8E9A] hover:text-white transition-colors cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-[#C8A96A] rounded"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 3: Global Chapters */}
+          {/* Programmes */}
           <div className="space-y-4">
-            <h4 className="font-mono text-sm font-semibold text-[#FFFFFF] uppercase tracking-wider">
-              Global Chapters
-            </h4>
-            <ul className="space-y-2.5 text-sm font-sans text-[#D1CBC0]">
-              <li className="flex items-center gap-2 text-[#FFFFFF] font-medium">
-                <span>🇮🇳 India</span>
-                <span className="text-[11px] font-mono text-[#C8A96A] bg-[#C8A96A]/10 px-1.5 py-0.5 rounded border border-[#C8A96A]/20">HQ</span>
-              </li>
-              <li className="flex items-center gap-2 hover:text-[#FFFFFF] transition-colors">
-                <span>🇺🇸 United States</span>
-                <span className="text-[11px] font-mono text-[#D1CBC0] opacity-60">Soon</span>
-              </li>
-              <li className="flex items-center gap-2 hover:text-[#FFFFFF] transition-colors">
-                <span>🇬🇧 United Kingdom</span>
-                <span className="text-[11px] font-mono text-[#D1CBC0] opacity-60">Soon</span>
-              </li>
-              <li className="flex items-center gap-2 hover:text-[#FFFFFF] transition-colors">
-                <span>🇮🇹 Italy</span>
-                <span className="text-[11px] font-mono text-[#D1CBC0] opacity-60">Soon</span>
-              </li>
-              <li className="flex items-center gap-2 hover:text-[#FFFFFF] transition-colors">
-                <span>🇷🇺 Russia</span>
-                <span className="text-[11px] font-mono text-[#D1CBC0] opacity-60">Soon</span>
-              </li>
+            <h3 className="text-xs font-mono font-semibold text-white uppercase tracking-widest">
+              Programmes
+            </h3>
+            <ul className="space-y-2.5">
+              {['Free Community', 'Explorer', 'Accelerator'].map((p) => (
+                <li key={p}>
+                  <a
+                    href="#programmes"
+                    onClick={(e) => { e.preventDefault(); handleNavClick('#programmes'); }}
+                    className="text-xs text-[#8E8E9A] hover:text-white transition-colors cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-[#C8A96A] rounded"
+                  >
+                    {p}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 4: Focus Domains & Governance */}
+          {/* Contact */}
           <div className="space-y-4">
-            <h4 className="font-mono text-sm font-semibold text-[#FFFFFF] uppercase tracking-wider">
-              Specializations
-            </h4>
-            <ul className="space-y-2.5 text-sm font-sans text-[#D1CBC0]">
-              <li><span className="hover:text-[#FFFFFF] transition-colors cursor-default">AI & Intelligent Systems</span></li>
-              <li><span className="hover:text-[#FFFFFF] transition-colors cursor-default">Distributed Cloud Systems</span></li>
-              <li><span className="hover:text-[#FFFFFF] transition-colors cursor-default">Quantitative Systems & Fintech</span></li>
-              <li><span className="hover:text-[#FFFFFF] transition-colors cursor-default">Open Source Research</span></li>
-            </ul>
-
-            <h4 className="font-mono text-sm font-semibold text-[#FFFFFF] uppercase tracking-wider pt-3">
-              Governance
-            </h4>
-            <ul className="space-y-2 text-sm font-sans text-[#D1CBC0]">
-              <li><span className="hover:text-[#FFFFFF] transition-colors cursor-default">Student Manifesto</span></li>
-              <li><span className="hover:text-[#FFFFFF] transition-colors cursor-default">Privacy & Terms</span></li>
+            <h3 className="text-xs font-mono font-semibold text-white uppercase tracking-widest">
+              Contact
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <a
+                  href="mailto:impactxglobal26@gmail.com"
+                  className="text-xs text-[#8E8E9A] hover:text-white transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#C8A96A] rounded"
+                >
+                  impactxglobal26@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+918018949822"
+                  className="text-xs text-[#8E8E9A] hover:text-white transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#C8A96A] rounded"
+                >
+                  +91 8018949822
+                </a>
+              </li>
+              <li>
+                <span className="text-xs text-[#6E6E7A] font-mono">
+                  Headquartered in India
+                </span>
+              </li>
             </ul>
           </div>
 
         </div>
 
-        {/* Bottom Legal & Back to Top Row */}
-        <div className="pt-8 flex flex-col gap-6 font-mono text-xs text-[#D1CBC0]">
-          <div className="flex items-center justify-end">
-            <button
-              onClick={scrollToTop}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0D0D0F]/60 border border-white/10 hover:border-[#C8A96A]/40 text-[#FFFFFF] transition-all cursor-pointer hover:text-[#C8A96A]"
-              title="Back to top"
-            >
-              <span>Back to Top</span>
-              <ArrowUp className="w-4 h-4" />
-            </button>
-          </div>
-          
-          {/* Centered Copyright line */}
-          <div className="pt-4 border-t border-white/10 w-full text-center">
+        {/* Bottom bar */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] font-mono text-[#6E6E7A]">
             <span>© {new Date().getFullYear()} ImpactX Global. All rights reserved.</span>
+            <span className="hidden sm:inline text-[#3A3A44]">·</span>
+            <span>Privacy Policy</span>
+            <span className="hidden sm:inline text-[#3A3A44]">·</span>
+            <span>Terms &amp; Conditions</span>
           </div>
+
+          <button
+            onClick={scrollToTop}
+            aria-label="Back to top"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#141418] border border-white/[0.06] text-[10px] font-mono text-[#8E8E9A] hover:text-[#C8A96A] hover:border-[#C8A96A]/25 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A]"
+          >
+            <span>Back to top</span>
+            <ArrowUp className="w-3 h-3" />
+          </button>
         </div>
 
       </div>

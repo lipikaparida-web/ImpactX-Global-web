@@ -1,57 +1,45 @@
 import React, { useState, useEffect } from 'react';
+
+// ─── Core layout ──────────────────────────────────────────────────────────────
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { DiscoverTabs } from './components/DiscoverTabs';
-import { PathwaysTabs } from './components/PathwaysTabs';
-import { ExperienceTabs } from './components/ExperienceTabs';
-import { ImpactStats } from './components/ImpactStats';
-import { Community } from './components/Community';
-import { AlumniNetwork } from './components/AlumniNetwork';
-import { FAQ } from './components/FAQ';
-import { ContactAndNewsletter } from './components/ContactAndNewsletter';
 import { Footer } from './components/Footer';
-import { ApplicationModal } from './components/ApplicationModal';
-import { HogwartsCastleBackground } from './components/HogwartsCastleBackground';
-import { HogwartsTrainBackground } from './components/HogwartsTrainBackground';
-import { MagicWandCursor } from './components/MagicWandCursor';
-import { PlatformGateway } from './components/PlatformGateway';
+
+// ─── Homepage sections (redesigned) ──────────────────────────────────────────
+import { Hero } from './components/Hero';
+import { OurStorySection } from './components/OurStorySection';
+import { Programmes } from './components/Programmes';
+import { HowItWorks } from './components/HowItWorks';
+import { DomainsSection } from './components/DomainsSection';
+import { WhyImpactX } from './components/WhyImpactX';
+import { CommunitySection } from './components/CommunitySection';
+import { ContactSection } from './components/ContactSection';
+
+// ─── Alumni system (preserved) ───────────────────────────────────────────────
 import { AlumniCardStudio } from './components/alumni/AlumniCardStudio';
 import { AlumniAuthModal } from './components/alumni/AlumniAuthModal';
-import { DomainId, AlumniCardConfig } from './types';
+import { AlumniCardConfig } from './types';
+
+// ─── Ambient background (kept — but Hogwarts / magic cursor removed) ─────────
+import { AcademyBackground } from './components/AcademyBackground';
 
 export default function App() {
-  const [showPlatformGateway, setShowPlatformGateway] = useState(true);
-  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
-  const [preselectedDomain, setPreselectedDomain] = useState<DomainId | string>('research');
   const [activeSection, setActiveSection] = useState('hero');
 
-  // Alumni card studio state
+  // Alumni card studio state (preserved from original)
   const [isCardStudioOpen, setIsCardStudioOpen] = useState(false);
   const [cardStudioPrefill, setCardStudioPrefill] = useState<Partial<AlumniCardConfig> | undefined>(undefined);
-
-  // Alumni auth modal state
   const [isAlumniAuthOpen, setIsAlumniAuthOpen] = useState(false);
 
-  // Active section tracker via IntersectionObserver (zero scroll event overhead)
+  // Active section tracker via IntersectionObserver
   useEffect(() => {
-    const sections = [
+    const sectionIds = [
       'hero',
-      'discover',
       'story',
-      'philosophy',
-      'why-us',
-      'team',
-      'pathways',
-      'programs',
+      'programmes',
+      'how-it-works',
       'domains',
-      'experience',
-      'journey',
-      'admissions',
-      'impact',
-      'chapters',
+      'why-us',
       'community',
-      'alumni',
-      'faq',
       'contact',
     ];
 
@@ -64,13 +52,10 @@ export default function App() {
           }
         }
       },
-      {
-        rootMargin: '-20% 0px -60% 0px',
-        threshold: 0,
-      }
+      { rootMargin: '-20% 0px -60% 0px', threshold: 0 }
     );
 
-    sections.forEach((id) => {
+    sectionIds.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -78,9 +63,11 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
-  const handleOpenApplyWithDomain = (domainId: DomainId | string) => {
-    setPreselectedDomain(domainId);
-    window.open('https://forms.gle/n4QQ2xfUNDmXSbQEA', '_blank', 'noopener,noreferrer');
+  const handleOpenApply = () => {
+    // Legacy handler — now handled per-programme in Programmes component.
+    // Scroll to programmes section as a fallback.
+    const el = document.getElementById('programmes');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleOpenCardStudio = (prefill?: Partial<AlumniCardConfig>) => {
@@ -91,89 +78,61 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#03040C] text-[#F7F4EE] font-sans selection:bg-[#C8A96A]/30 selection:text-[#C8A96A] antialiased relative overflow-x-hidden">
 
-      {/* Platform 9¾ Pre-loader & Entry Gateway */}
-      {showPlatformGateway && (
-        <PlatformGateway onEnterWebsite={() => {
-          setShowPlatformGateway(false);
-        }} />
-      )}
+      {/* Ambient background layer (no Hogwarts / train / magic cursor) */}
+      <AcademyBackground />
 
-      {/* ── Magic Wand Cursor — golden dust + spell bursts ── */}
-      <MagicWandCursor />
-
-      {/* ── Layer 0: Hogwarts Castle — immersive fixed background ── */}
-      <HogwartsCastleBackground />
-
-      {/* ── Layer 1: Hogwarts Express Train — runs across ALL sections ── */}
-      <HogwartsTrainBackground />
-
-      {/* Floating Glass Header Navigation with Professional Dropdowns */}
+      {/* Navigation */}
       <Navbar
-        onOpenApply={() => handleOpenApplyWithDomain('research')}
+        onOpenApply={handleOpenApply}
         activeSection={activeSection}
       />
 
-      {/* Main Cinematic Storytelling Sections (Consolidated into 7 Crisp Hubs) */}
-      <main className="relative z-10">
+      {/* Main content */}
+      <main className="relative z-10" id="main-content">
 
-        {/* 01. Hero & Real-Time Intake Status */}
+        {/* 01. Hero */}
         <Hero
-          onOpenApply={() => handleOpenApplyWithDomain('research')}
+          onOpenApply={handleOpenApply}
           onOpenDomains={() => {
-            const el = document.getElementById('domains') || document.getElementById('pathways');
+            const el = document.getElementById('domains');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
         />
 
-        {/* 02. Discover ImpactX Hub (Our Story, Philosophy, Why Us, Leadership & Team) */}
-        <DiscoverTabs />
+        {/* 02. Our Story */}
+        <OurStorySection />
 
-        {/* 03. Learning Pathways Hub (Flagship Programs + 9 Specialized Domains) */}
-        <PathwaysTabs
-          onSelectProgramToApply={(programId) => handleOpenApplyWithDomain(programId)}
-          onSelectDomainForApply={(domainId) => handleOpenApplyWithDomain(domainId)}
-        />
+        {/* 03. Programme Tiers — most important section */}
+        <Programmes />
 
-        {/* 04. Student Experience Hub (12-Week Builder Journey + Admissions Pipeline) */}
-        <ExperienceTabs
-          onOpenApply={() => handleOpenApplyWithDomain('research')}
-        />
+        {/* 04. How It Works */}
+        <HowItWorks />
 
-        {/* 05. International Movement & Chapters (3D Interactive Globe + Ecosystem Pillars) */}
-        <ImpactStats
-          onOpenApply={() => handleOpenApplyWithDomain('research')}
-        />
+        {/* 05. Specialised Domains */}
+        <DomainsSection />
 
-        {/* 06. Global Campus Community & Alumni Network */}
-        <Community />
-        <AlumniNetwork
-          onOpenCardStudio={handleOpenCardStudio}
-        />
+        {/* 06. Why ImpactX Global */}
+        <WhyImpactX />
 
-        {/* 07. Knowledge Base & Direct Connect */}
-        <FAQ />
-        <ContactAndNewsletter />
+        {/* 07. Community */}
+        <CommunitySection />
+
+        {/* 08. Contact */}
+        <ContactSection />
 
       </main>
 
-      {/* Compact, Organized Footer Matching Navbar Architecture */}
-      <Footer onOpenApply={() => handleOpenApplyWithDomain('research')} />
+      {/* Footer */}
+      <Footer onOpenApply={handleOpenApply} />
 
-      {/* Application Cohort Modal */}
-      <ApplicationModal
-        isOpen={isApplyModalOpen}
-        onClose={() => setIsApplyModalOpen(false)}
-        preselectedDomain={preselectedDomain}
-      />
-
-      {/* Alumni Card Studio Modal */}
+      {/* Alumni Card Studio (preserved) */}
       <AlumniCardStudio
         isOpen={isCardStudioOpen}
         onClose={() => setIsCardStudioOpen(false)}
         prefill={cardStudioPrefill}
       />
 
-      {/* Alumni Auth Modal */}
+      {/* Alumni Auth Modal (preserved) */}
       <AlumniAuthModal
         isOpen={isAlumniAuthOpen}
         onClose={() => setIsAlumniAuthOpen(false)}

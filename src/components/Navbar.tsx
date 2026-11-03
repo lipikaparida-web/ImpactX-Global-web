@@ -138,33 +138,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
                 </span>
               </a>
 
-              {/* Desktop inline nav links */}
-              <nav
-                className="hidden lg:flex items-center gap-1 xl:gap-2"
-                aria-label="Site navigation"
-              >
-                {NAV_ITEMS.map((item) => {
-                  const isActive = activeSection === item.href.replace('#', '');
-                  return (
-                    <a
-                      key={item.href}
-                      href={item.href}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick(item.href);
-                      }}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] ${
-                        isActive
-                          ? 'text-[#C8A96A] bg-[#C8A96A]/12 font-semibold border border-[#C8A96A]/20'
-                          : 'text-[#D1CBC0] hover:text-white hover:bg-white/[0.05]'
-                      }`}
-                    >
-                      {item.label}
-                    </a>
-                  );
-                })}
-              </nav>
-
               {/* Right side: CTA + hamburger */}
               <div className="flex items-center gap-2">
                 {/* Desktop CTA */}

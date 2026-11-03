@@ -6,19 +6,22 @@ import { getApplicationStatus, COHORT_CONFIG } from '../config/applicationConfig
 interface NavbarProps {
   onOpenApply: () => void;
   activeSection: string;
+  onNavigate?: (page: string) => void;
+  currentPage?: string;
 }
 
 const NAV_ITEMS = [
-  { label: 'Home', href: '#hero' },
-  { label: 'Our Story', href: '#story' },
-  { label: 'Programmes', href: '#programmes' },
-  { label: 'Domains', href: '#domains' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Community', href: '#community' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '#hero', page: null },
+  { label: 'Our Story', href: '#story', page: null },
+  { label: 'Programmes', href: '#programmes', page: null },
+  { label: 'Domains', href: '#domains', page: null },
+  { label: 'How It Works', href: '#how-it-works', page: null },
+  { label: 'Community', href: '#community', page: null },
+  { label: 'Reviews & Testimonials', href: null, page: 'testimonials' },
+  { label: 'Contact', href: '#contact', page: null },
 ];
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection, onNavigate, currentPage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -66,20 +69,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
   }, [menuOpen]);
 
   // Smooth navigation handler that works reliably across all browsers & devices
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string | null, page: string | null = null) => {
     // 1. Immediately close the drawer
     setMenuOpen(false);
     // 2. Immediately unlock body overflow so scrolling works
     document.body.style.overflow = '';
 
-    const id = href.replace('#', '');
-
-    if (!id || id === 'hero') {
+    // 3. If this is a page-level navigation (e.g. Testimonials), delegate upward
+    if (page && onNavigate) {
+      onNavigate(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
 
-    // 3. Small timeout to allow DOM and body overflow unlock to settle before scrolling
+    if (!href) return;
+
+    const id = href.replace('#', '');
+
+    if (!id || id === 'hero') {
+      // If on a sub-page, navigate back to home first
+      if (onNavigate) onNavigate('home');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    // If we are on a sub-page, go back to home first then scroll
+    if (onNavigate && currentPage && currentPage !== 'home') {
+      onNavigate('home');
+    }
+
+    // 4. Small timeout to allow DOM and body overflow unlock to settle before scrolling
     setTimeout(() => {
       const el = document.getElementById(id);
       if (el) {
@@ -227,16 +246,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection }) =>
           <nav aria-label="Site navigation drawer" className="p-3">
             <ul className="space-y-0.5" role="list">
               {NAV_ITEMS.map((item) => {
-                const isActive = activeSection === item.href.replace('#', '');
+                const isActive = item.page
+                  ? currentPage === item.page
+                  : item.href
+                    ? activeSection === item.href.replace('#', '')
+                    : false;
+                const isTestimonials = item.page === 'testimonials';
                 return (
-                  <li key={item.href}>
+                  <li key={item.page ?? item.href}>
                     <button
                       type="button"
-                      onClick={() => handleNavClick(item.href)}
+                      onClick={() => handleNavClick(item.href, item.page)}
                       className={`flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-medium transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] text-left ${
                         isActive
                           ? 'bg-[#C8A96A]/12 text-[#C8A96A] border border-[#C8A96A]/20'
-                          : 'text-[#D1CBC0] hover:text-white hover:bg-white/[0.05]'
+                          : isTestimonials
+                            ? 'text-[#C8A96A]/80 hover:text-[#C8A96A] hover:bg-[#C8A96A]/[0.06]'
+                            : 'text-[#D1CBC0] hover:text-white hover:bg-white/[0.05]'
                       }`}
                     >
                       <span>{item.label}</span>

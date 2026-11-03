@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AnimatePresence } from 'motion/react';
 
 // ─── Core layout ──────────────────────────────────────────────────────────────
 import { Navbar } from './components/Navbar';
@@ -14,6 +15,9 @@ import { WhyImpactX } from './components/WhyImpactX';
 import { CommunitySection } from './components/CommunitySection';
 import { ContactSection } from './components/ContactSection';
 
+// ─── Dedicated sub-pages ──────────────────────────────────────────────────────
+import { TestimonialsPage } from './components/TestimonialsPage';
+
 // ─── Alumni system (preserved) ───────────────────────────────────────────────
 import { AlumniCardStudio } from './components/alumni/AlumniCardStudio';
 import { AlumniAuthModal } from './components/alumni/AlumniAuthModal';
@@ -24,7 +28,10 @@ import { ProgrammeTier } from './config/applicationConfig';
 // ─── Ambient background (kept — but Hogwarts / magic cursor removed) ─────────
 import { AcademyBackground } from './components/AcademyBackground';
 
+type Page = 'home' | 'testimonials';
+
 export default function App() {
+  const [currentPage, setCurrentPage] = useState<Page>('home');
   const [activeSection, setActiveSection] = useState('hero');
 
   // Alumni card studio state (preserved from original)
@@ -34,8 +41,10 @@ export default function App() {
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
   const [selectedTier, setSelectedTier] = useState<ProgrammeTier | undefined>(undefined);
 
-  // Active section tracker via IntersectionObserver
+  // Active section tracker via IntersectionObserver (only runs on home page)
   useEffect(() => {
+    if (currentPage !== 'home') return;
+
     const sectionIds = [
       'hero',
       'story',
@@ -65,7 +74,13 @@ export default function App() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [currentPage]);
+
+  // Page navigation handler
+  const handleNavigate = (page: string) => {
+    setCurrentPage(page as Page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleOpenApply = () => {
     setIsApplyModalOpen(true);
@@ -81,16 +96,34 @@ export default function App() {
     setIsCardStudioOpen(true);
   };
 
+  // ─── Testimonials dedicated page ─────────────────────────────────────────────
+  if (currentPage === 'testimonials') {
+    return (
+      <div className="min-h-screen bg-[#03040C] text-[#F7F4EE] font-sans selection:bg-[#C8A96A]/30 selection:text-[#C8A96A] antialiased relative overflow-x-hidden">
+        <AcademyBackground />
+        <AnimatePresence mode="wait">
+          <TestimonialsPage
+            key="testimonials"
+            onBack={() => handleNavigate('home')}
+          />
+        </AnimatePresence>
+      </div>
+    );
+  }
+
+  // ─── Home page ────────────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-[#03040C] text-[#F7F4EE] font-sans selection:bg-[#C8A96A]/30 selection:text-[#C8A96A] antialiased relative overflow-x-hidden">
 
-      {/* Ambient background layer (no Hogwarts / train / magic cursor) */}
+      {/* Ambient background layer */}
       <AcademyBackground />
 
       {/* Navigation */}
       <Navbar
         onOpenApply={handleOpenApply}
         activeSection={activeSection}
+        onNavigate={handleNavigate}
+        currentPage={currentPage}
       />
 
       {/* Main content */}

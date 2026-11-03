@@ -185,6 +185,17 @@ export const DOMAINS: Domain[] = [
     featuredProjects: ['Predictive Healthcare Diagnostics', 'Autonomous Climate Monitors']
   },
   {
+    id: 'data-science',
+    name: 'Data Science',
+    tagline: 'Extracting patterns, engineering data pipelines, and transforming raw information into predictive intelligence.',
+    purpose: 'Empower students to analyze large-scale datasets, build statistical models, and drive evidence-based decisions.',
+    skills: ['Python', 'SQL', 'Pandas & NumPy', 'Statistical Modeling', 'Data Visualization', 'ETL Pipelines', 'Power BI / Tableau'],
+    mentorRole: 'Lead Data Scientists, Analytics Engineers, Quantitative Researchers',
+    outcomes: ['End-to-End Analytics Dashboards', 'Predictive Modeling Pipelines', 'Empirical Data Reports', 'Statistical Audits'],
+    activeProjectsCount: 16,
+    featuredProjects: ['Global Education Access Analytics', 'Urban Mobility Pattern Predictor']
+  },
+  {
     id: 'research',
     name: 'Research & Documentation',
     tagline: 'Transforming complex data into actionable whitepapers and policy frameworks.',

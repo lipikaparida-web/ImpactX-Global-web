@@ -74,14 +74,9 @@ export const Footer: React.FC<FooterProps> = () => {
               <div className="w-9 h-9 rounded-full bg-[#0D0D0F] border border-[#C8A96A]/25 flex items-center justify-center shadow-inner">
                 <ImpactXLogo className="w-9 h-9" />
               </div>
-              <div>
-                <span className="font-sans-display font-bold text-sm text-white tracking-tight">
-                  IMPACTX{' '}
-                  <span className="text-[#C8A96A] font-mono text-[10px] tracking-widest">
-                    GLOBAL
-                  </span>
-                </span>
-              </div>
+              <span className="font-sans-display font-bold text-base text-white tracking-tight whitespace-nowrap">
+                ImpactX Global
+              </span>
             </a>
 
             <p className="text-xs text-[#8E8E9A] leading-relaxed font-light max-w-[220px]">

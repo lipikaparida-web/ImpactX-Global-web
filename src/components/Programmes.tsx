@@ -14,15 +14,18 @@ interface ProgrammeCardProps {
   tier: ProgrammeTier;
   index: number;
   appStatus: 'OPEN' | 'CLOSED';
+  onApplyTier?: (tier: ProgrammeTier) => void;
 }
 
-const ProgrammeCard: React.FC<ProgrammeCardProps> = ({ tier, index, appStatus }) => {
+const ProgrammeCard: React.FC<ProgrammeCardProps> = ({ tier, index, appStatus, onApplyTier }) => {
   const isOpen = appStatus === 'OPEN';
 
   const handleApply = () => {
     if (!isOpen) return;
     if (tier.applyUrl) {
       window.open(tier.applyUrl, '_blank', 'noopener,noreferrer');
+    } else if (onApplyTier) {
+      onApplyTier(tier);
     } else {
       // Application URL not yet configured — scroll to contact section
       const el = document.getElementById('contact');
@@ -50,9 +53,9 @@ const ProgrammeCard: React.FC<ProgrammeCardProps> = ({ tier, index, appStatus })
       {/* Featured badge */}
       {tier.isFeatured && (
         <div className="absolute top-4 right-4">
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#C8A96A]/15 border border-[#C8A96A]/30 text-[10px] font-mono uppercase tracking-widest text-[#C8A96A]">
-            <Star className="w-2.5 h-2.5" />
-            Popular
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#C8A96A]/20 border border-[#C8A96A]/40 text-[10px] font-mono uppercase tracking-widest text-[#C8A96A] shadow-sm">
+            <Star className="w-2.5 h-2.5 fill-[#C8A96A]" />
+            {tier.badgeLabel || 'Most Preferred'}
           </span>
         </div>
       )}
@@ -122,8 +125,8 @@ const ProgrammeCard: React.FC<ProgrammeCardProps> = ({ tier, index, appStatus })
 
         {/* Note if URL not configured */}
         {isOpen && !tier.applyUrl && (
-          <p className="mt-2 text-center text-[10px] text-[#6E6E7A] font-mono">
-            Link not yet configured — contact us to apply
+          <p className="mt-2 text-center text-[10px] text-[#8E8E9A] font-mono">
+            Fast-track Cohort 3 Application
           </p>
         )}
       </div>
@@ -133,7 +136,11 @@ const ProgrammeCard: React.FC<ProgrammeCardProps> = ({ tier, index, appStatus })
 
 // ─── Programmes Section ───────────────────────────────────────────────────────
 
-export const Programmes: React.FC = () => {
+interface ProgrammesProps {
+  onApplyTier?: (tier: ProgrammeTier) => void;
+}
+
+export const Programmes: React.FC<ProgrammesProps> = ({ onApplyTier }) => {
   const appStatus = getApplicationStatus();
 
   return (
@@ -188,7 +195,7 @@ export const Programmes: React.FC = () => {
             </p>
 
             {appStatus === 'OPEN' && (
-              <p className="mt-3 text-xs font-mono text-[#9E9EA7]">
+              <p className="mt-3 text-xs font-mono text-emerald-400/90 font-medium">
                 Applications close on {COHORT_CONFIG.deadlineDisplay} (India Standard Time).
               </p>
             )}
@@ -203,6 +210,7 @@ export const Programmes: React.FC = () => {
               tier={tier}
               index={index}
               appStatus={appStatus}
+              onApplyTier={onApplyTier}
             />
           ))}
         </div>

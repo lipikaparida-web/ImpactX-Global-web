@@ -51,14 +51,14 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
           <div>
             {/* Header */}
             <div className="space-y-2.5 mb-8 text-left">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 backdrop-blur-md">
-                Global Cohort • Applications Closed
+              <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 bg-emerald-950/50 px-4 py-1.5 rounded-full border border-emerald-500/25 backdrop-blur-md">
+                Winter Intake 2026 • Cohort 3 Applications Open
               </span>
               <h2 className="text-2xl sm:text-3xl font-sans-display font-bold text-[#F7F4EE] pt-2">
-                Applications are Currently Closed
+                Apply to ImpactX Global
               </h2>
               <p className="text-xs sm:text-sm text-[#9E9EA7] font-light">
-                Applications for BATCH-2 (Winter Intake) are currently closed. Submit your profile below to join the priority waitlist for our next intake.
+                Applications for Cohort 3 are open until 4 November 2026, 11:59 PM (IST). Submit your profile below to join the ecosystem.
               </p>
             </div>
 
@@ -217,9 +217,9 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                 </button>
                 <button
                   type="submit"
-                  className="px-7 py-3 text-xs font-semibold text-[#0D0D0F] bg-[#F7F4EE] hover:bg-white rounded-full transition-all flex items-center gap-2 cursor-pointer shadow-md"
+                  className="px-7 py-3 text-xs font-semibold text-[#0D0D0F] bg-[#C8A96A] hover:bg-[#E2C78E] rounded-full transition-all flex items-center gap-2 cursor-pointer shadow-md"
                 >
-                  <span>Join Waitlist</span>
+                  <span>Submit Application</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -229,27 +229,27 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
         ) : (
           /* Confirmation View */
           <div className="text-center py-8 space-y-6">
-            <div className="w-16 h-16 rounded-full bg-[#C8A96A]/20 text-[#C8A96A] border border-[#C8A96A]/30 flex items-center justify-center mx-auto">
-              <CheckCircle2 className="w-8 h-8 text-[#C8A96A]" />
+            <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto">
+              <CheckCircle2 className="w-8 h-8 text-emerald-400" />
             </div>
 
             <div className="space-y-2">
               <h3 className="text-2xl font-sans-display font-bold text-[#F7F4EE]">
-                Waitlist Request Received!
+                Application Successfully Submitted!
               </h3>
               <p className="text-xs sm:text-sm text-[#9E9EA7] max-w-md mx-auto font-light">
-                Thank you, <strong className="text-[#F7F4EE]">{formData.fullName}</strong>. You have been added to the priority waitlist for our <span className="text-[#C8A96A] font-mono">{formData.primaryDomain}</span> domain track.
+                Thank you, <strong className="text-[#F7F4EE]">{formData.fullName}</strong>. Your application for Cohort 3 has been received for the <span className="text-[#C8A96A] font-mono">{formData.primaryDomain}</span> domain track.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#0D0D0F]/80 border border-[#C8A96A]/20 text-left max-w-md mx-auto space-y-3 text-xs font-mono">
               <div className="flex justify-between text-[#9E9EA7]">
                 <span>Status</span>
-                <span className="text-[#C8A96A]">Priority Waitlist Confirmed</span>
+                <span className="text-emerald-400">Cohort 3 Application Active</span>
               </div>
               <div className="flex justify-between text-[#9E9EA7]">
-                <span>Estimated Next Intake</span>
-                <span className="text-[#F7F4EE]">Upcoming Cohort Announcement</span>
+                <span>Intake Period</span>
+                <span className="text-[#F7F4EE]">Winter Intake 2026 (Cohort 3)</span>
               </div>
               <div className="flex justify-between text-[#9E9EA7]">
                 <span>Target Track</span>

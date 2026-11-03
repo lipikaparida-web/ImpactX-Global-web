@@ -17,7 +17,9 @@ import { ContactSection } from './components/ContactSection';
 // ─── Alumni system (preserved) ───────────────────────────────────────────────
 import { AlumniCardStudio } from './components/alumni/AlumniCardStudio';
 import { AlumniAuthModal } from './components/alumni/AlumniAuthModal';
+import { ApplicationModal } from './components/ApplicationModal';
 import { AlumniCardConfig } from './types';
+import { ProgrammeTier } from './config/applicationConfig';
 
 // ─── Ambient background (kept — but Hogwarts / magic cursor removed) ─────────
 import { AcademyBackground } from './components/AcademyBackground';
@@ -29,6 +31,8 @@ export default function App() {
   const [isCardStudioOpen, setIsCardStudioOpen] = useState(false);
   const [cardStudioPrefill, setCardStudioPrefill] = useState<Partial<AlumniCardConfig> | undefined>(undefined);
   const [isAlumniAuthOpen, setIsAlumniAuthOpen] = useState(false);
+  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+  const [selectedTier, setSelectedTier] = useState<ProgrammeTier | undefined>(undefined);
 
   // Active section tracker via IntersectionObserver
   useEffect(() => {
@@ -64,10 +68,12 @@ export default function App() {
   }, []);
 
   const handleOpenApply = () => {
-    // Legacy handler — now handled per-programme in Programmes component.
-    // Scroll to programmes section as a fallback.
-    const el = document.getElementById('programmes');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setIsApplyModalOpen(true);
+  };
+
+  const handleOpenApplyTier = (tier: ProgrammeTier) => {
+    setSelectedTier(tier);
+    setIsApplyModalOpen(true);
   };
 
   const handleOpenCardStudio = (prefill?: Partial<AlumniCardConfig>) => {
@@ -103,7 +109,7 @@ export default function App() {
         <OurStorySection />
 
         {/* 03. Programme Tiers — most important section */}
-        <Programmes />
+        <Programmes onApplyTier={handleOpenApplyTier} />
 
         {/* 04. How It Works */}
         <HowItWorks />
@@ -140,6 +146,12 @@ export default function App() {
           setIsAlumniAuthOpen(false);
           setIsCardStudioOpen(true);
         }}
+      />
+
+      {/* Cohort Application Modal */}
+      <ApplicationModal
+        isOpen={isApplyModalOpen}
+        onClose={() => setIsApplyModalOpen(false)}
       />
 
     </div>

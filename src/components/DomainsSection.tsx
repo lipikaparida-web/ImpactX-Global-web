@@ -10,6 +10,7 @@ import {
   Layers,
   Share2,
   Palette,
+  Database,
 } from 'lucide-react';
 
 interface DomainItem {
@@ -74,6 +75,12 @@ const DOMAINS: DomainItem[] = [
     description: 'Create visual identities, UI assets, and design systems for real products.',
     icon: Palette,
   },
+  {
+    id: 'data-science',
+    title: 'Data Science',
+    description: 'Extract actionable insights from complex datasets, engineer predictive analytics, and drive evidence-based solutions.',
+    icon: Database,
+  },
 ];
 
 export const DomainsSection: React.FC = () => {
@@ -104,7 +111,7 @@ export const DomainsSection: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="inline-block text-xs font-mono uppercase tracking-widest text-[#C8A96A] bg-[#C8A96A]/10 px-4 py-1.5 rounded-full border border-[#C8A96A]/20 mb-5"
           >
-            Nine Specialised Domains
+            Ten Specialised Domains
           </motion.span>
           <motion.h2
             id="domains-heading"
@@ -126,7 +133,7 @@ export const DomainsSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-sm sm:text-base text-[#8E8E9A] max-w-xl mx-auto leading-relaxed font-light"
           >
-            ImpactX Global operates across nine specialised domains. Explore the area
+            ImpactX Global operates across ten specialised domains. Explore the area
             most aligned with your interests and skills.
           </motion.p>
         </div>

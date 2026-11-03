@@ -25,8 +25,8 @@ export const COHORT_CONFIG: CohortConfig = {
   name: 'Winter Intake 2026 — Cohort 3',
   shortName: 'Cohort 3',
   status: 'OPEN',                           // <- Change to 'CLOSED' when intake ends
-  deadlineIST: '2026-11-02T23:59:59+05:30', // 2 November 2026 at midnight IST
-  deadlineDisplay: '2 November 2026',
+  deadlineIST: '2026-11-04T23:59:59+05:30', // 4 November 2026 at 11:59 PM IST
+  deadlineDisplay: '4 November 2026, 11:59 PM',
 };
 
 // ─── Programme Tier Configuration ─────────────────────────────────────────────
@@ -45,6 +45,7 @@ export interface ProgrammeTier {
   closedLabel: string;     // Button label when CLOSED
   applyUrl: string;        // <- TODO: Set these when form URLs are provided
   isFeatured?: boolean;
+  badgeLabel?: string;
 }
 
 export const PROGRAMME_TIERS: ProgrammeTier[] = [
@@ -81,7 +82,6 @@ export const PROGRAMME_TIERS: ProgrammeTier[] = [
     ctaLabel: 'Apply — ₹699',
     closedLabel: 'Applications Closed',
     applyUrl: '', // TODO: Add Explorer application form URL
-    isFeatured: true,
   },
   {
     id: 'accelerator',
@@ -99,6 +99,8 @@ export const PROGRAMME_TIERS: ProgrammeTier[] = [
     ctaLabel: 'Apply — ₹999',
     closedLabel: 'Applications Closed',
     applyUrl: '', // TODO: Add Accelerator application form URL
+    isFeatured: true,
+    badgeLabel: 'Most Preferred',
   },
 ];
 

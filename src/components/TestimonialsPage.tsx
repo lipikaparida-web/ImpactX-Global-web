@@ -30,23 +30,23 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ testimonial, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.55, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
-      className="relative flex flex-col rounded-2xl bg-[#0E0E13]/70 border border-white/[0.07] hover:border-[#C8A96A]/20 transition-all duration-300 overflow-hidden group"
+      className="relative flex flex-col rounded-2xl bg-[#12131C]/85 border border-white/[0.12] hover:border-[#E5C07B]/45 hover:shadow-[0_4px_32px_rgba(229,192,123,0.12)] transition-all duration-300 overflow-hidden group"
     >
       {/* Gold top accent line */}
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#C8A96A]/30 to-transparent" />
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#E5C07B]/50 to-transparent" />
 
       <div className="p-6 flex flex-col flex-1">
         {/* Quote icon */}
         <div className="mb-4 flex items-start justify-between gap-3">
-          <div className="p-2 rounded-xl bg-[#181820] border border-[#C8A96A]/15 group-hover:border-[#C8A96A]/30 transition-colors shrink-0">
-            <Quote className="w-3.5 h-3.5 text-[#C8A96A]" />
+          <div className="p-2.5 rounded-xl bg-[#1A1A26] border border-[#E5C07B]/25 group-hover:border-[#E5C07B]/50 transition-colors shrink-0">
+            <Quote className="w-3.5 h-3.5 text-[#E5C07B]" />
           </div>
         </div>
 
         {/* Review text */}
         <div className="flex-1 mb-5">
           {/* Always show preview paragraph */}
-          <p className="text-sm text-[#C1BAB2] leading-relaxed font-light">
+          <p className="text-sm text-[#DCD7CA] leading-relaxed font-normal">
             {preview}
           </p>
 
@@ -64,7 +64,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ testimonial, index }) => {
                 {paragraphs.slice(1).map((para, i) => (
                   <p
                     key={i}
-                    className="mt-4 text-sm text-[#C1BAB2] leading-relaxed font-light"
+                    className="mt-4 text-sm text-[#DCD7CA] leading-relaxed font-normal"
                   >
                     {para}
                   </p>
@@ -79,16 +79,16 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ testimonial, index }) => {
           <button
             type="button"
             onClick={() => setExpanded((v) => !v)}
-            className="self-start mb-5 inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-[#C8A96A] hover:text-[#E2C78E] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] rounded"
+            className="self-start mb-5 inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-[#E5C07B] hover:text-[#F3D088] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E5C07B] rounded font-semibold"
           >
             {expanded ? (
               <>
-                <ChevronUp className="w-3 h-3" />
+                <ChevronUp className="w-3.5 h-3.5" />
                 Read Less
               </>
             ) : (
               <>
-                <ChevronDown className="w-3 h-3" />
+                <ChevronDown className="w-3.5 h-3.5" />
                 Read More
               </>
             )}
@@ -96,8 +96,8 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ testimonial, index }) => {
         )}
 
         {/* Author name */}
-        <div className="pt-4 border-t border-white/[0.05]">
-          <p className="text-xs font-sans-display font-semibold text-white tracking-tight">
+        <div className="pt-4 border-t border-white/[0.08]">
+          <p className="text-sm font-sans-display font-bold text-white tracking-tight">
             {testimonial.name}
           </p>
         </div>

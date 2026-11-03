@@ -28,10 +28,10 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="text-3xl sm:text-4xl font-sans-display font-bold text-[#F7F4EE] tracking-tight mb-4"
+            className="text-3xl sm:text-4xl font-sans-display font-extrabold text-[#FFFFFF] tracking-tight mb-4"
           >
             We'd love to{' '}
-            <span className="font-serif-editorial italic font-normal text-[#C8A96A]">
+            <span className="font-serif-editorial italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FCEAC5] via-[#E8C57D] to-[#D4A247]">
               hear from you.
             </span>
           </motion.h2>
@@ -40,7 +40,7 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-sm text-[#8E8E9A] max-w-md mx-auto leading-relaxed font-light"
+            className="text-sm text-[#D4CEBF] max-w-md mx-auto leading-relaxed font-normal"
           >
             Reach out with questions about programmes, domains, or collaborations.
           </motion.p>
@@ -55,16 +55,16 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0 }}
-            className="flex items-center gap-4 p-5 rounded-2xl bg-[#0E0E13]/60 border border-white/[0.07] hover:border-[#C8A96A]/25 transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A]"
+            className="flex items-center gap-4 p-5 rounded-2xl bg-[#12131C]/85 border border-white/[0.12] hover:border-[#E5C07B]/45 hover:shadow-[0_4px_24px_rgba(229,192,123,0.12)] transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E5C07B]"
           >
-            <div className="p-2.5 rounded-xl bg-[#181820] border border-[#C8A96A]/15 group-hover:border-[#C8A96A]/40 transition-colors shrink-0">
-              <Mail className="w-4 h-4 text-[#C8A96A]" />
+            <div className="p-2.5 rounded-xl bg-[#1A1A26] border border-[#E5C07B]/25 group-hover:border-[#E5C07B]/50 transition-colors shrink-0">
+              <Mail className="w-4 h-4 text-[#E5C07B]" />
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-semibold text-white group-hover:text-[#C8A96A] transition-colors">
+              <p className="text-xs font-semibold text-white group-hover:text-[#E5C07B] transition-colors">
                 Email
               </p>
-              <p className="text-[10px] font-mono text-[#8E8E9A] truncate">
+              <p className="text-[11px] font-mono text-[#D4CEBF] truncate font-medium">
                 impactxglobal26@gmail.com
               </p>
             </div>
@@ -76,19 +76,19 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.06 }}
-            className="flex items-center gap-4 p-5 rounded-2xl bg-[#0E0E13]/60 border border-white/[0.07] hover:border-[#C8A96A]/25 transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A]"
+            className="flex items-center gap-4 p-5 rounded-2xl bg-[#12131C]/85 border border-white/[0.12] hover:border-[#E5C07B]/45 hover:shadow-[0_4px_24px_rgba(229,192,123,0.12)] transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E5C07B]"
           >
-            <div className="p-2.5 rounded-xl bg-[#181820] border border-[#C8A96A]/15 group-hover:border-[#C8A96A]/40 transition-colors shrink-0">
-              <Phone className="w-4 h-4 text-[#C8A96A]" />
+            <div className="p-2.5 rounded-xl bg-[#1A1A26] border border-[#E5C07B]/25 group-hover:border-[#E5C07B]/50 transition-colors shrink-0">
+              <Phone className="w-4 h-4 text-[#E5C07B]" />
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-semibold text-white group-hover:text-[#C8A96A] transition-colors">
+              <p className="text-xs font-semibold text-white group-hover:text-[#E5C07B] transition-colors">
                 Phone
               </p>
-              <p className="text-[10px] font-mono text-[#8E8E9A]">
+              <p className="text-[11px] font-mono text-[#D4CEBF] font-medium">
                 +91 8018949822
               </p>
-              <p className="text-[9px] text-[#6E6E7A] font-mono">Mon–Fri, 10 AM–6 PM IST</p>
+              <p className="text-[10px] text-[#A6A298] font-mono">Mon–Fri, 10 AM–6 PM IST</p>
             </div>
           </motion.a>
 
@@ -100,16 +100,16 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.12 }}
-            className="flex items-center gap-4 p-5 rounded-2xl bg-[#0E0E13]/60 border border-white/[0.07] hover:border-[#C8A96A]/25 transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A]"
+            className="flex items-center gap-4 p-5 rounded-2xl bg-[#12131C]/85 border border-white/[0.12] hover:border-[#E5C07B]/45 hover:shadow-[0_4px_24px_rgba(229,192,123,0.12)] transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E5C07B]"
           >
-            <div className="p-2.5 rounded-xl bg-[#181820] border border-[#C8A96A]/15 group-hover:border-[#C8A96A]/40 transition-colors shrink-0">
-              <Linkedin className="w-4 h-4 text-[#C8A96A]" />
+            <div className="p-2.5 rounded-xl bg-[#1A1A26] border border-[#E5C07B]/25 group-hover:border-[#E5C07B]/50 transition-colors shrink-0">
+              <Linkedin className="w-4 h-4 text-[#E5C07B]" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white group-hover:text-[#C8A96A] transition-colors">
+              <p className="text-xs font-semibold text-white group-hover:text-[#E5C07B] transition-colors">
                 LinkedIn
               </p>
-              <p className="text-[10px] font-mono text-[#8E8E9A]">ImpactX Global</p>
+              <p className="text-[11px] font-mono text-[#D4CEBF] font-medium">ImpactX Global</p>
             </div>
           </motion.a>
 
@@ -121,16 +121,16 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.18 }}
-            className="flex items-center gap-4 p-5 rounded-2xl bg-[#0E0E13]/60 border border-white/[0.07] hover:border-[#C8A96A]/25 transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A]"
+            className="flex items-center gap-4 p-5 rounded-2xl bg-[#12131C]/85 border border-white/[0.12] hover:border-[#E5C07B]/45 hover:shadow-[0_4px_24px_rgba(229,192,123,0.12)] transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E5C07B]"
           >
-            <div className="p-2.5 rounded-xl bg-[#181820] border border-[#C8A96A]/15 group-hover:border-[#C8A96A]/40 transition-colors shrink-0">
-              <Instagram className="w-4 h-4 text-[#C8A96A]" />
+            <div className="p-2.5 rounded-xl bg-[#1A1A26] border border-[#E5C07B]/25 group-hover:border-[#E5C07B]/50 transition-colors shrink-0">
+              <Instagram className="w-4 h-4 text-[#E5C07B]" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white group-hover:text-[#C8A96A] transition-colors">
+              <p className="text-xs font-semibold text-white group-hover:text-[#E5C07B] transition-colors">
                 Instagram
               </p>
-              <p className="text-[10px] font-mono text-[#8E8E9A]">@impactxglobal</p>
+              <p className="text-[11px] font-mono text-[#D4CEBF] font-medium">@impactxglobal</p>
             </div>
           </motion.a>
 

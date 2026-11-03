@@ -2,19 +2,19 @@
 
 @layer base {
   :root {
-    --bg-primary: #090909;
-    --bg-secondary: #111114;
-    --bg-surface: #151519;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(255, 255, 255, 0.2);
+    --bg-primary: #080911;
+    --bg-secondary: #0f111a;
+    --bg-surface: #141624;
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --border-hover: rgba(229, 192, 123, 0.4);
     --text-primary: #FFFFFF;
-    --text-secondary: #D1CBC0;
-    --accent-gold: #C8A96A;
-    --warm-brass: #C5A059;
-    --copper: #A86532;
-    --burgundy: #5A1414;
-    --forest-green: #2A3A2C;
-    --smoke-gray: #A0A0AA;
+    --text-secondary: #DCD7CA;
+    --accent-gold: #E5C07B;
+    --warm-brass: #F0D08E;
+    --copper: #C6814B;
+    --burgundy: #6E1B1B;
+    --forest-green: #34D399;
+    --smoke-gray: #CBC5B6;
   }
 
   html {

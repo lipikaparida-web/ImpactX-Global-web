@@ -60,37 +60,37 @@ export const AcademyBackground: React.FC = () => {
     const isMobile = width < 768;
 
     // 1. Star Field
-    const numStars = Math.min(isMobile ? 180 : 350, Math.floor((width * height) / 4500));
+    const numStars = Math.min(isMobile ? 220 : 420, Math.floor((width * height) / 3800));
     const stars = Array.from({ length: numStars }, () => ({
       x: Math.random() * width,
-      y: Math.random() * height * 0.8,
-      radius: Math.random() * 1.3 + 0.2,
-      alpha: Math.random() * 0.8 + 0.2,
-      speed: Math.random() * 0.015 + 0.003,
+      y: Math.random() * height * 0.85,
+      radius: Math.random() * 1.5 + 0.3,
+      alpha: Math.random() * 0.85 + 0.25,
+      speed: Math.random() * 0.02 + 0.005,
       direction: Math.random() > 0.5 ? 1 : -1,
       twinklePhase: Math.random() * Math.PI * 2,
     }));
 
     // 2. Slow Drifting Clouds
-    const numClouds = isMobile ? 5 : 8;
+    const numClouds = isMobile ? 5 : 9;
     const clouds = Array.from({ length: numClouds }, (_, i) => ({
       x: (i * (width / numClouds)) + (Math.random() * 100 - 50),
-      y: Math.random() * (height * 0.4) + height * 0.05,
-      radius: Math.random() * 120 + 80,
+      y: Math.random() * (height * 0.45) + height * 0.05,
+      radius: Math.random() * 140 + 90,
       speedX: Math.random() * 0.12 + 0.04,
-      opacity: Math.random() * 0.12 + 0.05,
+      opacity: Math.random() * 0.15 + 0.08,
     }));
 
     // 3. Upward Floating Stardust & Fireflies
-    const numParticles = isMobile ? 22 : 45;
+    const numParticles = isMobile ? 35 : 65;
     const particles = Array.from({ length: numParticles }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      size: Math.random() * 2.2 + 0.6,
-      speedY: -(Math.random() * 0.3 + 0.08),
-      speedX: (Math.random() - 0.5) * 0.2,
-      alpha: Math.random() * 0.7 + 0.1,
-      isAmber: Math.random() > 0.65,
+      size: Math.random() * 2.6 + 0.8,
+      speedY: -(Math.random() * 0.35 + 0.1),
+      speedX: (Math.random() - 0.5) * 0.25,
+      alpha: Math.random() * 0.8 + 0.2,
+      isAmber: Math.random() > 0.55,
     }));
 
     let time = 0;
@@ -350,7 +350,7 @@ export const AcademyBackground: React.FC = () => {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full object-cover" />
       <div
-        className="absolute inset-0 bg-gradient-to-b from-[#07070B]/40 via-[#07070B]/60 to-[#07070B]/80 pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-[#05060B]/20 to-[#07080F]/55 pointer-events-none"
         aria-hidden="true"
       />
     </div>

@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = () => {
               </span>
             </a>
 
-            <p className="text-xs text-[#8E8E9A] leading-relaxed font-light max-w-[220px]">
+            <p className="text-xs text-[#CBC5B6] leading-relaxed font-normal max-w-[220px]">
               A student-driven ecosystem connecting learners, builders, and innovators worldwide.
             </p>
 
@@ -94,7 +94,7 @@ export const Footer: React.FC<FooterProps> = () => {
                     target={social.href.startsWith('http') ? '_blank' : undefined}
                     rel={social.href.startsWith('http') ? 'noreferrer' : undefined}
                     aria-label={social.label}
-                    className="w-8 h-8 rounded-lg bg-[#141418] border border-white/[0.07] flex items-center justify-center text-[#8E8E9A] hover:text-[#C8A96A] hover:border-[#C8A96A]/25 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A]"
+                    className="w-8 h-8 rounded-lg bg-[#141418] border border-white/[0.12] flex items-center justify-center text-[#CBC5B6] hover:text-[#E5C07B] hover:border-[#E5C07B]/40 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E5C07B]"
                   >
                     <Icon className="w-3.5 h-3.5" />
                   </a>
@@ -114,7 +114,7 @@ export const Footer: React.FC<FooterProps> = () => {
                   <a
                     href={link.href}
                     onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-                    className="text-xs text-[#8E8E9A] hover:text-white transition-colors cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-[#C8A96A] rounded"
+                    className="text-xs text-[#CBC5B6] hover:text-[#E5C07B] transition-colors cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-[#E5C07B] rounded"
                   >
                     {link.label}
                   </a>

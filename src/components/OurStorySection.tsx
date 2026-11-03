@@ -48,7 +48,7 @@ export const OurStorySection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="space-y-4 text-sm sm:text-base text-[#9E9EA7] leading-relaxed font-light"
+              className="space-y-4 text-sm sm:text-base text-[#DCD7CA] leading-relaxed font-normal"
             >
               <p>
                 ImpactX Global began with a straightforward belief: students deserve more than
@@ -77,7 +77,7 @@ export const OurStorySection: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-start gap-4 p-5 rounded-2xl bg-[#0E0E13]/60 border border-white/[0.07] hover:border-[#C8A96A]/20 transition-all duration-300"
+                className="flex items-start gap-4 p-5 rounded-2xl bg-[#12131C]/80 border border-white/[0.12] hover:border-[#E5C07B]/40 hover:shadow-[0_4px_24px_rgba(229,192,123,0.12)] transition-all duration-300"
               >
                 <img
                   src={member.avatar}

@@ -52,10 +52,10 @@ export const CommunitySection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="text-3xl sm:text-4xl font-sans-display font-bold text-[#F7F4EE] tracking-tight leading-tight mb-6"
+              className="text-3xl sm:text-4xl font-sans-display font-extrabold text-[#FFFFFF] tracking-tight leading-tight mb-6"
             >
               A community that{' '}
-              <span className="font-serif-editorial italic font-normal text-[#C8A96A]">
+              <span className="font-serif-editorial italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FCEAC5] via-[#E8C57D] to-[#D4A247]">
                 builds together.
               </span>
             </motion.h2>
@@ -64,7 +64,7 @@ export const CommunitySection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-sm sm:text-base text-[#9E9EA7] leading-relaxed font-light"
+              className="text-sm sm:text-base text-[#D4CEBF] leading-relaxed font-normal"
             >
               ImpactX Global brings students together across disciplines and borders.
               Whether through online collaboration or social impact initiatives, our
@@ -83,13 +83,13 @@ export const CommunitySection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                  className="p-5 rounded-2xl bg-[#0E0E13]/60 border border-white/[0.07] hover:border-[#C8A96A]/20 transition-all duration-300 group"
+                  className="p-5 rounded-2xl bg-[#12131C]/85 border border-white/[0.12] hover:border-[#E5C07B]/40 hover:shadow-[0_4px_24px_rgba(229,192,123,0.12)] transition-all duration-300 group"
                 >
-                  <div className="p-2 rounded-xl bg-[#181820] border border-[#C8A96A]/15 group-hover:border-[#C8A96A]/35 transition-colors w-fit mb-3">
-                    <Icon className="w-4 h-4 text-[#C8A96A]" />
+                  <div className="p-2 rounded-xl bg-[#1A1A26] border border-[#E5C07B]/25 group-hover:border-[#E5C07B]/50 transition-colors w-fit mb-3">
+                    <Icon className="w-4 h-4 text-[#E5C07B]" />
                   </div>
                   <h3 className="text-sm font-semibold text-white mb-1.5">{item.title}</h3>
-                  <p className="text-xs text-[#8E8E9A] leading-relaxed font-light">{item.description}</p>
+                  <p className="text-xs text-[#CBC5B6] leading-relaxed font-normal">{item.description}</p>
                 </motion.div>
               );
             })}

@@ -28,17 +28,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
     >
       {/* Atmospheric background gradients */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] bg-gradient-radial from-[#C8A96A]/[0.04] via-[#1A1A2E]/[0.06] to-transparent rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-gradient-radial from-[#0D1B4A]/[0.12] to-transparent blur-[100px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[750px] bg-gradient-radial from-[#C8A96A]/[0.10] via-[#2A1E5C]/[0.10] to-transparent rounded-full blur-[110px]" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[500px] bg-gradient-radial from-[#1E3A8A]/[0.18] to-transparent blur-[90px]" />
         {/* Fine starfield */}
-        {[...Array(40)].map((_, i) => (
+        {[...Array(50)].map((_, i) => (
           <div
             key={i}
             className="absolute w-px h-px rounded-full bg-white"
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              opacity: Math.random() * 0.4 + 0.05,
+              opacity: Math.random() * 0.6 + 0.15,
             }}
           />
         ))}
@@ -54,8 +54,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="mb-6"
           >
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/60 border border-[#C8A96A]/25 backdrop-blur-xl text-[10px] font-mono uppercase tracking-widest text-[#C8A96A]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96A]" />
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#181824]/80 border border-[#E5C07B]/40 shadow-[0_0_20px_rgba(229,192,123,0.15)] backdrop-blur-xl text-[11px] font-mono uppercase tracking-widest text-[#F3D088]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#F3D088] shadow-[0_0_8px_#F3D088]" />
               IMPACTX GLOBAL
             </span>
           </motion.div>
@@ -67,14 +67,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
               onClick={scrollToProgrammes}
-              className="mb-7 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-950/50 border border-emerald-500/25 backdrop-blur-xl hover:border-emerald-500/50 transition-all duration-300 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+              className="mb-7 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-950/70 border border-emerald-400/40 shadow-[0_0_24px_rgba(52,211,153,0.18)] backdrop-blur-xl hover:border-emerald-400/70 hover:shadow-[0_0_32px_rgba(52,211,153,0.3)] transition-all duration-300 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               aria-label="Cohort 3 applications are now open — go to programmes"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-[11px] font-mono text-emerald-300 tracking-wide">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34D399]" />
+              <span className="text-xs font-mono text-emerald-300 tracking-wide font-medium">
                 COHORT 3 APPLICATIONS OPEN · Closes {COHORT_CONFIG.deadlineDisplay}
               </span>
-              <ChevronRight className="w-3 h-3 text-emerald-400 group-hover:translate-x-0.5 transition-transform duration-200" />
+              <ChevronRight className="w-3.5 h-3.5 text-emerald-300 group-hover:translate-x-0.5 transition-transform duration-200" />
             </motion.button>
           )}
 
@@ -85,10 +85,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="mb-5"
           >
-            <h1 className="text-[2.6rem] sm:text-6xl lg:text-7xl font-sans-display font-bold text-[#F7F4EE] leading-[1.07] tracking-tight text-balance">
+            <h1 className="text-[2.8rem] sm:text-6xl lg:text-7xl font-sans-display font-extrabold text-[#FFFFFF] leading-[1.07] tracking-tight text-balance drop-shadow-[0_2px_24px_rgba(255,255,255,0.06)]">
               <span className="sr-only">ImpactX Global — </span>
               Impact Starts{' '}
-              <span className="font-serif-editorial italic font-normal text-[#C8A96A]">
+              <span className="font-serif-editorial italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FCEAC5] via-[#E8C57D] to-[#D4A247] drop-shadow-[0_2px_16px_rgba(232,197,125,0.3)]">
                 With You.
               </span>
             </h1>
@@ -99,7 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base sm:text-lg text-[#C4B99A] font-medium leading-snug mb-4 max-w-2xl"
+            className="text-lg sm:text-xl text-[#F5EADB] font-medium leading-snug mb-4 max-w-2xl"
           >
             From curious learners to global builders — turn your ideas into meaningful impact.
           </motion.p>
@@ -109,7 +109,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-            className="text-sm sm:text-base text-[#8E8E9A] font-light leading-relaxed mb-9 max-w-xl"
+            className="text-sm sm:text-base text-[#DCD7CA] font-normal leading-relaxed mb-9 max-w-xl"
           >
             A student-driven ecosystem for building real-world projects, developing leadership,
             conducting research, and collaborating across disciplines.
@@ -125,7 +125,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
             <button
               id="hero-cta-primary"
               onClick={scrollToProgrammes}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full text-sm font-semibold text-[#09090D] bg-[#C8A96A] hover:bg-[#DDBC7C] shadow-[0_0_24px_rgba(200,169,106,0.28)] hover:shadow-[0_0_36px_rgba(200,169,106,0.45)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full text-sm font-semibold text-[#09090D] bg-gradient-to-r from-[#F5D898] via-[#E5C07B] to-[#D8B066] hover:brightness-110 shadow-[0_0_28px_rgba(229,192,123,0.4)] hover:shadow-[0_0_40px_rgba(229,192,123,0.6)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
               aria-label="Explore ImpactX Global Programmes"
             >
               <span>Explore Programmes</span>
@@ -135,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenApply, onOpenDomains }) => {
             <button
               id="hero-cta-secondary"
               onClick={scrollToStory}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full text-sm font-medium text-[#D1CBC0] bg-transparent border border-white/[0.12] hover:border-[#C8A96A]/40 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A]"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full text-sm font-medium text-[#F7F4EE] bg-white/[0.04] border border-white/[0.18] hover:border-[#E5C07B]/50 hover:bg-white/[0.08] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E5C07B]"
               aria-label="Discover the ImpactX Global Ecosystem"
             >
               Discover Our Ecosystem

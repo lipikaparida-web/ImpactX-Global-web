@@ -55,10 +55,10 @@ export const HowItWorks: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="text-3xl sm:text-4xl font-sans-display font-bold text-[#F7F4EE] tracking-tight"
+            className="text-3xl sm:text-4xl font-sans-display font-extrabold text-[#FFFFFF] tracking-tight"
           >
             From Curious to{' '}
-            <span className="font-serif-editorial italic font-normal text-[#C8A96A]">
+            <span className="font-serif-editorial italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FCEAC5] via-[#E8C57D] to-[#D4A247]">
               Contributing.
             </span>
           </motion.h2>
@@ -75,27 +75,27 @@ export const HowItWorks: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: i * 0.09, ease: [0.16, 1, 0.3, 1] }}
-                className="relative p-6 rounded-2xl bg-[#0E0E13]/60 border border-white/[0.07] hover:border-[#C8A96A]/20 transition-all duration-300 group"
+                className="relative p-6 rounded-2xl bg-[#12131C]/85 border border-white/[0.12] hover:border-[#E5C07B]/40 hover:shadow-[0_4px_28px_rgba(229,192,123,0.12)] transition-all duration-300 group"
               >
                 {/* Connector line (desktop) */}
                 {i < STEPS.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-full w-6 h-px bg-gradient-to-r from-[#C8A96A]/30 to-transparent -translate-y-px" aria-hidden="true" />
+                  <div className="hidden lg:block absolute top-10 left-full w-6 h-px bg-gradient-to-r from-[#E5C07B]/40 to-transparent -translate-y-px" aria-hidden="true" />
                 )}
 
                 {/* Step number */}
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl font-sans-display font-bold text-[#C8A96A]/25 leading-none select-none">
+                  <span className="text-3xl font-sans-display font-extrabold text-[#E5C07B]/45 leading-none select-none">
                     {step.number}
                   </span>
-                  <div className="p-2 rounded-xl bg-[#1A1A22] border border-[#C8A96A]/15 group-hover:border-[#C8A96A]/35 transition-colors">
-                    <Icon className="w-4 h-4 text-[#C8A96A]" />
+                  <div className="p-2 rounded-xl bg-[#1A1A26] border border-[#E5C07B]/25 group-hover:border-[#E5C07B]/50 transition-colors">
+                    <Icon className="w-4 h-4 text-[#E5C07B]" />
                   </div>
                 </div>
 
                 <h3 className="text-base font-sans-display font-semibold text-white mb-2">
                   {step.label}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#8E8E9A] leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-[#D4CEBF] leading-relaxed font-normal">
                   {step.description}
                 </p>
               </motion.div>

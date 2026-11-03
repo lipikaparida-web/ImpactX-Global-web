@@ -119,10 +119,10 @@ export const DomainsSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="text-3xl sm:text-4xl font-sans-display font-bold text-[#F7F4EE] tracking-tight mb-4"
+            className="text-3xl sm:text-4xl font-sans-display font-extrabold text-[#FFFFFF] tracking-tight mb-4"
           >
             Find Your{' '}
-            <span className="font-serif-editorial italic font-normal text-[#C8A96A]">
+            <span className="font-serif-editorial italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FCEAC5] via-[#E8C57D] to-[#D4A247]">
               Specialisation.
             </span>
           </motion.h2>
@@ -131,7 +131,7 @@ export const DomainsSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-sm sm:text-base text-[#8E8E9A] max-w-xl mx-auto leading-relaxed font-light"
+            className="text-sm sm:text-base text-[#D4CEBF] max-w-xl mx-auto leading-relaxed font-normal"
           >
             ImpactX Global operates across ten specialised domains. Explore the area
             most aligned with your interests and skills.
@@ -149,16 +149,16 @@ export const DomainsSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-start gap-4 p-5 rounded-2xl bg-[#0E0E13]/60 border border-white/[0.07] hover:border-[#C8A96A]/22 hover:bg-[#131318]/70 transition-all duration-300 group cursor-default"
+                className="flex items-start gap-4 p-5 rounded-2xl bg-[#12131C]/85 border border-white/[0.12] hover:border-[#E5C07B]/45 hover:bg-[#181926] hover:shadow-[0_4px_28px_rgba(229,192,123,0.12)] transition-all duration-300 group cursor-default"
               >
-                <div className="shrink-0 p-2.5 rounded-xl bg-[#181820] border border-[#C8A96A]/15 group-hover:border-[#C8A96A]/35 transition-colors">
-                  <Icon className="w-4 h-4 text-[#C8A96A]" />
+                <div className="shrink-0 p-2.5 rounded-xl bg-[#1A1A26] border border-[#E5C07B]/25 group-hover:border-[#E5C07B]/50 transition-colors">
+                  <Icon className="w-4 h-4 text-[#E5C07B]" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="text-sm font-sans-display font-semibold text-white mb-1.5 leading-snug">
                     {domain.title}
                   </h3>
-                  <p className="text-xs text-[#8E8E9A] leading-relaxed font-light">
+                  <p className="text-xs text-[#CBC5B6] leading-relaxed font-normal">
                     {domain.description}
                   </p>
                 </div>

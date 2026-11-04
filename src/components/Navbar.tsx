@@ -149,7 +149,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApply, activeSection, onNa
                 className="flex items-center gap-3 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] py-1"
                 aria-label="ImpactX Global — Return to top"
               >
-                <div className="w-8 h-8 rounded-full bg-[#0D0D0F] border border-[#C8A96A]/30 flex items-center justify-center shrink-0 shadow-inner">
+                <div className="w-8 h-8 rounded-lg bg-[#0D0D0F] border border-[#C8A96A]/30 flex items-center justify-center shrink-0 shadow-inner">
                   <ImpactXLogo className="w-8 h-8" />
                 </div>
                 <span className="font-sans-display font-bold text-base sm:text-lg tracking-tight text-white whitespace-nowrap">

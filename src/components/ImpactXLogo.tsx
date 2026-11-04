@@ -10,10 +10,10 @@ export const ImpactXLogo: React.FC<ImpactXLogoProps> = ({
   color = "currentColor",
 }) => {
   return (
-    <img 
-      src="/impactx-logo.jpg" 
-      alt="ImpactX Logo" 
-      className={`${className.replace(/text-\[[^\]]+\]/, '')} object-cover rounded-full shadow-sm`}
+    <img
+      src="/impactx-logo.jpg"
+      alt="ImpactX Global logo"
+      className={`${className.replace(/text-\[[^\]]+\]/, '')} object-contain shadow-sm`}
     />
   );
 };

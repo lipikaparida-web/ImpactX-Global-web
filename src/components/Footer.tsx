@@ -71,7 +71,7 @@ export const Footer: React.FC<FooterProps> = () => {
               className="inline-flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A] rounded-lg"
               aria-label="ImpactX Global — Return to top"
             >
-              <div className="w-9 h-9 rounded-full bg-[#0D0D0F] border border-[#C8A96A]/25 flex items-center justify-center shadow-inner">
+              <div className="w-9 h-9 rounded-lg bg-[#0D0D0F] border border-[#C8A96A]/25 flex items-center justify-center shadow-inner">
                 <ImpactXLogo className="w-9 h-9" />
               </div>
               <span className="font-sans-display font-bold text-base text-white tracking-tight whitespace-nowrap">

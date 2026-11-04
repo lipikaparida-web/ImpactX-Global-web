@@ -29,9 +29,10 @@ export const COHORT_CONFIG: CohortConfig = {
   deadlineDisplay: '4 November 2026, 11:59 PM',
 };
 
+const APPLICATION_FORM_URL = 'https://forms.gle/z4KPrBuhWxk1XfjR7';
+
 // ─── Programme Tier Configuration ─────────────────────────────────────────────
-// Update `applyUrl` for each tier once the form links are provided.
-// Leave as empty string ('') to indicate "link not yet configured".
+// Each tier can use its own form URL or share the cohort application form.
 
 export interface ProgrammeTier {
   id: 'free-community' | 'explorer' | 'accelerator';
@@ -43,7 +44,7 @@ export interface ProgrammeTier {
   highlights: string[];
   ctaLabel: string;        // Button label when OPEN
   closedLabel: string;     // Button label when CLOSED
-  applyUrl: string;        // <- TODO: Set these when form URLs are provided
+  applyUrl: string;
   isFeatured?: boolean;
   badgeLabel?: string;
 }
@@ -64,7 +65,7 @@ export const PROGRAMME_TIERS: ProgrammeTier[] = [
     ],
     ctaLabel: 'Apply for Free',
     closedLabel: 'Applications Closed',
-    applyUrl: '', // TODO: Add Free Community application form URL
+    applyUrl: APPLICATION_FORM_URL,
   },
   {
     id: 'explorer',
@@ -81,7 +82,7 @@ export const PROGRAMME_TIERS: ProgrammeTier[] = [
     ],
     ctaLabel: 'Apply — ₹699',
     closedLabel: 'Applications Closed',
-    applyUrl: '', // TODO: Add Explorer application form URL
+    applyUrl: APPLICATION_FORM_URL,
   },
   {
     id: 'accelerator',
@@ -98,7 +99,7 @@ export const PROGRAMME_TIERS: ProgrammeTier[] = [
     ],
     ctaLabel: 'Apply — ₹999',
     closedLabel: 'Applications Closed',
-    applyUrl: '', // TODO: Add Accelerator application form URL
+    applyUrl: APPLICATION_FORM_URL,
     isFeatured: true,
     badgeLabel: 'Most Preferred',
   },

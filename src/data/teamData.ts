@@ -14,5 +14,12 @@ export interface TeamMember {
 }
 
 export const TEAM_MEMBERS: TeamMember[] = [
-  // Empty until actual profiles are supplied by the user
+  {
+    id: 'reetika-lenka',
+    name: 'Ms. Reetika Lenka',
+    designation: 'Founder & CEO',
+    photoUrl: '/images/team/reetika-lenka.jpg',
+    linkedinUrl: 'https://www.linkedin.com/in/reetikalenka',
+  },
 ];
+

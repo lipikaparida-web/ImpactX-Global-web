@@ -28,5 +28,12 @@ export const TEAM_MEMBERS: TeamMember[] = [
     photoUrl: '/images/team/lipika-parida.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/lipikaparida3/',
   },
+  {
+    id: 'sourav-panda',
+    name: 'Mr. Sourav Panda',
+    designation: 'Chief Operating Officer (COO)',
+    photoUrl: '/images/team/sourav-panda.jpg',
+    linkedinUrl: 'https://www.linkedin.com/in/sourav-panda-896620307',
+  },
 ];
 

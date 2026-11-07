@@ -89,14 +89,14 @@ export const DISCORD_GALLERY_ITEMS: DiscordGalleryItem[] = [
 
   // ─── Clearly labelled placeholders for unprovided categories ───────────────
   {
-    id: 'placeholder-general-1',
-    title: 'Cross-Domain Project Brainstorming',
+    id: 'pm-meeting-room-blueprint',
+    title: 'Project Management Blueprint Review & Defense',
     category: 'general',
     categoryLabel: 'General Discussions',
-    isPlaceholder: true,
-    discordChannel: '#common-room',
-    caption: 'Day-to-day asynchronous technical brainstorming across engineering, design, and management.',
-    details: 'Discord archive capture currently being curated for public display.',
+    imageSrc: '/images/community/pm-meeting-room-presentation.jpg',
+    discordChannel: '#PM Meeting Room',
+    caption: 'Intern Arnav Jain presenting the Week 4 Final Project Management Blueprint to Co-Founder Lipika and cohort peers.',
+    details: 'Live screen share and technical defense in domain-dedicated voice meeting rooms.',
   },
   {
     id: 'placeholder-intro-1',
@@ -208,3 +208,4 @@ export const COMMUNITY_SESSIONS: CommunitySession[] = [
     imagePlaceholderText: 'Winter Intake 2026 Orientation — Coming Soon',
   },
 ];
+

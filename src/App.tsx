@@ -17,6 +17,7 @@ import { ContactSection } from './components/ContactSection';
 
 // ─── Dedicated sub-pages ──────────────────────────────────────────────────────
 import { TestimonialsPage } from './components/TestimonialsPage';
+import { OurStoryPage } from './components/OurStoryPage';
 
 // ─── Alumni system (preserved) ───────────────────────────────────────────────
 import { AlumniCardStudio } from './components/alumni/AlumniCardStudio';
@@ -28,7 +29,7 @@ import { ProgrammeTier } from './config/applicationConfig';
 // ─── Ambient background (kept — but Hogwarts / magic cursor removed) ─────────
 import { AcademyBackground } from './components/AcademyBackground';
 
-type Page = 'home' | 'testimonials';
+type Page = 'home' | 'testimonials' | 'story';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -95,6 +96,21 @@ export default function App() {
     setCardStudioPrefill(prefill);
     setIsCardStudioOpen(true);
   };
+
+  // ─── Our Story dedicated page ────────────────────────────────────────────────
+  if (currentPage === 'story') {
+    return (
+      <div className="min-h-screen bg-[#03040C] text-[#F7F4EE] font-sans selection:bg-[#C8A96A]/30 selection:text-[#C8A96A] antialiased relative overflow-x-hidden">
+        <AcademyBackground />
+        <AnimatePresence mode="wait">
+          <OurStoryPage
+            key="story"
+            onBack={() => handleNavigate('home')}
+          />
+        </AnimatePresence>
+      </div>
+    );
+  }
 
   // ─── Testimonials dedicated page ─────────────────────────────────────────────
   if (currentPage === 'testimonials') {

@@ -12,7 +12,7 @@ interface NavbarProps {
 
 const NAV_ITEMS = [
   { label: 'Home', href: '#hero', page: null },
-  { label: 'Our Story', href: '#story', page: null },
+  { label: 'Our Story', href: null, page: 'story' },
   { label: 'Programmes', href: '#programmes', page: null },
   { label: 'Domains', href: '#domains', page: null },
   { label: 'How It Works', href: '#how-it-works', page: null },

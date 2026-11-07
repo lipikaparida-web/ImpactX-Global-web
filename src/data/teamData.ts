@@ -21,5 +21,12 @@ export const TEAM_MEMBERS: TeamMember[] = [
     photoUrl: '/images/team/reetika-lenka.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/reetikalenka',
   },
+  {
+    id: 'lipika-parida',
+    name: 'Ms. Lipika Parida',
+    designation: 'Co-Founder & CSO',
+    photoUrl: '/images/team/lipika-parida.jpg',
+    linkedinUrl: 'https://www.linkedin.com/in/lipikaparida3/',
+  },
 ];
 

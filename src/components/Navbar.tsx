@@ -18,6 +18,7 @@ const NAV_ITEMS = [
   { label: 'How It Works', href: '#how-it-works', page: null },
   { label: 'Community', href: null, page: 'community' },
   { label: 'Reviews & Testimonials', href: null, page: 'testimonials' },
+  { label: 'Meet Our Team', href: null, page: 'team' },
   { label: 'Contact', href: '#contact', page: null },
 ];
 

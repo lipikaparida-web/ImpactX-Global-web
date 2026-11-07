@@ -19,6 +19,7 @@ import { ContactSection } from './components/ContactSection';
 import { TestimonialsPage } from './components/TestimonialsPage';
 import { OurStoryPage } from './components/OurStoryPage';
 import { CommunityPage } from './components/CommunityPage';
+import { TeamPage } from './components/TeamPage';
 
 // ─── Alumni system (preserved) ───────────────────────────────────────────────
 import { AlumniCardStudio } from './components/alumni/AlumniCardStudio';
@@ -30,7 +31,7 @@ import { ProgrammeTier } from './config/applicationConfig';
 // ─── Ambient background (kept — but Hogwarts / magic cursor removed) ─────────
 import { AcademyBackground } from './components/AcademyBackground';
 
-type Page = 'home' | 'testimonials' | 'story' | 'community';
+type Page = 'home' | 'testimonials' | 'story' | 'community' | 'team';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -136,6 +137,21 @@ export default function App() {
         <AnimatePresence mode="wait">
           <CommunityPage
             key="community"
+            onBack={() => handleNavigate('home')}
+          />
+        </AnimatePresence>
+      </div>
+    );
+  }
+
+  // ─── Team dedicated page ──────────────────────────────────────────────────────
+  if (currentPage === 'team') {
+    return (
+      <div className="min-h-screen bg-[#03040C] text-[#F7F4EE] font-sans selection:bg-[#C8A96A]/30 selection:text-[#C8A96A] antialiased relative overflow-x-hidden">
+        <AcademyBackground />
+        <AnimatePresence mode="wait">
+          <TeamPage
+            key="team"
             onBack={() => handleNavigate('home')}
           />
         </AnimatePresence>

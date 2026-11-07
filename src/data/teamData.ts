@@ -35,5 +35,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
     photoUrl: '/images/team/sourav-panda.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/sourav-panda-896620307',
   },
+  {
+    id: 'snehasikta-prusty',
+    name: 'Ms. Snehasikta Prusty',
+    designation: 'Chief People Officer (CPO)',
+    photoUrl: '/images/team/snehasikta-prusty.jpg',
+  },
 ];
 

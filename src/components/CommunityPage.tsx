@@ -142,9 +142,9 @@ export const CommunityPage: React.FC<CommunityPageProps> = ({ onBack, onNavigate
             transition={{ duration: 0.65, delay: 0.08 }}
             className="text-3.5xl sm:text-5xl lg:text-6xl font-sans-display font-extrabold text-[#FFFFFF] tracking-tight leading-[1.12] mb-6 text-balance"
           >
-            The People Behind{' '}
+            Where Ideas Find{' '}
             <span className="font-serif-editorial italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FCEAC5] via-[#E8C57D] to-[#D4A247] drop-shadow-[0_2px_16px_rgba(232,197,125,0.3)]">
-              ImpactX
+              Belonging.
             </span>
           </motion.h1>
 

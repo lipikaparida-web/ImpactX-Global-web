@@ -42,8 +42,8 @@ export const TEAM_MEMBERS: TeamMember[] = [
     photoUrl: '/images/team/snehasikta-prusty.jpg',
   },
   {
-    id: 'ayusmita-sahoo',
-    name: 'Ms. Ayusmita Sahoo',
+    id: 'ayusmita-dash',
+    name: 'Ayusmita Dash',
     designation: 'Head of Web & Digital Experience',
     photoUrl: '/images/team/ayusmita-sahoo.jpg',
   },

@@ -47,5 +47,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
     designation: 'Head of Web & Digital Experience',
     photoUrl: '/images/team/ayusmita-sahoo.jpg',
   },
+  {
+    id: 'mausumi-baral',
+    name: 'Ms. Mausumi Baral',
+    designation: 'Creative Director',
+    photoUrl: '/images/team/mausumi-baral.jpg',
+  },
 ];
 

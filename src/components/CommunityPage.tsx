@@ -30,13 +30,12 @@ interface CommunityPageProps {
   onNavigateHomeSection?: (sectionId: string) => void;
 }
 
-type CategoryFilter = 'all' | 'general' | 'introductions' | 'announcements' | 'alumni';
+type CategoryFilter = 'all' | 'general' | 'announcements' | 'alumni';
 
 const CATEGORY_TABS: { id: CategoryFilter; label: string }[] = [
   { id: 'all', label: 'All Activities' },
   { id: 'alumni', label: 'Alumni & Member Interactions' },
   { id: 'general', label: 'General Discussions' },
-  { id: 'introductions', label: 'Introductions & Community' },
   { id: 'announcements', label: 'Announcements & Updates' },
 ];
 
@@ -653,3 +652,4 @@ export const CommunityPage: React.FC<CommunityPageProps> = ({ onBack, onNavigate
     </motion.div>
   );
 };
+

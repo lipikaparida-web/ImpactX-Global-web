@@ -16,7 +16,7 @@ const NAV_ITEMS = [
   { label: 'Programmes', href: '#programmes', page: null },
   { label: 'Domains', href: '#domains', page: null },
   { label: 'How It Works', href: '#how-it-works', page: null },
-  { label: 'Community', href: '#community', page: null },
+  { label: 'Community', href: null, page: 'community' },
   { label: 'Reviews & Testimonials', href: null, page: 'testimonials' },
   { label: 'Contact', href: '#contact', page: null },
 ];

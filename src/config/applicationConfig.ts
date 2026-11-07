@@ -31,6 +31,10 @@ export const COHORT_CONFIG: CohortConfig = {
 
 const APPLICATION_FORM_URL = 'https://forms.gle/z4KPrBuhWxk1XfjR7';
 
+// ─── Discord Community Configuration ──────────────────────────────────────────
+// Single configurable URL for the ImpactX Global Discord server invitation.
+export const DISCORD_INVITE_URL = 'https://discord.gg/impactx';
+
 // ─── Programme Tier Configuration ─────────────────────────────────────────────
 // Each tier can use its own form URL or share the cohort application form.
 

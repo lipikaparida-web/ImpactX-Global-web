@@ -53,5 +53,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
     designation: 'Creative Director',
     photoUrl: '/images/team/mausumi-baral.jpg',
   },
+  {
+    id: 'biswajit-das',
+    name: 'Mr. Biswajit Das',
+    designation: 'Marketing & Partnerships Executive',
+    photoUrl: '/images/team/biswajit-das.jpg',
+  },
 ];
 

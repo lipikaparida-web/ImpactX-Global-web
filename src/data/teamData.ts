@@ -41,5 +41,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
     designation: 'Chief People Officer (CPO)',
     photoUrl: '/images/team/snehasikta-prusty.jpg',
   },
+  {
+    id: 'ayusmita-sahoo',
+    name: 'Ms. Ayusmita Sahoo',
+    designation: 'Head of Web & Digital Experience',
+    photoUrl: '/images/team/ayusmita-sahoo.jpg',
+  },
 ];
 
